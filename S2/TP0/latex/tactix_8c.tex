@@ -1,0 +1,62 @@
+\hypertarget{tactix_8c}{\section{Référence du fichier tactix.\-c}
+\label{tactix_8c}\index{tactix.\-c@{tactix.\-c}}
+}
+
+
+tactix functions  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$stdbool.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}tactix.\-h\char`\"{}}\\*
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{tactix_8c_a40799b39bddb70386d11dd119d1a27bb}{\hyperlink{struct_jeu}{Jeu} \hyperlink{tactix_8c_a40799b39bddb70386d11dd119d1a27bb}{creer\-Jeu} (void)}\label{tactix_8c_a40799b39bddb70386d11dd119d1a27bb}
+
+\begin{DoxyCompactList}\small\item\em Creation d'un jeu avec une initialisation du plateau. \end{DoxyCompactList}\item 
+\hypertarget{tactix_8c_acd34c90edaeb8fb6bccff1ee231ef209}{void {\bfseries afficher\-Jeu} (\hyperlink{struct_jeu}{Jeu} j)}\label{tactix_8c_acd34c90edaeb8fb6bccff1ee231ef209}
+
+\item 
+\hypertarget{tactix_8c_a500c7f178ad96e8cd39962cc150132ce}{bool {\bfseries coup\-Possible} (\hyperlink{struct_jeu}{Jeu} game)}\label{tactix_8c_a500c7f178ad96e8cd39962cc150132ce}
+
+\item 
+\hypertarget{tactix_8c_aa561d8325c5ecfd7941b1b7665f4a00d}{bool {\bfseries meme\-Ligne} (\hyperlink{struct_jeu}{Jeu} $\ast$pj, \hyperlink{struct_coup}{Coup} cp)}\label{tactix_8c_aa561d8325c5ecfd7941b1b7665f4a00d}
+
+\item 
+\hypertarget{tactix_8c_a7a8def36a8bf62f12ac02321e55dad0c}{bool {\bfseries meme\-Colonne} (\hyperlink{struct_jeu}{Jeu} $\ast$pj, \hyperlink{struct_coup}{Coup} cp)}\label{tactix_8c_a7a8def36a8bf62f12ac02321e55dad0c}
+
+\item 
+\hypertarget{tactix_8c_aa45db23d2f720a5dd008474555b79f6b}{\hyperlink{struct_position}{Position} {\bfseries determiner\-Position\-Case} (int val)}\label{tactix_8c_aa45db23d2f720a5dd008474555b79f6b}
+
+\item 
+\hypertarget{tactix_8c_a840a637d7370ab6f9f5bb6a0bcd278ae}{bool {\bfseries infos\-Position} (\hyperlink{struct_coup}{Coup} cp, \hyperlink{struct_position}{Position} $\ast$pdebut, \hyperlink{struct_position}{Position} $\ast$pfin)}\label{tactix_8c_a840a637d7370ab6f9f5bb6a0bcd278ae}
+
+\item 
+\hypertarget{tactix_8c_ab38ccf615a68302ae6ed3946880a9a64}{void {\bfseries minimum\-Et\-Maximum} (int val1, int val2, int $\ast$minimum, int $\ast$maximum)}\label{tactix_8c_ab38ccf615a68302ae6ed3946880a9a64}
+
+\item 
+\hypertarget{tactix_8c_addfe8d52b2c38bd78dbac3ff095b0ff3}{\hyperlink{struct_jeu}{Jeu} {\bfseries jouer} (\hyperlink{struct_jeu}{Jeu} game, \hyperlink{tactix_8h_a9a527722d878ba01d077a448efebe469}{Joueur} p)}\label{tactix_8c_addfe8d52b2c38bd78dbac3ff095b0ff3}
+
+\item 
+bool \hyperlink{tactix_8c_a8c615b50fb27fd035eeee9f81a3897fd}{tac\-Tix} (void)
+\begin{DoxyCompactList}\small\item\em Lance une partie complete. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+tactix functions 
+
+\subsection{Documentation des fonctions}
+\hypertarget{tactix_8c_a8c615b50fb27fd035eeee9f81a3897fd}{\index{tactix.\-c@{tactix.\-c}!tac\-Tix@{tac\-Tix}}
+\index{tac\-Tix@{tac\-Tix}!tactix.c@{tactix.\-c}}
+\subsubsection[{tac\-Tix}]{\setlength{\rightskip}{0pt plus 5cm}tac\-Tix (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{tactix_8c_a8c615b50fb27fd035eeee9f81a3897fd}
+
+
+Lance une partie complete. 
+
+Renvoie vrai si les joueurs souhaitent continuer 
