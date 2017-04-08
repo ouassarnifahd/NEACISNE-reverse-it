@@ -1,0 +1,18 @@
+#include<stdio.h> 
+#include<stdlib.h> 
+int main ( void ) { 
+    int i,j,k,p,t=0,n;
+    printf("Donner un nombre n>0: ");
+    scanf("%d", &n);
+    for(i=0; i<=n-1;i++){
+		for(j=0; j<=n-1-i ;j++){
+			printf(" ");
+		}
+		for(k=0; k<=i ;k++){
+			p=t+k ;
+			printf("%d", p);
+		}
+		printf("\n");
+	}
+    return (EXIT_SUCCESS) ;
+}

@@ -1,0 +1,29 @@
+%%%%%%%%% FFT SIN HANNING %%%%%%%%%
+% CLEAR
+clc
+clear
+close all
+
+% LOAD
+load sig2_quidonc.mat
+
+% GVars
+Nb=10;
+
+% CODE
+N=length(xk);
+Ta=N/Fs;
+f=0:1/Ta:Fs-1/Ta;
+Hn=transpose(hann(N,'periodic'));
+xkh=xk.*Hn;
+
+Nbz=N*Nb;
+xkh1=[xkh zeros(1,Nbz)];
+N1=length(xkh1);
+Ta1=N1/Fs;
+f1=0:1/Ta1:Fs-1/Ta1;
+
+% FIGURE
+stem(f1,abs(fft(xkh1)),'-r')
+hold on
+stem(f,abs(fft(xkh)))

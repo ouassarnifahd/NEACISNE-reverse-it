@@ -1,0 +1,17 @@
+%%%%%%%%%%%% RECT %%%%%%%%%%%%
+% CLEAR
+clc
+clear
+close all
+% LOAD
+load sig1_rect.mat
+% CODE
+N=length(xk);
+Ts=1/Fs;
+t=0:Ts:(N-1)*Ts;
+
+% FIGURE
+stem(t,xk)
+
+
+

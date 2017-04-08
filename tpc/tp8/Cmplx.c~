@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct sComplexe {
+    float Re=0, Im=0;
+} Complexe;
+
+void affiCplx(Complexe z){
+    printf("z = %f ", z.Re);
+    if (z.Im=0) {
+        printf("\n");
+    }
+    if (z.Im>0) {
+        printf("+ i%f\n", Z.Im);
+    }
+    else {
+        printf("- i%f\n", abs(Z.Im));
+    }
+}
+
+Complexe readCplx(char expression[20]){
+    Complexe z;
+    sscanf(expression,"%f + i%f", z.Re, z.Im);
+    return z;
+}
+
+Complexe addCplx(Complexe z1, Complexe z2){
+    Complexe z;
+    z.Re=z1.Re+z2.Re;
+    z.Im=z1.Im+z2.Im;
+    return z;
+}
+
+Complexe multCplx(Complexe z1, Complexe z2){
+    Complexe z;
+    z.Re=z1.Re*z2.Re-z1.Im*z2.Im;
+    z.Im=z1.Im*z2.Re+z1.Re*z2.Im;
+    return z;
+}
+
+Complexe divCplx(Complexe z1, Complexe z2){
+    Complexe z;
+    z.Re=(z1.Re*z2.Re+z1.Im*z2.Im)/(z2.Re*z2.Re+z2.Im*z2.Im);
+    z.Im=(z1.Im*z2.Re-z1.Re*z2.Im)/(z2.Re*z2.Re+z2.Im*z2.Im);
+    return z;
+}
+
+char add[100]="( 12 + i4 ) / ( 1 + i )";
+
+
+int main(int argc, char *argv[]){
+
+
+}

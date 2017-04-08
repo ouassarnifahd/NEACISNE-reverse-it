@@ -1,0 +1,72 @@
+Info sur l'architecture PIC18: 8-bit (Harvard)
+    Read-Address-Bus:       21-bit -> 2M Addressable-Memory-Location (write only)
+    Write-Address-Bus:      12-bit -> 4k Addressable-Memory-Location (write only)
+    Instruction-Adress-Bus: 16-bit (read only)
+    Data-Address-Bus:       8-bit (read/write)
+
+    PROGRAM MEMORY 2Mb (2048 Kb)
+               ||
+   INSTRUCTION || 16-bit
+               \/
+    /----------------------\
+    |        1.FETCH       |
+    |----------------------|
+    |       2.DECODE       |
+    |       3.EXECUTE      |
+    |      4.WRITE-BACK    |
+    \----------------------/
+               /\
+         DATA  ||  16-bit
+               \/
+    DATA MEMORY 4Kb (4096-bit)
+   [BSR(0x0-0xF) / SFR(0x0|0xF)]
+
+CODE:
+    near int|char|...
+    far int|char|...
+    #pragma code_entry-scn=0x000000 /* for the linker */
+
+PERIPHERALS: (Hardware limits)
+    Control registers (i.e. contains Protocols)
+    Work registers (i.e. contains PROTOCOL+DATA-received/transmitted)
+
+INTERRUPTIONS: (USING GLOBAL VARIABLES) p32
+    1) IRQ: Interrupt Request (logique-de-demasquage: 1|0) p38
+        IF: Interrupt Flag
+        IE: Interrupt Enable
+            GIE: Global Interrupt Enable
+        IP: Interrupt Priority
+        CODE:
+            /* system - disable PIC16 legacy mode */
+                RCONbits.IPEN = 1;
+            /* timer0 - interrupt configuration – high priority vector */
+                INTCONbits.TMR0IF = 0;
+                INTCON2bits.TMR0IP = 1;
+                INTCONbits.TMR0IE = 1;
+            /* system - global interrupt enable */
+                INTCONbits.GIEH=1;
+    2) Interruption Vectors: Memory-Addresses containing: goto ISR
+    3) Context "commuting": Save mainProgram->ISR-> Restore mainProgram
+    4) ISR: Interrupt Service Routine (function|software)
+        CODE:
+            /* ISR - high level Interrupt Service Routine */
+                void interrupt high_priority high_isr (void) {
+                    /* check for timer1 IRQ */
+                        if( INTCONbits.TMR0IF ) {
+                            /* IRQ acknowledgment */
+                                INTCONbits.TMR0IF = 0; /* ACK */
+
+                            /* user ISR processing */
+                        }
+                }
+            /* program entry point */
+                void main(void) {
+                    timer0_init();
+                    while(1) {
+                        /* user application scheduler */
+                    }
+                }
+
+FUNCTION CALL: PC, GOTO, RETURN
+
+OFFLINE SCHEDULER:

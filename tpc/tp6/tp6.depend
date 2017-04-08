@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1481281205 source:/home/eleves/promo19/elec/ouassarni/tpc/src/tp6/tp6/main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<time.h>
+
