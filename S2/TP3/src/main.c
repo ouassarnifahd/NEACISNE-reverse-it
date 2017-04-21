@@ -21,7 +21,11 @@ int main(int argc, char const *argv[]){
 				do{
 					printf("\t  Entrer l'element: ");
 				}while(read_element(&newElt));
-				mainFILE->Enqueue(mainFILE,newElt);
+				if(mainFILE->Enqueue(mainFILE,newElt)){
+					printf("\t  Success!\n");
+				} else {
+					printf("\t  Erreur!\n");
+				}
 				break;
 			case 2:
 				if(mainFILE->Dequeue(mainFILE,NULL)){

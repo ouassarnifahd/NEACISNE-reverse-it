@@ -26,80 +26,29 @@ static int TQueue_Length(const PTQueue this){
     return this->NumElems;
 }
 
-/*
-if(TQueue_IsEmpty(this)){
-    this->Table[this->NumElems]=pushElt;
-    this->NumElems++;
-    return 1;
-}
-else {
-    if(this->NumElems == this->TabSize){
-        this->TabSize=2*this->TabSize;
-        this->Table=realloc(this->Table,this->TabSize*sizeof(TElement));
-        if(!this->Table) return 0;
-        int Index;
-        for (Index = 0; Index < this->FrontIndex; Index++)
-            this->Table[Index + this->TabSize] = this->Table[Index];
-        this->BackIndex = Index + this->TabSize - 1;
-    }
-    else {
-        this->BackIndex= (this->BackIndex + 1) % this->TabSize;
-        this->Table[this->BackIndex]=pushElt;
-        this->NumElems++;
-    }
-    return 1;
-}
-return 0;
-*/
-
 static bool TQueue_Enqueue(const PTQueue this, TElement pushElt){
-    PTElement pfile;
-    int i;
-    if (this->IsEmpty(this)){
-        *(this->Table) = pushElt;
-    }
-    else {
-        this->BackIndex ++;
-        if (this->BackIndex > this->TabSize){
-            if (this->FrontIndex == 0){
-                pfile = (PTElement) realloc(this->Table, 2*(this->TabSize)*sizeof(TElement));
-                if (pfile == NULL){
-                    printf("Erreur d'allocation!\n");
-                    return false;
-                }
-                else {
-                    this->Table = pfile;
-                    this->TabSize *= 2;
-                    this->Table[this->BackIndex] = pushElt;
-                }
-            }
-            else{
-                this->BackIndex = 0;
-                this->Table[this->BackIndex] = pushElt;
-            }
+    if(TQueue_IsEmpty(this)){
+        this->Table[this->NumElems]=pushElt;
+        this->NumElems++;
+        return 1;
+    } else {
+        if(this->NumElems == this->TabSize){
+            this->TabSize=2*this->TabSize;
+            this->Table=realloc(this->Table,this->TabSize*sizeof(TElement));
+            if(!this->Table) return 0;
+            int Index;
+            for(Index=0; Index<this->FrontIndex; Index++)
+                this->Table[Index+this->TabSize]=this->Table[Index];
+            this->BackIndex = Index + this->TabSize - 1;
         }
-        else if (((this->FrontIndex) == (this->BackIndex)) != 0){
-            pfile = (PTElement) realloc(this->Table, 2*(this->TabSize)*sizeof(TElement));
-            if (pfile == NULL){
-                printf("Erreur d'allocation!\n");
-                return false;
-            }
-            else {
-                this->Table = pfile;
-                this->TabSize *= 2;
-                for (i=0; i<(this->BackIndex);i++){
-                    this->Table[this->TabSize + i] = this->Table[i];
-                }
-                this->BackIndex += this->NumElems;
-                this->Table[this->BackIndex] = pushElt;
-            }
-        }
-        else{
+        else {
+            this->BackIndex = (this->BackIndex + 1) % this->TabSize;
             this->Table[this->BackIndex] = pushElt;
+            this->NumElems++;
         }
+        return 1;
     }
-    this->NumElems ++;
-    return true;
+    return 0;
 }
 
 static bool TQueue_Dequeue(const PTQueue this, PTElement popElt){
