@@ -1,14 +1,17 @@
 #general
+MKDIR		 := mkdir -p
+RM			 := rm -rf
+
 CC    		 := gcc
 wFlag 		 := -Wall
+
 srcPath		 := src
 incPath		 := inc
 objPath		 := obj
 binPath		 := bin
-Project		 := queue
-
-#Documentation
 docPath		 := doc
+
+Project		 := queue
 docName		 := $(Project)_documentation
 
 #Colors
@@ -31,11 +34,11 @@ WHITE		 := \033[1;37m
 NOCOLOR		 := \033[0m
 
 #common
-incProject 	  := $(incPath)/$(Project).h
-incElement    := $(incPath)/Elements/element.h
-srcProject	  := $(srcPath)/$(Project).c
-srcElement	  := $(srcPath)/Elements/element.c
-srcMain		  := $(srcPath)/main.c
+incProject 	 := $(incPath)/$(Project).h
+incElement   := $(incPath)/Elements/element.h
+srcProject   := $(srcPath)/$(Project).c
+srcElement   := $(srcPath)/Elements/element.c
+srcMain		 := $(srcPath)/main.c
 
 #int
 intFlags     := $(wFlag) -D _INT_
@@ -54,42 +57,45 @@ floatBinary  := $(Project).float
 build: cleanEasy int float makeDoc
 
 int: intObj
-	@[ -d ${intBinPath}   ] || mkdir -p ${intBinPath}
-	@${CC} ${intFlags} -o ${intBinPath}/${intBinary} ${srcMain} ${intObjects}
+	@[ -d ${intBinPath}   ] || $(MKDIR) $(intBinPath)
+	@$(CC) $(intFlags) -o $(intBinPath)/$(intBinary) $(srcMain) $(intObjects)
 	@echo "${GREEN}Successfuly compiled ${RED}${intBinary} ${NOCOLOR}  : see $${PWD}/${intBinPath}"
 
 float: floatObj
-	@[ -d ${floatBinPath} ] || mkdir -p ${floatBinPath}
-	@${CC} ${floatFlags} -o ${floatBinPath}/${floatBinary} ${srcMain} ${floatObjects}
+	@[ -d ${floatBinPath} ] || $(MKDIR) $(floatBinPath)
+	@$(CC) $(floatFlags) -o $(floatBinPath)/$(floatBinary) $(srcMain) $(floatObjects)
 	@echo "${GREEN}Successfuly compiled ${RED}${floatBinary} ${NOCOLOR}: see $${PWD}/${floatBinPath}"
 
 intObj:
-	@[ -d ${intObjPath}   ] || mkdir -p ${intObjPath}
-	@${CC} ${intFlags} -c ${srcElement} -o ${intObjPath}/element.o
-	@${CC} ${intFlags} -c ${srcProject} -o ${intObjPath}/${Project}.o
+	@[ -d ${intObjPath}   ] || $(MKDIR) $(intObjPath)
+	@$(CC) $(intFlags) -c $(srcElement) -o $(intObjPath)/element.o
+	@$(CC) $(intFlags) -c $(srcProject) -o $(intObjPath)/$(Project).o
 
 floatObj:
-	@[ -d ${floatObjPath} ] || mkdir -p ${floatObjPath}
-	@${CC} ${floatFlags} -c ${srcElement} -o ${floatObjPath}/element.o
-	@${CC} ${floatFlags} -c ${srcProject} -o ${floatObjPath}/${Project}.o
+	@[ -d ${floatObjPath} ] || $(MKDIR) $(floatObjPath)
+	@$(CC) $(floatFlags) -c $(srcElement) -o $(floatObjPath)/element.o
+	@$(CC) $(floatFlags) -c $(srcProject) -o $(floatObjPath)/$(Project).o
+
+$(srcPath)/%.c:$(objPath)/%.o
+	@$(CC) $(wFlag) -c $< -o $@
 
 makeDoc:
 	@echo "Run ${PURPLE}make doc${NOCOLOR} to create ${BLUE}documentation${NOCOLOR}."
 
 doc:
-	@[ -d ${docPath} ] || mkdir -p ${docPath}
+	@[ -d ${docPath} ] || $(MKDIR) $(docPath)
 	@echo "${RED}Generating latex...${NOCOLOR}"
 	@doxygen Doxyfile
 	@echo "${RED}Generating pdf...${NOCOLOR}"
-	@cd ${docPath}/latex; make refman.pdf
-	@cp ${docPath}/latex/refman.pdf ${docPath}/${docName}.pdf
+	@cd $(docPath)/latex; make refman.pdf
+	@cp $(docPath)/latex/refman.pdf $(docPath)/$(docName).pdf
 	@echo "${GREEN}Successfuly generated ${RED}${docName}.pdf${NOCOLOR} @ $${PWD}/${docPath}"
 
 cleanEasy:
-	@[ ! -d ${intBinPath}   ] || rm -f ${intBinPath}/*
-	@[ ! -d ${intObjPath}   ] || rm -f ${intObjPath}/*
-	@[ ! -d ${floatBinPath} ] || rm -f ${floatBinPath}/*
-	@[ ! -d ${floatObjPath} ] || rm -f ${floatObjPath}/*
+	@[ ! -d ${intBinPath}   ] || rm -f $(intBinPath)/*
+	@[ ! -d ${intObjPath}   ] || rm -f $(intObjPath)/*
+	@[ ! -d ${floatBinPath} ] || rm -f $(floatBinPath)/*
+	@[ ! -d ${floatObjPath} ] || rm -f $(floatObjPath)/*
 
 clean:
-	@rm -rf ${binPath} ${objPath} ${docPath}
+	@$(RM) $(binPath) $(objPath) $(docPath)
