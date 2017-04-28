@@ -52,13 +52,20 @@ static bool TQueue_Enqueue(const PTQueue this, TElement pushElt){
 }
 
 static bool TQueue_Dequeue(const PTQueue this, PTElement popElt){
-    if(TQueue_IsEmpty(this)) return 0;
-    *popElt = this->Table[this->FrontIndex];
-    this->FrontIndex = (this->FrontIndex + 1) % this->TabSize;
-    this->NumElems--;
-    if(!this->NumElems)
+    if(TQueue_IsEmpty(this)){
         this->FrontIndex = 0;
         this->BackIndex = 0;
+        return 0;
+    }
+    else {
+        *popElt = this->Table[this->FrontIndex];
+        this->FrontIndex = (this->FrontIndex + 1) % this->TabSize;
+        this->NumElems--;
+        if(TQueue_IsEmpty(this)){
+            this->FrontIndex = 0;
+            this->BackIndex = 0;
+        }
+    }
     return 1;
 }
 
@@ -80,14 +87,16 @@ static void TQueue_Delete(const PTQueue this){
 }
 
 static void TQueue_Display(const PTQueue this){
-	int i=this->FrontIndex;
+	int pos = this->FrontIndex;
 	printf("Taille: %d\n",this->TabSize);
     printf("Nombre d'éléments : %d\n",this->NumElems);
 	printf("Contenu: out <- ");
-    while(i!=(this->BackIndex+1)%this->TabSize){
-        display_element(this->Table + i);
-        printf(" <- ");
-        i=(i+1)%this->TabSize;
-	}
+    if (!this->IsEmpty(this)){
+        do {
+            display_element(this->Table + pos);
+            printf(" <- ");
+            pos=(pos+1)%this->TabSize;
+        } while(pos != (this->BackIndex+1)%(this->TabSize));
+    }
     printf("in\n");
 }
