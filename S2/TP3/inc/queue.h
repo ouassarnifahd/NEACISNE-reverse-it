@@ -71,19 +71,19 @@ static inline bool TQueue_Enqueue(const PTQueue this, TElement pushElt);
 */
 static inline bool TQueue_Dequeue(const PTQueue this, PTElement popElt);
 
-/** @fn TList_Clear
+/** @fn TQueue_Clear
 *   @brief Vide la file.
 *   @param this Pointeur vers le type file (PTQueue).
 */
 static inline void TQueue_Clear(const PTQueue this);
 
-/** @fn TList_Display
+/** @fn TQueue_Display
 *   @brief Affiche tous les éléments de la file.
 *   @param this Pointeur vers le type file (PTQueue).
 */
 static inline void TQueue_Display(const PTQueue this);
 
-/** @fn TList_Delete
+/** @fn TQueue_Delete
 *   @brief Supprime la file en libérant les zones mémoires allouées.
 *   @param this Pointeur vers le type file (PTQueue).
 */
