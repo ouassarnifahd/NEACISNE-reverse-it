@@ -1,0 +1,19 @@
+CC 		:= gcc
+TYPES 	:= float int
+OUTDIR 	:= ./$(TYPE)
+EXEC	:= $(OUTDIR)/list 	# Project #
+
+OBJ		:= $(OUTDIR)/list.o $(OUTDIR)/element.o $(OUTDIR)/main.o
+
+
+all:
+	for type in $(TYPES); do ($(MAKE) targets TYPE=$$type); done
+
+targets: $(OUTDIR) $(EXEC)
+
+$(OUTDIR):
+	mkdir $(OUTDIR)
+
+$(EXEC): $(OBJ)
+
+### gcc -MM *.c Toutes les dependences des fichiers source c.

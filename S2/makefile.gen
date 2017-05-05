@@ -1,0 +1,19 @@
+CC 		:= gcc
+
+EXEC	:= $(OUTDIR)/list 	# Project #
+
+SOURCES := $(shell find $(srcPath) -name '*.c')
+
+OBJECTS	:= $(SOURCES:$(srcPath)/%.c=$(objPath)/%.o)
+
+all:
+	for type in $(TYPES); do ($(MAKE) targets TYPE=$$type); done
+
+targets: $(OUTDIR) $(EXEC)
+
+$(OUTDIR):
+	mkdir $(OUTDIR)
+
+$(EXEC): $(OBJ)
+
+### gcc -MM *.c Toutes les dependences des fichiers source c.
