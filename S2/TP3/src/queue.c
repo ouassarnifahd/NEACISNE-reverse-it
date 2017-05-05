@@ -29,26 +29,33 @@ static int TQueue_Length(const PTQueue this){
 static bool TQueue_Enqueue(const PTQueue this, TElement pushElt){
     if(TQueue_IsEmpty(this)){
         this->Table[this->NumElems]=pushElt;
-        this->NumElems++;
-        return 1;
     } else {
-        if(this->NumElems == this->TabSize){
-            this->TabSize=2*this->TabSize;
-            this->Table=realloc(this->Table,this->TabSize*sizeof(TElement));
+        this->BackIndex++;
+        if(this->BackIndex >= this->TabSize){
+            if (this->FrontIndex == 0){
+                this->TabSize *= 2;
+                this->Table = realloc(this->Table,this->TabSize*sizeof(TElement));
+                if (!this->Table) return 0;
+                this->Table[this->BackIndex] = pushElt;
+            } else {
+                this->BackIndex = 0;
+                this->Table[this->BackIndex] = pushElt;
+            }
+        } else if(this->FrontIndex == this->BackIndex){
+            this->TabSize *= 2;
+            this->Table = realloc(this->Table,this->TabSize*sizeof(TElement));
             if(!this->Table) return 0;
             int Index;
-            for(Index=0; Index<this->FrontIndex; Index++)
+            for(Index=0; Index<this->BackIndex; Index++)
                 this->Table[Index+this->TabSize]=this->Table[Index];
-            this->BackIndex = Index + this->TabSize - 1;
-        }
-        else {
-            this->BackIndex = (this->BackIndex + 1) % this->TabSize;
+            this->BackIndex += this->NumElems;
             this->Table[this->BackIndex] = pushElt;
-            this->NumElems++;
+        } else {
+            this->Table[this->BackIndex] = pushElt;
         }
-        return 1;
     }
-    return 0;
+    this->NumElems++;
+    return 1;
 }
 
 static bool TQueue_Dequeue(const PTQueue this, PTElement popElt){
