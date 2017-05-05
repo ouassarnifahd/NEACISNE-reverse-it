@@ -1,0 +1,54 @@
+%%%%%%%%%% FILTRE %%%%%%%%%%%
+% CLEAR
+clc
+clear
+close all
+
+% Filtrage
+Fs=8000;
+Fp=2500;
+Rp=0.1;
+Rs=0.9;
+Bp=400;
+dWs=50;
+
+Wp1=(Fp-Bp-dWs)/(Fs/2);
+Ws1=Wp1+dWs/(Fs/2);
+Wp2=(Fp+Bp+dWs)/(Fs/2);
+Ws2=Wp2-2*dWs/(Fs/2);
+
+
+%% Butterworth
+[N,Wn]=buttord([Wp1 Wp2],[Ws1 Ws2],Rp,Rs);
+[Num,Den]=butter(N,Wn,'stop');
+
+% SIMULINK
+sim('LockwoodFFT',[0 41]);
+pause ;
+
+%% Chebyshev1
+
+[N,Wn]=cheb1ord([Wp1 Wp2],[Ws1 Ws2],Rp,Rs);
+[Num,Den]=butter(N,Wn,'stop');
+
+% SIMULINK
+sim('LockwoodFFT',[0 41]);
+pause ;
+
+%% Chebyshev2
+
+[N,Wn]=buttord([Wp1 Wp2],[Ws1 Ws2],Rp,Rs);
+[Num,Den]=cheby1(N,0.02,Wn,'stop');
+
+% SIMULINK
+sim('LockwoodFFT',[0 41]);
+pause ;
+
+%% RIF
+
+[N,Wn]=butterord([Wp1 Wp2],[Ws1 Ws2],Rp,Rs);
+[Num,Den]=butter(N,Wn,'stop');
+
+% SIMULINK
+sim('LockwoodFFT',[0 41]);
+pause ;
