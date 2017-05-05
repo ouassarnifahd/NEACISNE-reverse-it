@@ -3,9 +3,9 @@
 #---------------------------------------------------------------------------
 
 DOXYFILE_ENCODING      = UTF-8
-PROJECT_NAME           = "queues"
+PROJECT_NAME           = "Files"
 PROJECT_NUMBER         = "1.0"
-PROJECT_BRIEF          = "Une implementation de queue en C"
+PROJECT_BRIEF          = "Une implementation de files en C"
 PROJECT_LOGO           =
 OUTPUT_DIRECTORY       = "doc"
 CREATE_SUBDIRS         = NO
@@ -401,4 +401,3 @@ DOT_TRANSPARENT        = NO
 DOT_MULTI_TARGETS      = NO
 GENERATE_LEGEND        = YES
 DOT_CLEANUP            = YES
-

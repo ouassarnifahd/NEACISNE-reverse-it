@@ -13,7 +13,7 @@
 struct Queue {
     int         TabSize;                                        /**< Attribut: Taille allouée au tableau.                  */
     int         NumElems;                                       /**< Attribut: Nombre d'éléments dans la file.             */
-    int         FrontIndex;                                     /**< Attribut: Indice de la tête de la file.               */
+    int         FrontIndex;                                     /**< Attribut: Indice de la tête de la file.               */
     int         BackIndex;                                      /**< Attribut: Indice de la queue de la file.              */
     PTElement   Table;                                          /**< Attribut: Tableau dynamiquement alloué.               */
 
