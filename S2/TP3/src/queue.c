@@ -65,8 +65,8 @@ static bool TQueue_Dequeue(const PTQueue this, PTElement popElt){
         return 0;
     }
     else {
-        *popElt = this->Table[this->FrontIndex];
-        this->FrontIndex = (this->FrontIndex + 1) % this->TabSize;
+        popElt = this->Table+this->FrontIndex;
+        this->FrontIndex++;
         this->NumElems--;
         if(TQueue_IsEmpty(this)){
             this->FrontIndex = 0;
