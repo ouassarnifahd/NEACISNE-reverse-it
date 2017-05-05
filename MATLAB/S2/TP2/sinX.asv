@@ -1,5 +1,0 @@
-function [X,x] = sinX(N,k)
-X=[zeros(1,k) i*N/2 zeros(1,N-(2*k-1)-2) -i*N/2 zeros(1,k-1)];
-x=real(ifft(X));
-stem(x);
-end
