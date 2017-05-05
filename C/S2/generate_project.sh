@@ -52,7 +52,6 @@ _ */
 EOF1
 
 #Elements:
-mkdir Elements; cd Elements
 cat << EOF2 > "element.h"
 #ifndef _ELEMENT_
 #define _ELEMENT_
@@ -62,7 +61,7 @@ cat << EOF2 > "element.h"
 #include<stdbool.h>
 
 /** @file element.h
-*   @brief Header contenant la definition de l\'elements.
+*   @brief Header contenant la definition de l'elements.
 */
 
 #ifdef _DOXYGEN_
@@ -76,40 +75,40 @@ cat << EOF2 > "element.h"
 #ifdef _OTHER_
 
 /** @typedef TElement
-*   @brief L\'element.
+*   @brief L'element.
 */
 typedef TYPE TElement;
 
 #elif _FLOAT_
 
 /** @typedef TElement
-*   @brief L\'element.
+*   @brief L'element.
 */
 typedef float TElement;
 
 #elif _INT_
 
 /** @typedef TElement
-*   @brief L\'element.
+*   @brief L'element.
 */
 typedef int TElement;
 
 #endif
 
 /** @typedef PTElement
-*   @brief Pointeur vers l\'element.
+*   @brief Pointeur vers l'element.
 */
 typedef void* PTElement;
 
 /** @fn display_element
-*   @brief Affiche l\'element.
-*   @param L\'element a afficher.
+*   @brief Affiche l'element.
+*   @param L'element a afficher.
 */
 void display_element(const void *pElement);
 
 /** @fn read_element
-*   @brief Lecture de l\'element.
-*   @param L\'element a lire.
+*   @brief Lecture de l'element.
+*   @param L'element a lire.
 */
 bool read_element(const void *pElement);
 
@@ -117,7 +116,7 @@ bool read_element(const void *pElement);
 
 EOF2
 
-#MAIN:copying to main.c
+#'MAIN:copying to main.c
 cd ../../$SrcPath
 cat << EOF3 > main.c
 #include\
@@ -193,31 +192,30 @@ cat << EOF4 > "$ProjectName.c"
 EOF4
 
 #Elements:
-mkdir Elements; cd Elements
 cat << EOF5 > "element.c"
 #include\
 "../../$IncPath/Elements/element.h"
 
-#ifdef _FLOAT_
+#ifdef _TYPE1_
 
 void display_element(const void *pElement){
     float flottant= *(const float *)pElement;
-    printf("%.2f", flottant);
+    printf("%?", flottant);
 }
 
 bool read_element(const void *pElement){
-    return !scanf("%f",(float *)pElement);
+    return !scanf("%?",(float *)pElement);
 }
 
-#elif _INT_
+#elif _TYPE2_
 
 void display_element(const void *pElement){
     int entier= *(const int *)pElement;
-    printf("%d", entier);
+    printf("%?", entier);
 }
 
 bool read_element(const void *pElement){
-    return !scanf("%d",(int *)pElement);
+    return !scanf("%?",(int *)pElement);
 }
 
 #endif
@@ -263,9 +261,9 @@ NOCOLOR		 := \\033[0m
 
 #common
 incProject 	  := \$(incPath)/\$(Project).h
-incElement    := \$(incPath)/Elements/element.h
+incElement    := \$(incPath)/element.h
 srcProject	  := \$(srcPath)/\$(Project).c
-srcElement	  := \$(srcPath)/Elements/element.c
+srcElement	  := \$(srcPath)/element.c
 srcMain		  := \$(srcPath)/main.c
 
 #int
@@ -336,7 +334,7 @@ cat << EOF7 > Doxyfile
 #---------------------------------------------------------------------------
 
 DOXYFILE_ENCODING      = UTF-8
-PROJECT_NAME           = "${ProjectName}s"
+PROJECT_NAME           = "$ProjectPath - $ProjectName"
 PROJECT_NUMBER         = "1.0"
 PROJECT_BRIEF          = "Une implementation de $ProjectName en C"
 PROJECT_LOGO           =
