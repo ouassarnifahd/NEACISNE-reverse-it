@@ -176,12 +176,12 @@ obj 		 := \$(src:c=o)
 
 all: cleanEasy build makeDoc
 
-build: \$(obj)
+build: \$(addprefix \$(objPath)/,\$(obj))
 	@[ -d \${binPath}   ] || \$(MKDIR) \$(binPath)
-	@\$(CC) \$(wFlags) -o \$(binPath) \$(srcMain) \$^
+	@\$(CC) \$(wFlags) -o \$(binPath)/\$(Project) \$^
 	@echo "\${GREEN}Successfuly compiled \${RED}\${intBinary} \${NOCOLOR}  : see \$\${PWD}/\${binPath}"
 
-\$(objPath)/%.o: \$(srcPath)/%.c
+\$(objPath)/%.o: \$(srcPath)/%.c \$(addprefix \$(incPath)/,\$(inc))
 	@[ -d \${objPath} ] || \$(MKDIR) \$(objPath)
 	@\$(CC) \$(wFlag) -o \$@ \$<
 
