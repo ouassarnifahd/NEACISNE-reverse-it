@@ -1,20 +1,39 @@
 #!/bin/bash
 
-if [[ $# != 2 ]]; then
-	echo "usage: $0 <ProjectName> <ProjectPath>"
+if [[ $# < 2 ]]; then
+	echo "usage: $0 <ProjectPath> <ProjectName> -f Projectfiles ..."
 	echo "Note: if ProjectPath is set to 'current' then the project will be created in the current directory"
 	exit;
 fi
 
 #General
-ProjectName=$1
+ProjectName=$2
+ProjectTitle="$1 - $2"
+ProjectPath=$1
+ProjectBrief="Une implementation d'algorithmes de tri en C"
 ProjectLanguage='French'
-ProjectBrief="Une implementation des ${ProjectName}s en C"
-DocMacro='_DOXYGEN_'
+i=$((0))
+for file; do
+	if (( $i >= 3 )); then
+		#echo $i $file
+		FILES="$file $FILES";
+		#echo $i $FILES
+		HDR="#include \"$file.h\""$'\n'"$HDR"
+		#echo "$HDR"
+		INC="$file.h $INC"
+		#echo $i $INC
+		SRC="$file.c $SRC"
+		#echo $SRC
+	fi
+	i=$(($i+1))
+done
+
+SRC="main.c $ProjectName.c $SRC"
+INC="$ProjectName.h $INC"
+Common="#include <stdio.h>"$'\n'"#include <stdlib.h>"$'\n'"#include <stdbool.h>"
 
 #Paths
 curDir=`pwd`
-ProjectPath=$2
 SrcPath='src'
 IncPath='inc'
 ObjPath='obj'
@@ -23,7 +42,7 @@ DocPath='doc'
 
 # Making directory
 if [[ $FolderName != 'current' ]]; then
-	mkdir -p "$ProjectPath"
+	[ -d $ProjectPath ] || mkdir -p "$ProjectPath"
 	curDir=$ProjectPath
 	cd "$curDir"
 fi
@@ -32,7 +51,7 @@ fi
 [ -d $IncPath ] || mkdir -p $IncPath
 
 #HEADER:copying to file.h
-cd $IncPath/
+cd $IncPath
 cat << EOF1 > "$ProjectName.h"
 #ifndef _\
 `echo "$ProjectName" | tr /a-z/ /A-Z/`\
@@ -40,7 +59,10 @@ _
 #define _\
 `echo "$ProjectName" | tr /a-z/ /A-Z/`\
 _
-#include"./Elements/element.h"
+
+$Common
+
+$HDR
 
 
 
@@ -51,184 +73,84 @@ _ */
 
 EOF1
 
-#Elements:
-cat << EOF2 > "element.h"
-#ifndef _ELEMENT_
-#define _ELEMENT_
+#...
+if [[ $3 -eq '-f' && $# -gt 4 ]]; then
+for file in $FILES; do
+if [[ $file == 'element' ]]; then
+	HEADER=''
+else
+	HEADER='#include "element.h"'
+fi
+cat << EOF >"$file.h"
+#ifndef _\
+`echo $file | tr /a-z/ /A-Z/`\
+_
+#define _\
+`echo $file | tr /a-z/ /A-Z/`\
+_
 
-#include<stdio.h>
-#include<stdlib.h>
-#include<stdbool.h>
+$Common
 
-/** @file element.h
-*   @brief Header contenant la definition de l'elements.
-*/
+$HEADER
 
-#ifdef _DOXYGEN_
 
-#define _INT_
-#define _FLOAT_
-#define _OTHER_
 
-#endif /* _DOXYGEN_ */
 
-#ifdef _OTHER_
+#endif /* end of include guard : _\
+`echo $file | tr /a-z/ /A-Z/`\
+_ */
 
-/** @typedef TElement
-*   @brief L'element.
-*/
-typedef TYPE TElement;
+EOF
+done
+fi
 
-#elif _FLOAT_
-
-/** @typedef TElement
-*   @brief L'element.
-*/
-typedef float TElement;
-
-#elif _INT_
-
-/** @typedef TElement
-*   @brief L'element.
-*/
-typedef int TElement;
-
-#endif
-
-/** @typedef PTElement
-*   @brief Pointeur vers l'element.
-*/
-typedef void* PTElement;
-
-/** @fn display_element
-*   @brief Affiche l'element.
-*   @param L'element a afficher.
-*/
-void display_element(const void *pElement);
-
-/** @fn read_element
-*   @brief Lecture de l'element.
-*   @param L'element a lire.
-*/
-bool read_element(const void *pElement);
-
-#endif /* end of include guard : _ELEMENT_ */
-
-EOF2
-
-#'MAIN:copying to main.c
-cd ../../$SrcPath
+#MAIN:copying to main.c
+cd ../$SrcPath
 cat << EOF3 > main.c
+$Common
+
 #include\
 "../$IncPath/$ProjectName.h"
 
 int main(int argc, char const *argv[]){
-	int choix;
-	/* INDEX ?  int index */
-	TElement newElt;
-	printf("Creation d'une $ProjectName de nombres %s: \n", (char*)TYPE);
-	/* DATA STRUCT NEW */
-	printf("Faites votre choix:");
-	while(1){
-		printf("\n");
-		printf("\t1 : Ajouter un element a $ProjectName\n");
-		/* printf("\t? : Another choice ?\n"); */
-		printf("\t? : Modifier la position courante\n");
-		printf("\t? : Enlever l'element de $ProjectName\n");
-		printf("\t? : Vider la liste\n");
-		printf("\t0 : Quitter\n");
-		printf("\n\tChoix: ");
-		scanf("%d", &choix);
-		switch(choix){
-			case 1:
-				do{
-					printf("\t  Entrer l'element: ");
-				}while(/* READ ELEMENT */);
-				/* ADD ELEMENT TO DATA STRUCT */
-				break;
-			case ?:
-				/* SOMETHING HERE ? */
-				break;
-			/* case ?:
-				do{
-					printf("\t  Entrer un nouvelle position: ");
-				}while(scanf("%d",&index));
-				/* CHANGE INDEX ? */
-				break; */
-			case ?:
-				/* REMOVE ELEMENT */
-				if(/* REMOVING FUNCTION */){
-					printf("\t  Success!\n");
-				} else {
-					printf("\t  Erreur!\n");
-				}
-				break;
-			case ?:
-				/* DATA STRUCT CLEAR */
-				printf("\t  Liste vidée!\n");
-				break;
-			case 0:
-				/* DATA STRUCT DESTRUCTION */
-				printf("\t  Destruction de la liste!\n");
-				return EXIT_SUCCESS;
-			default:
-				printf("\t  Ce choix n'est pas valide!\n");
-		}
-		printf("\n");
-		/* DISPLAY HERE */
-	}
+
 }
 EOF3
 
 #FUNCTIONS:copying to functions.c
 cat << EOF4 > "$ProjectName.c"
-#include<stdio.h>
-#include<stdlib.h>
+$Common
 
 #include\
 "../$IncPath/$ProjectName.h"
-#include"../inc/Elements/element.h"
 
 EOF4
 
-#Elements:
-cat << EOF5 > "element.c"
-#include\
-"../../$IncPath/Elements/element.h"
+#...
+if [[ $3 -eq '-f' && $# -gt 4 ]]; then
+for file in $FILES ; do
+HEADER="#include \"../$IncPath/$file.h\""
+cat << EOF > "$file.c"
+$Common
 
-#ifdef _TYPE1_
-
-void display_element(const void *pElement){
-    float flottant= *(const float *)pElement;
-    printf("%?", flottant);
-}
-
-bool read_element(const void *pElement){
-    return !scanf("%?",(float *)pElement);
-}
-
-#elif _TYPE2_
-
-void display_element(const void *pElement){
-    int entier= *(const int *)pElement;
-    printf("%?", entier);
-}
-
-bool read_element(const void *pElement){
-    return !scanf("%?",(int *)pElement);
-}
-
-#endif
+$HEADER
 
 
-EOF5
+
+
+
+EOF
+done
+fi
 
 #MAKEFILE:copying to makefile
-cd ../..
+cd ..
 
 cat << EOF6 > makefile
 #general
 CC    		 := gcc
+RM			 := rm -rf
+MKDIR 		 := mkdir -p
 wFlag 		 := -Wall
 srcPath		 := $SrcPath
 incPath		 := $IncPath
@@ -241,74 +163,33 @@ docPath		 := $DocPath
 docName		 := \$(Project)_documentation
 
 #Colors
-BLACK		 := \\033[0;30m
-GRAY		 := \\033[1;30m
 RED			 := \\033[0;31m
-LRED		 := \\033[1;31m
 GREEN		 := \\033[0;32m
-LGREEN		 := \\033[1;32m
-BROWN		 := \\033[0;33m
-YELLOW		 := \\033[1;33m
 BLUE		 := \\033[0;34m
-LBLUE		 := \\033[1;34m
 PURPLE		 := \\033[0;35m
-LPURPLE		 := \\033[1;35m
-CYAN		 := \\033[0;36m
-LCYAN		 := \\033[1;36m
-LGRAY		 := \\033[0;37m
-WHITE		 := \\033[1;37m
 NOCOLOR		 := \\033[0m
 
 #common
-incProject 	  := \$(incPath)/\$(Project).h
-incElement    := \$(incPath)/element.h
-srcProject	  := \$(srcPath)/\$(Project).c
-srcElement	  := \$(srcPath)/element.c
-srcMain		  := \$(srcPath)/main.c
+inc 	  	 := $INC
+src			 := $SRC
+obj 		 := \$(src:c=o)
 
-#int
-intFlags     := \$(wFlag) -D _INT_
-intBinPath	 := \$(binPath)/int
-intObjPath	 := \$(objPath)/int
-intObjects   := \$(intObjPath)/\$(Project).o \$(intObjPath)/element.o
-intBinary	 := \$(Project).int
+all: cleanEasy build makeDoc
 
-#float
-floatFlags   := \$(wFlag) -D _FLOAT_
-floatBinPath := \$(binPath)/float
-floatObjPath := \$(objPath)/float
-floatObjects := \$(floatObjPath)/\$(Project).o \$(floatObjPath)/element.o
-floatBinary  := \$(Project).float
+build: \$(obj)
+	@[ -d \${binPath}   ] || \$(MKDIR) \$(binPath)
+	@\$(CC) \$(wFlags) -o \$(binPath) \$(srcMain) \$^
+	@echo "\${GREEN}Successfuly compiled \${RED}\${intBinary} \${NOCOLOR}  : see \$\${PWD}/\${binPath}"
 
-srcElement	 := \$(srcPath)/Elements
-
-build: cleanEasy int float makeDoc
-
-int: intObj
-	@[ -d \${intBinPath}   ] || mkdir -p \${intBinPath}
-	@\${CC} \${intFlags} -o \${intBinPath}/\${intBinary} \${srcMain} \${intObjects}
-	@echo "\${GREEN}Successfuly compiled \${RED}\${intBinary} \${NOCOLOR}  : see \$\${PWD}/\${intBinPath}"
-
-float: floatObj
-	@[ -d \${floatBinPath} ] || mkdir -p \${floatBinPath}
-	@\${CC} \${floatFlags} -o \${floatBinPath}/\${floatBinary} \${srcMain} \${floatObjects}
-	@echo "\${GREEN}Successfuly compiled \${RED}\${floatBinary} \${NOCOLOR}: see \$\${PWD}/\${floatBinPath}"
-
-intObj:
-	@[ -d \${intObjPath}   ] || mkdir -p \${intObjPath}
-	@\${CC} \${intFlags} -c \${srcElement} -o \${intObjPath}/element.o
-	@\${CC} \${intFlags} -c \${srcProject} -o \${intObjPath}/\${Project}.o
-
-floatObj:
-	@[ -d \${floatObjPath} ] || mkdir -p \${floatObjPath}
-	@\${CC} \${floatFlags} -c \${srcElement} -o \${floatObjPath}/element.o
-	@\${CC} \${floatFlags} -c \${srcProject} -o \${floatObjPath}/\${Project}.o
+\$(objPath)/%.o: \$(srcPath)/%.c
+	@[ -d \${objPath} ] || \$(MKDIR) \$(objPath)
+	@\$(CC) \$(wFlag) -o \$@ \$<
 
 makeDoc:
 	@echo "Run \${PURPLE}make doc\${NOCOLOR} to create \${BLUE}documentation\${NOCOLOR}."
 
-doc:
-	@[ -d \${docPath} ] || mkdir -p \${docPath}
+doc: \$(inc)
+	@[ -d \${docPath} ] || \$(MKDIR) \$(docPath)
 	@echo "\${RED}Generating latex...\${NOCOLOR}"
 	@doxygen Doxyfile
 	@echo "\${RED}Generating pdf...\${NOCOLOR}"
@@ -317,13 +198,11 @@ doc:
 	@echo "\${GREEN}Successfuly generated \${RED}\${docName}.pdf\${NOCOLOR} @ \$\${PWD}/\${docPath}"
 
 cleanEasy:
-	@[ ! -d \${intBinPath}   ] || rm -f \${intBinPath}/*
-	@[ ! -d \${intObjPath}   ] || rm -f \${intObjPath}/*
-	@[ ! -d \${floatBinPath} ] || rm -f \${floatBinPath}/*
-	@[ ! -d \${floatObjPath} ] || rm -f \${floatObjPath}/*
+	@[ ! -d \${binPath}   ] || rm -f \$(binPath)/*
+	@[ ! -d \${objPath}   ] || rm -f \$(objPath)/*
 
 clean:
-	@rm -rf \${binPath} \${objPath} \${docPath}
+	@\$(RM) \$(binPath) \$(objPath) \$(docPath)
 
 EOF6
 
@@ -334,14 +213,14 @@ cat << EOF7 > Doxyfile
 #---------------------------------------------------------------------------
 
 DOXYFILE_ENCODING      = UTF-8
-PROJECT_NAME           = "$ProjectPath - $ProjectName"
+PROJECT_NAME           = "$ProjectTitle"
 PROJECT_NUMBER         = "1.0"
-PROJECT_BRIEF          = "Une implementation de $ProjectName en C"
+PROJECT_BRIEF          = "$ProjectBrief"
 PROJECT_LOGO           =
 OUTPUT_DIRECTORY       = "doc"
 CREATE_SUBDIRS         = NO
 ALLOW_UNICODE_NAMES    = NO
-OUTPUT_LANGUAGE        = French
+OUTPUT_LANGUAGE        = $ProjectLanguage
 BRIEF_MEMBER_DESC      = YES
 REPEAT_BRIEF           = YES
 ABBREVIATE_BRIEF       = "The \$name class" \\
