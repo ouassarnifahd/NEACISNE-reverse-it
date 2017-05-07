@@ -21,11 +21,13 @@ PURPLE		 := \033[0;35m
 NOCOLOR		 := \033[0m
 
 #common
-inc 	  	 := sort.h array.h element.h 
-src			 := main.c sort.c array.c element.c 
+inc 	  	 := sort.h array.h element.h
+src			 := main.c sort.c array.c element.c
 obj 		 := $(src:c=o)
 
 all: cleanEasy build makeDoc
+
+test: obj/element.o obj/array.o
 
 build: $(obj)
 	@[ -d ${binPath}   ] || $(MKDIR) $(binPath)
@@ -33,8 +35,9 @@ build: $(obj)
 	@echo "${GREEN}Successfuly compiled ${RED}${intBinary} ${NOCOLOR}  : see $${PWD}/${binPath}"
 
 $(objPath)/%.o: $(srcPath)/%.c
-	@[ -d ${objPath} ] || $(MKDIR) $(objPath)
-	@$(CC) $(wFlag) -o $@ $<
+	@[ -d $(dir $@) ] || $(MKDIR) $(dir $@)
+	@[ -d $(dir $<) ] || $(MKDIR) $(dir $<)
+	@$(CC) $(wFlag) -D ELEM_SHORT -c -o $@ $<
 
 makeDoc:
 	@echo "Run ${PURPLE}make doc${NOCOLOR} to create ${BLUE}documentation${NOCOLOR}."
@@ -49,9 +52,8 @@ doc: $(inc)
 	@echo "${GREEN}Successfuly generated ${RED}${docName}.pdf${NOCOLOR} @ $${PWD}/${docPath}"
 
 cleanEasy:
-	@[ ! -d ${binPath}   ] || rm -f $(binPath)/*
-	@[ ! -d ${objPath}   ] || rm -f $(objPath)/*
+	@[ ! -d ${binPath} ] || rm -f $(binPath)/*
+	@[ ! -d ${objPath} ] || rm -f $(objPath)/*
 
 clean:
 	@$(RM) $(binPath) $(objPath) $(docPath)
-
