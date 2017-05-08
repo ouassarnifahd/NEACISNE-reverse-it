@@ -6,42 +6,30 @@
 #include <stdbool.h>
 #include <string.h>
 
-#ifdef SELECTION
-
-void sort(void *tabElems,
+void selection_sort(void *tabElems,
           size_t numElems,
           size_t sizeElem,
           int (*compare)(const void *, const void *));
 
-#elif INSERTION
-
-void sort(void *tabElems,
+void insertion_sort(void *tabElems,
           size_t numElems,
           size_t sizeElem,
           int (*compare)(const void *, const void *));
 
-#elif BUBBLES
-
-void sort(void *tabElems,
+void bubble_sort(void *tabElems,
           size_t numElems,
           size_t sizeElem,
           int (*compare)(const void *, const void *));
 
-#elif MERGE
-
-void sort(void *tabElems,
+void merge_sort(void *tabElems,
           size_t numElems,
           size_t sizeElem,
           int (*compare)(const void *, const void *));
 
-#elif QUICK
-
-void sort(void *tabElems,
+void quick_sort(void *tabElems,
           size_t numElems,
           size_t sizeElem,
           int (*compare)(const void *, const void *));
-
-#endif
 
 bool is_sorted(void *tabElems,
                size_t numElems,

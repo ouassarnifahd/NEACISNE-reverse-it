@@ -12,8 +12,8 @@ int TElement_Compare(const void *p1,const void *p2){
 void TElement_Random(void *pVal, const void *pMin, const void *pMax){
     srand(time(NULL));
     #if defined ELEM_SHORT || defined ELEM_LONG
-    *(PTElement)pVal=*(PTElement)pMin+rand()%(*(PTElement)pMin-*(PTElement)pMax);
+    *(PTElement)pVal = *(PTElement)pMin + rand()%(*(PTElement)pMin - *(PTElement)pMax);
     #elif ELEM_REAL
-    *(PTElement)pVal=*(PTElement)pMin+(rand()/(double)RAND_MAX)*(*(PTElement)pMin-*(PTElement)pMax);
+    *(PTElement)pVal = *(PTElement)pMin + (rand()/(double)RAND_MAX) * (*(PTElement)pMin - *(PTElement)pMax);
     #endif
 }

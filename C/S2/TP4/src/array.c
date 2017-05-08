@@ -1,10 +1,13 @@
 #include "../inc/array.h"
 
 void displayTab(void *tabElems, size_t numElems, size_t sizeElem, void (*display)(const void *)){
+    printf("[ ");
     while(numElems--){
         display(tabElems);
+        printf(" ");
         tabElems = (char*)tabElems + sizeElem;
     }
+    printf("]\n");
 }
 
 void* initRandomTab(size_t numElems, const void *pMin, const void *pMax, size_t sizeElem, void (*random)(void *, const void *, const void *)){

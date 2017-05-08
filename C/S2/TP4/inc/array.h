@@ -6,12 +6,14 @@
 #include <stdbool.h>
 #include <string.h>
 
+#define ARRAY_SIZE 10
+
 void displayTab(void *tabElems,
                 size_t numElems,
                 size_t sizeElem,
                 void (*display)(const void *));
 
-void *initRandomTab(size_t numElems,
+void* initRandomTab(size_t numElems,
                     const void *pMin,
                     const void *pMax,
                     size_t sizeElem,
