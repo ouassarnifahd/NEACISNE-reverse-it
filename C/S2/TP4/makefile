@@ -1,42 +1,42 @@
 #general
-CC    		 := gcc
-RM			 := rm -rf
-MKDIR 		 := mkdir -p
-wFlag 		 := -Wall
-srcPath		 := src
-incPath		 := inc
-objPath		 := obj
-binPath		 := bin
-Project		 := sort
+CC    		:= gcc
+RM			:= rm -rf
+MKDIR 		:= mkdir -p
+wFlag 		:= -Wall
+srcPath		:= src
+incPath		:= inc
+objPath		:= obj
+binPath		:= bin
+Project		:= sort
 
 #Documentation
-docPath		 := doc
-docName		 := $(Project)_documentation
+docPath		:= doc
+docName		:= $(Project)_documentation
 
 #Colors
-RED			 := \033[0;31m
-GREEN		 := \033[0;32m
-BLUE		 := \033[0;34m
-PURPLE		 := \033[0;35m
-NOCOLOR		 := \033[0m
+RED			:= \033[0;31m
+GREEN		:= \033[0;32m
+BLUE		:= \033[0;34m
+PURPLE		:= \033[0;35m
+NOCOLOR		:= \033[0m
 
 #common
-inc 	  	 := $(addprefix $(incPath)/,sort.h array.h element.h)
-src			 := $(addprefix $(srcPath)/,sort.c array.c main.c element.c)
-elems		 := ELEM_SHORT ELEM_LONG ELEM_REAL
-sorts		 := selection insertion bubbles merge quick
+inc 	  	:= $(addprefix $(incPath)/,sort.h array.h element.h)
+src			:= $(addprefix $(srcPath)/,sort.c array.c main.c element.c)
+elems		:= ELEM_SHORT ELEM_LONG ELEM_REAL
+sorts		:= selection insertion bubbles merge quick
 
 all: cleanEasy build makeDoc
 
 build: object
-	@for type in $(elems); do \
+	for type in $(elems); do \
 		echo "Preparing $$type:"; \
 		outDir=`echo "$${type#ELEM_}" | tr /A-Z/ /a-z/`; \
 		staticObjects="$(wildcard $(objPath)/*.o) $(objPath)/$$outDir/element.o"; \
 		[ -d $(binPath)/$${outDir} ] || $(MKDIR) $(binPath)/$${outDir}; \
 		for sort in $(sorts); do \
-			[ -a $(objPath)/$$outDir/$(Project)_$$sort.o ] || \
-			$(CC) $(wFlag) -o $(binPath)/$$outDir/$(Project)_$$sort $$staticObjects $(objPath)/$$outDir/$(Project)_$$sort.o; \
+			[ -a $(binPath)/$$outDir/"$(Project)_$$sort.o" ] || \
+			$(CC) $(wFlag) -o $(binPath)/$$outDir/$(Project)_$$sort $$staticObjects $(objPath)/$$outDir/"$(Project)_$$sort.o"; \
 			echo "$(GREEN)Successfuly compiled $(RED)$(Project)_$${sort}$(NOCOLOR)"; \
 		done; \
 	done; \
