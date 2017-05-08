@@ -2,7 +2,7 @@
 
 void selection_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)(const void *, const void *)){
     size_t Offset, Index, selectedIndex;
-    void *selectedElem = NULL, *tempElem = NULL;
+    void *selectedElem = NULL;
     for(Offset = 0; Offset < numElems-1 ; Offset++){
         memcpy(selectedElem, (char*)tabElems + Offset * sizeElem, sizeElem);
         selectedIndex = Offset;
@@ -12,11 +12,8 @@ void selection_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*comp
                 selectedIndex = Index;
             }
         }
-        if(selectedIndex != Offset){
-            memcpy(tempElem, (char*)tabElems + Offset * sizeElem, sizeElem);
-            memcpy((char*)tabElems + Offset * sizeElem, selectedElem, sizeElem);
-            memcpy((char*)tabElems + selectedIndex * sizeElem, tempElem, sizeElem);
-        }
+        if(selectedIndex != Offset)
+            swap((char*)tabElems + Offset * sizeElem,(char*)tabElems + selectedIndex * sizeElem,sizeElem);
     }
 }
 
@@ -41,5 +38,10 @@ bool is_sorted(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)(
 }
 
 bool swap(void *pa, void *pb, size_t sizeElem){
-    return 0;
+    void* tmp = NULL;
+    bool test1=0, test2=0, test3=0;
+    test1 = memcpy(tmp,pb,sizeElem);
+    test2 = memcpy(pb,pa,sizeElem);
+    test3 = memcpy(pa,tmp,sizeElem);
+    return test1 & test2 & test3;
 }

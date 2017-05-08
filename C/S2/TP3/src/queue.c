@@ -1,3 +1,7 @@
+/** @file queue.c
+*   @brief Ficher source contenant les fonctions de manupilation des files.
+*/
+
 #include"../inc/queue.h"
 
 PTQueue TQueue_New(int maxSize){

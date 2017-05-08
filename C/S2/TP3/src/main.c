@@ -1,3 +1,7 @@
+/** @file main.h
+*   @brief Ficher source de la fonction main.
+*/
+
 #include"../inc/queue.h"
 
 int main(int argc, char const *argv[]){
