@@ -20,9 +20,9 @@ int main(int argc, char const *argv[]){
     printf("tri du tableau avec tri selection.\n");
     selection_sort(tabElts,ARRAY_SIZE,sizeof(TElement),TElement_Compare);
     #elif INSERTION
-    printf("tri du tableau avec tri insertion.\n")
+    printf("tri du tableau avec tri insertion.\n");
     insertion_sort(tabElts,ARRAY_SIZE,sizeof(TElement),TElement_Compare);
-    #elif BUBBLE;
+    #elif BUBBLE
     printf("tri du tableau avec tri bulles.\n");
     bubble_sort(tabElts,ARRAY_SIZE,sizeof(TElement),TElement_Compare);
     #elif MERGE
