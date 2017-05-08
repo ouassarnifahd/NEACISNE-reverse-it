@@ -1,6 +1,6 @@
 #general
 CC    		:= gcc
-RM		:= rm -rf
+RM			:= rm -rf
 MKDIR 		:= mkdir -p
 wFlag 		:= -Wall
 srcPath		:= src
@@ -14,7 +14,7 @@ docPath		:= doc
 docName		:= $(Project)_documentation
 
 #Colors
-RED		:= \033[0;31m
+RED			:= \033[0;31m
 GREEN		:= \033[0;32m
 BLUE		:= \033[0;34m
 PURPLE		:= \033[0;35m
@@ -22,7 +22,7 @@ NOCOLOR		:= \033[0m
 
 #common
 inc 	  	:= $(addprefix $(incPath)/,sort.h array.h element.h)
-src		:= $(addprefix $(srcPath)/,sort.c array.c main.c element.c)
+src			:= $(addprefix $(srcPath)/,sort.c array.c main.c element.c)
 elems		:= ELEM_SHORT ELEM_LONG ELEM_REAL
 sorts		:= selection insertion bubbles merge quick
 
