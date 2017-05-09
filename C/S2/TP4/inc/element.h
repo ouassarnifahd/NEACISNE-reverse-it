@@ -23,6 +23,10 @@ typedef short TElement;
 */
 #define FORMAT "%hi"
 
+#ifdef DEBUG
+#define FORMATREAD "%hi"
+#endif
+
 #elif ELEM_LONG
 
 /** @typedef TElement
@@ -35,6 +39,10 @@ typedef long TElement;
 */
 #define FORMAT "%li"
 
+#ifdef DEBUG
+#define FORMATREAD "%li"
+#endif
+
 #elif ELEM_REAL
 
 /** @typedef TElement
@@ -46,6 +54,10 @@ typedef float TElement;
 *   @brief Format de la structure de données.
 */
 #define FORMAT "%.2f"
+
+#ifdef DEBUG
+#define FORMATREAD "%f"
+#endif
 
 #else
 
