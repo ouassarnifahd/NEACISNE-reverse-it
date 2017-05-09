@@ -7,6 +7,7 @@ srcPath		:= src
 incPath		:= inc
 objPath		:= obj
 binPath		:= bin
+debugPath	:= debug
 Project		:= sort
 
 #Documentation
@@ -22,72 +23,93 @@ NOCOLOR		:= \033[0m
 
 #common
 inc 	  	:= $(addprefix $(incPath)/,sort.h array.h element.h)
-src			:= $(addprefix $(srcPath)/,sort.c array.c main.c element.c)
+src			:= sort.c array.c element.c main.c
+obj			:= $(src:%c=%o)
 elems		:= ELEM_SHORT ELEM_LONG ELEM_REAL
 sorts		:= selection insertion bubbles merge quick
 
-all: cleanEasy build makeDoc
+all: mrproper build makeDoc
 
 build: object
-	for type in $(elems); do \
+	@for type in $(elems); do \
 		echo "Preparing $$type:"; \
-		outDir=`echo "$${type#ELEM_}" | tr /A-Z/ /a-z/`; \
-		staticObjects="$(wildcard $(objPath)/*.o) $(objPath)/$$outDir/element.o"; \
-		[ -d $(binPath)/$${outDir} ] || $(MKDIR) $(binPath)/$${outDir}; \
+		typeDir=`echo "$${type#ELEM_}" | tr /A-Z/ /a-z/`; \
+		staticObjects="$(wildcard $(objPath)/*.o) $(objPath)/$$typeDir/element.o"; \
 		for sort in $(sorts); do \
-			[ -a $(binPath)/$$outDir/"$(Project)_$$sort.o" ] || \
-			$(CC) $(wFlag) -o $(binPath)/$$outDir/$(Project)_$$sort $$staticObjects $(objPath)/$$outDir/"$(Project)_$$sort.o"; \
+			[ -a $(binPath)/$$typeDir/$(Project)_$$sort.o ] || \
+			$(MAKE) $(binPath)/$$typeDir/$(Project)_$$sort staticOBJ="$$staticObjects" && \
 			echo "$(GREEN)Successfuly compiled $(RED)$(Project)_$${sort}$(NOCOLOR)"; \
 		done; \
 	done; \
 	echo "All Done. ";
 
 object: $(inc)
-	@made=$$((0)); \
-	for source in $(src); do \
-		file=$$(basename $$source); \
-		outfile=$${file/.c/.o}; \
-		[ $$made -eq 2 ] || if  [ $$file == 'array.c' ] || [ $$file == 'sort.c' ]; then \
-			[ -a $(objPath)/$$file ] || $(MAKE) $(objPath)/$$outfile; \
-			made=$$(($$made+1)); \
+	@for object in $(obj); do \
+		if  [ $$object == array.o ] || [ $$object == sort.o ]; then \
+			[ -a $(objPath)/$$object ] || $(MAKE) $(objPath)/$$object Flags=$(wFlag); \
 		fi; \
 		for type in $(elems); do \
-			outDir="`echo "$${type#ELEM_}" | tr /A-Z/ /a-z/`"; \
+			typeDir=`echo "$${type#ELEM_}" | tr /A-Z/ /a-z/`; \
 			typeFlag="-D $$type"; \
-			[ -d $(objPath)/$$outDir ] || $(MKDIR) $(objPath)/$$outDir; \
-			if [ $$(basename $$source) == 'element.c' ]; then \
-				[ -a $(objPath)/$$outDir/$$outfile ] || \
-				$(CC) $(wFlag) $$typeFlag -c $$source -o $(objPath)/$$outDir/$$outfile; \
+			if [ $$object == element.o ]; then \
+				[ -a $(objPath)/$$typeDir/$$object ] || \
+				$(MAKE) $(objPath)/$$typeDir/$$object typeOBJ=yes typeDir=$$typeDir Flags="$(wFlag) $$typeFlag"; \
 			fi; \
 			for sort in $(sorts); do \
 				sortFlag="-D `echo "$$sort" | tr /a-z/ /A-Z/`"; \
-				if [ $$file == 'main.c' ]; then \
-					[ -a $(objPath)/$$outDir/"$(Project)_$${sort}.o" ] || \
-					$(CC) $(wFlag) $$typeFlag $$sortFlag -c $$source -o $(objPath)/$$outDir/"$(Project)_$${sort}.o"; \
+				if [ $$object == main.o ]; then \
+					[ -a $(objPath)/$$typeDir/$(Project)_$${sort}.o ] || \
+					$(MAKE) $(objPath)/$$typeDir/$(Project)_$${sort}.o sortOBJ=yes typeDir=$$typeDir Flags="$(wFlag) $$typeFlag $$sortFlag"; \
 				fi; \
 			done; \
 		done; \
 	done;
 
+$(debugPath)/%.dbg: $(srcPath)/%.c $(inc)
+	@$(MAKE) directory path=$(dir $@)
+	@$(CC) $(wFlag) $(dFlag) -o $@ $< 2> $(basename $@).err
+
+$(binPath)/%: $(objPath)/%.o
+	@$(MAKE) directory path=$(dir $@)
+	@$(MAKE) compile OBJ='no' CFlags=$(wFlag) out=$@ objects="$(staticOBJ) $<";
+
+ifeq ($(typeOBJ),yes)
+$(objPath)/$(typeDir)/%.o: $(srcPath)/%.c
+	@$(MAKE) directory path=$(dir $@)
+	@$(MAKE) compile OBJ='yes' CFlags="$(Flags)" out=$@ in=$<
+endif
+
+ifeq ($(sortOBJ),yes)
+$(objPath)/$(typeDir)/sort_%.o: $(srcPath)/main.c
+	@$(MAKE) directory path=$(dir $@)
+	@$(MAKE) compile OBJ='yes' CFlags="$(Flags)" out=$@ in=$<
+else
 $(objPath)/%.o: $(srcPath)/%.c
-	@[ -d $(dir $@) ] || $(MKDIR) $(dir $@)
-	@$(CC) $(wFlag) -c -o $@ $<
+	@$(MAKE) directory path=$(dir $@)
+	@$(MAKE) compile OBJ='yes' CFlags="$(Flags)" out=$@ in=$<
+endif
+
+directory:
+	@[ -d $(path) ] || $(MKDIR) $(path)
+
+compile:
+	@if [ $(OBJ) == yes ]; then $(CC) $(CFlags) -c -o $(out) $(in); else $(CC) $(CFlags) -o $(out) $(objects); fi
 
 makeDoc:
-	@echo "Run ${PURPLE}make doc${NOCOLOR} to create ${BLUE}documentation${NOCOLOR}."
+	@echo "Run $(PURPLE)make doc$(NOCOLOR) to create $(BLUE)documentation$(NOCOLOR)."
 
 doc: $(inc)
-	@[ -d ${docPath} ] || $(MKDIR) $(docPath)
+	@$(MAKE) directory path=$(docPath)
 	@echo "${RED}Generating latex...${NOCOLOR}"
 	@doxygen Doxyfile
 	@echo "${RED}Generating pdf...${NOCOLOR}"
-	@cd ${docPath}/latex; make refman.pdf
-	@cp ${docPath}/latex/refman.pdf ${docPath}/${docName}.pdf
-	@echo "${GREEN}Successfuly generated ${RED}${docName}.pdf${NOCOLOR} @ ${docPath}"
+	@cd $(docPath)/latex; make refman.pdf
+	@cp $(docPath)/latex/refman.pdf $(docPath)/$(docName).pdf
+	@echo "$(GREEN)Successfuly generated $(RED)$(docName).pdf$(NOCOLOR) @ $(docPath)"
 
-cleanEasy:
-	@[ ! -d ${binPath} ] || $(RM) $(binPath)/*
-	@[ ! -d ${objPath} ] || $(RM) $(objPath)/*
+mrproper:
+	@[ ! -d $(binPath) ] || $(RM) $(binPath)/*
+	@[ ! -d $(objPath) ] || $(RM) $(objPath)/*
 
 clean:
 	@$(RM) $(binPath) $(objPath) $(docPath)

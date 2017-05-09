@@ -1,6 +1,6 @@
 CC 		:= gcc
 TYPES 	:= float int
-OUTDIR 	:= ./$(TYPE)
+OUTDIR 	:= $(TYPE)
 EXEC	:= $(OUTDIR)/list 	# Project #
 
 OBJ		:= $(OUTDIR)/list.o $(OUTDIR)/element.o $(OUTDIR)/main.o

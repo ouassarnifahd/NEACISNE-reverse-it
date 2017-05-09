@@ -20,3 +20,10 @@ void* initRandomTab(size_t numElems, const void *pMin, const void *pMax, size_t 
     }
     return arr;
 }
+
+#ifdef DEBUG
+int main(int argc, char const *argv[]) {
+    /* code */
+    return 0;
+}
+#endif

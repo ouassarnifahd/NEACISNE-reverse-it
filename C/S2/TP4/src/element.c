@@ -17,3 +17,10 @@ void TElement_Random(void *pVal, const void *pMin, const void *pMax){
     *(PTElement)pVal = *(PTElement)pMin + (rand()/(double)RAND_MAX) * (*(PTElement)pMin - *(PTElement)pMax);
     #endif
 }
+
+#ifdef DEBUG
+int main(int argc, char const *argv[]) {
+    /* code */
+    return 0;
+}
+#endif

@@ -18,10 +18,34 @@ void selection_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*comp
 }
 
 void insertion_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)(const void *, const void *)){
-
+    size_t Index, backIndex;
+    void *elementToInsert = NULL;
+    for(Index = 1; Index < numElems; Index++){
+        if(compare((char*)tabElems + Index * sizeElem - 1, (char*)tabElems + Index * sizeElem + 1) > 0){
+            memcpy(elementToInsert,(char*)tabElems + Index * sizeElem, sizeElem);
+            for(backIndex = Index; backIndex > 0 && compare((char*)tabElems + Index * sizeElem - 1,elementToInsert) > 0; backIndex--){
+                memcpy((char*)tabElems + backIndex * sizeElem,(char*)tabElems + backIndex * sizeElem - 1, sizeElem);
+            }
+            memcpy((char*)tabElems + backIndex * sizeElem,elementToInsert, sizeElem);
+        }
+    }
 }
 
 void bubble_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)(const void *, const void *)){
+    bool sortDone = 0;
+    size_t Index, subSize;
+    for(subSize = numElems; subSize > 0 && !sortDone; subSize--){
+        sortDone = 1;
+        for(Index = 1; Index < subSize; Index++){
+            if(compare((char*)tabElems + Index * sizeElem - 1, (char*)tabElems + Index * sizeElem) > 0){
+                sortDone = 0;
+                swap((char*)tabElems + Index * sizeElem - 1, (char*)tabElems + Index * sizeElem, sizeElem);
+            }
+        }
+    }
+}
+
+void merge_recursive(void *tabLeft, void *tabRight, size_t numElems, size_t sizeElem, int (*compare)(const void *, const void *)){
 
 }
 
@@ -30,7 +54,9 @@ void merge_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)
 }
 
 void quick_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)(const void *, const void *)){
+    if(numElems <= sizeElem){
 
+    }
 }
 
 bool is_sorted(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)(const void *, const void *)){
@@ -45,3 +71,10 @@ bool swap(void *pa, void *pb, size_t sizeElem){
     test3 = memcpy(pa,tmp,sizeElem);
     return test1 & test2 & test3;
 }
+
+#ifdef DEBUG
+int main(int argc, char const *argv[]) {
+    /* code */
+    return 0;
+}
+#endif
