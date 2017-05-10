@@ -10,6 +10,10 @@
 #include <stdbool.h>
 #include <string.h>
 
+#define MAX 100
+#define MIN -10
+
+
 /** @fn selection_sort
 *   @brief Fonction de tri par selection.
 *   @param numElems Nombre d'elements du tableau.
@@ -18,7 +22,6 @@
 */
 void selection_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)(const void *, const void *));
 
-
 /** @fn insertion_sort
 *   @brief Fonction de tri par insertion.
 *   @param numElems Nombre d'elements du tableau.
@@ -26,7 +29,6 @@ void selection_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*comp
 *   @param compare Fonction Callback de la relation d'ordre.
 */
 void insertion_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)(const void *, const void *));
-
 
 /** @fn bubble_sort
 *   @brief Fonction de tri à bulles.

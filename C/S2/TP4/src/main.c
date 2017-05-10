@@ -1,37 +1,34 @@
-#include <float.h>
-#include <limits.h>
-
 #include "../inc/element.h"
 #include "../inc/array.h"
 #include "../inc/sort.h"
 
 int main(int argc, char const *argv[]){
-    #ifdef ELEM_SHORT
-    TElement min = SCHAR_MIN, max = SCHAR_MAX;
-    #elif ELEM_LONG
-    TElement min = LONG_MIN, max = LONG_MAX;
+    TElement min = MIN, max = MAX;
+    #if defined ELEM_SHORT || defined ELEM_LONG
+    srand(time(NULL));
     #elif ELEM_REAL
-    TElement min = FLT_MIN, max = FLT_MAX;
+    srand48(time(NULL));
     #endif
     printf("Initialisation du tableau aléatoire:\n");
-    PTElement tabElts = initRandomTab(ARRAY_SIZE,&min,&max,sizeof(TElement),TElement_Random);
-    displayTab(tabElts,ARRAY_SIZE,sizeof(TElement),TElement_Display);
+    PTElement tabElems = initRandomTab(ARRAY_SIZE,&min,&max,sizeof(TElement),TElement_Random);
+    displayTab(tabElems,ARRAY_SIZE,sizeof(TElement),TElement_Display);
     #ifdef SELECTION
     printf("tri du tableau avec tri selection.\n");
-    selection_sort(tabElts,ARRAY_SIZE,sizeof(TElement),TElement_Compare);
+    selection_sort(tabElems,ARRAY_SIZE,sizeof(TElement),TElement_Compare);
     #elif INSERTION
     printf("tri du tableau avec tri insertion.\n");
-    insertion_sort(tabElts,ARRAY_SIZE,sizeof(TElement),TElement_Compare);
+    insertion_sort(tabElems,ARRAY_SIZE,sizeof(TElement),TElement_Compare);
     #elif BUBBLE
     printf("tri du tableau avec tri bulles.\n");
-    bubble_sort(tabElts,ARRAY_SIZE,sizeof(TElement),TElement_Compare);
+    bubble_sort(tabElems,ARRAY_SIZE,sizeof(TElement),TElement_Compare);
     #elif MERGE
     printf("tri du tableau avec tri fusion.\n");
-    merge_sort(tabElts,ARRAY_SIZE,sizeof(TElement),TElement_Compare);
+    merge_sort(tabElems,ARRAY_SIZE,sizeof(TElement),TElement_Compare);
     #elif QUICK
     printf("tri du tableau avec tri rapide.\n");
-    quick_sort(tabElts,ARRAY_SIZE,sizeof(TElement),TElement_Compare);
+    quick_sort(tabElems,ARRAY_SIZE,sizeof(TElement),TElement_Compare);
     #endif
     printf("Affichage du tableau trié.\n");
-    displayTab(tabElts,ARRAY_SIZE,sizeof(TElement),TElement_Display);
+    displayTab(tabElems,ARRAY_SIZE,sizeof(TElement),TElement_Display);
+    free(tabElems);
 }

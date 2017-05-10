@@ -53,6 +53,11 @@ int main(int argc, char const *argv[]){
     TElement_Display(&MyElementMax);
     printf("\n");
     printf("sizeof(TElement)=%lu\n",sizeof(TElement));
+    #if defined ELEM_SHORT || defined ELEM_LONG
+    srand(time(NULL));
+    #elif ELEM_REAL
+    srand48(time(NULL));
+    #endif
     PTElement tabElement = initRandomTab(ARRAY_SIZE, &MyElementMin, &MyElementMax, sizeof(TElement), TElement_Random);
     printf("RandomTab=");
     displayTab(tabElement, ARRAY_SIZE, sizeof(TElement), TElement_Display);
