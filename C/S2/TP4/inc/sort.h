@@ -10,9 +10,19 @@
 #include <stdbool.h>
 #include <string.h>
 
+/** @def MAX_RAND
+*   @brief Valeur max du tableau aleatoire.
+*/
 #define MAX_RAND +100
+
+/** @def MIN_RAND
+*   @brief Valeur min du tableau aleatoire.
+*/
 #define MIN_RAND -100
 
+/** @def MIN_SORT
+*   @brief Taille du tableau minimal a trier recursivement.
+*/
 #define MIN_SORT 2
 
 /** @fn selection_sort
