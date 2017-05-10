@@ -10,12 +10,14 @@
 #include <stdbool.h>
 #include <string.h>
 
-#define MAX 100
-#define MIN -10
+#define MAX_RAND +100
+#define MIN_RAND -100
 
+#define MIN_SORT 2
 
 /** @fn selection_sort
 *   @brief Fonction de tri par selection.
+*   @param tabElems Pointeur vers le tableau.
 *   @param numElems Nombre d'elements du tableau.
 *   @param sizeElem Taille unitaire en octets d’un élément.
 *   @param compare Fonction Callback de la relation d'ordre.
@@ -24,6 +26,7 @@ void selection_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*comp
 
 /** @fn insertion_sort
 *   @brief Fonction de tri par insertion.
+*   @param tabElems Pointeur vers le tableau.
 *   @param numElems Nombre d'elements du tableau.
 *   @param sizeElem Taille unitaire en octets d’un élément.
 *   @param compare Fonction Callback de la relation d'ordre.
@@ -32,6 +35,7 @@ void insertion_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*comp
 
 /** @fn bubble_sort
 *   @brief Fonction de tri à bulles.
+*   @param tabElems Pointeur vers le tableau.
 *   @param numElems Nombre d'elements du tableau.
 *   @param sizeElem Taille unitaire en octets d’un élément.
 *   @param compare Fonction Callback de la relation d'ordre.
@@ -40,6 +44,7 @@ void bubble_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*compare
 
 /** @fn merge_sort
 *   @brief Fonction de tri fusion.
+*   @param tabElems Pointeur vers le tableau.
 *   @param numElems Nombre d'elements du tableau.
 *   @param sizeElem Taille unitaire en octets d’un élément.
 *   @param compare Fonction Callback de la relation d'ordre.
@@ -48,6 +53,7 @@ void merge_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)
 
 /** @fn quick_sort
 *   @brief Fonction de tri rapide.
+*   @param tabElems Pointeur vers le tableau.
 *   @param numElems Nombre d'elements du tableau.
 *   @param sizeElem Taille unitaire en octets d’un élément.
 *   @param compare Fonction Callback de la relation d'ordre.
@@ -56,6 +62,7 @@ void quick_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)
 
 /** @fn is_sorted
 *   @brief Fonction de validation du tri.
+*   @param tabElems Pointeur vers le tableau.
 *   @param numElems Nombre d'elements du tableau.
 *   @param sizeElem Taille unitaire en octets d’un élément.
 *   @param compare Fonction Callback de la relation d'ordre.

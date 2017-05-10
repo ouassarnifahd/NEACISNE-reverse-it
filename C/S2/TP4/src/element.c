@@ -40,7 +40,7 @@ int main(int argc, char const *argv[]) {
     #if defined ELEM_SHORT || defined ELEM_LONG
     srand(time(NULL));
     #elif ELEM_REAL
-    srand48(time(NULL)); // drand48(); FLOAT RANDOM in [0,1]
+    srand48(time(NULL));
     #endif
     TElement_Random(&RandElement,&MyElementMin,&MyElementMax);
     printf("RandElement: ");

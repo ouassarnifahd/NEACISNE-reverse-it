@@ -30,20 +30,20 @@ src			:= sort.c array.c element.c main.c
 obj			:= $(src:%c=%o)
 
 elems		:= ELEM_SHORT ELEM_LONG ELEM_REAL
-sorts		:= selection insertion bubbles merge quick
+sorts		:= selection insertion bubble merge quick
 
 # TODO: regex!
 
 all: mrproper build makeDoc
 
 build: object
-	@for type in $(elems); do \
-		echo "Preparing $$type:"; \
-		typeDir=`echo "$${type#ELEM_}" | tr /A-Z/ /a-z/`; \
-		staticObject="$(objPath)/$$typeDir/element.o"; \
+	@for elem in $(elems); do \
+		echo "Preparing $$elem:"; \
+		type=`echo "$${elem#ELEM_}" | tr /A-Z/ /a-z/`; \
+		staticObject="$(objPath)/$$type/element.o"; \
 		for sort in $(sorts); do \
-			[ -a $(binPath)/$$typeDir/$(Project)_$$sort.o ] || \
-			$(MAKE) $(binPath)/$$typeDir/$(Project)_$$sort staticOBJ="$$staticObject" && \
+			[ -a $(binPath)/$$type/$${$(Project)}_$(Project).o ] || \
+			$(MAKE) $(binPath)/$$type/$${$(Project)}_$(Project) type=$$type staticOBJ="$$staticObject" && \
 			echo "$(GREEN)Successfuly compiled $(RED)$(Project)_$${sort}$(NOCOLOR)"; \
 		done; \
 	done; \
@@ -54,18 +54,18 @@ object: $(inc)
 		if  [ $$object == array.o ] || [ $$object == sort.o ]; then \
 			[ -a $(objPath)/$$object ] || $(MAKE) $(objPath)/$$object Flags=$(wFlag); \
 		else \
-			for type in $(elems); do \
-				typeDir=`echo "$${type#ELEM_}" | tr /A-Z/ /a-z/`; \
-				typeFlag="-D $$type"; \
+			for elem in $(elems); do \
+				type=`echo "$${elem#ELEM_}" | tr /A-Z/ /a-z/`; \
+				elemFlag="-D $$elem"; \
 				if [ $$object == element.o ]; then \
-					[ -a $(objPath)/$$typeDir/$$object ] || \
-					$(MAKE) $(objPath)/$$typeDir/$$object typeOBJ=yes typeDir=$$typeDir Flags="$(wFlag) $$typeFlag"; \
+					[ -a $(objPath)/$$type/$$object ] || \
+					$(MAKE) $(objPath)/$$type/$$object type=$$type Flags="$(wFlag) $$elemFlag"; \
 				else \
 					for sort in $(sorts); do \
 						sortFlag="-D `echo "$$sort" | tr /a-z/ /A-Z/`"; \
 						if [ $$object == main.o ]; then \
-							[ -a $(objPath)/$$typeDir/$(Project)_$${sort}.o ] || \
-							$(MAKE) $(objPath)/$$typeDir/$(Project)_$${sort}.o sortOBJ=yes typeDir=$$typeDir Flags="$(wFlag) $$typeFlag $$sortFlag"; \
+							[ -a $(objPath)/$$type/$${$(Project)}_$(Project).o ] || \
+							$(MAKE) $(objPath)/$$type/$${$(Project)}_$(Project).o type=$$type Flags="$(wFlag) $$elemFlag $$sortFlag"; \
 						fi; \
 					done; \
 				fi; \
@@ -75,32 +75,32 @@ object: $(inc)
 
 $(debugPath)/%.dbg: $(srcPath)/%.c $(inc)
 	@$(MAKE) directory path=$(dir $@)
-	@if [ '$(object)' != '' ]; then \
-		$(MAKE) compile OBJ='yes' CFlags="$(Flags)" out=$(dir $@)$(object) in=$(dir $<)$(object:%o=%c); \
-		$(CC) $(dbgFlags) $(Flags) -o $@ $(dir $@)$(object) $< 2> $(basename $@).err; \
+	@if [ '$(objects)' != '' ]; then \
+		$(MAKE) $(addprefix $(debugPath)/,$(objects)) Flags="$(Flags)"; \
+		$(CC) $(dbgFlags) $(Flags) -o $@ $(addprefix $(debugPath)/,$(objects)) $< 2> $(basename $@).err; \
 	else \
 		$(CC) $(dbgFlags) $(Flags) -o $@ $< 2> $(basename $@).err; \
 	fi;
 
-$(binPath)/%: $(objPath)/%.o
+$(debugPath)/%.o: $(srcPath)/%.c
+	@$(MAKE) directory path=$(dir $@)
+	@$(MAKE) compile OBJ='yes' CFlags="$(Flags)" out=$@ in=$<
+
+$(objPath)/$(type)/%.o: $(srcPath)/%.c
+	@$(MAKE) directory path=$(dir $@)
+	@$(MAKE) compile OBJ='yes' CFlags="$(Flags)" out=$@ in=$<
+
+$(binPath)/$(type)/%_$(Project): $(objPath)/$(type)/%_$(Project).o
 	@$(MAKE) directory path=$(dir $@)
 	@$(MAKE) compile OBJ='no' CFlags=$(wFlag) out=$@ objects="$(wildcard $(objPath)/*.o) $(staticOBJ) $<";
 
-ifeq ($(typeOBJ),yes)
-$(objPath)/$(typeDir)/%.o: $(srcPath)/%.c
+$(objPath)/$(type)/%_$(Project).o: $(srcPath)/main.c
 	@$(MAKE) directory path=$(dir $@)
 	@$(MAKE) compile OBJ='yes' CFlags="$(Flags)" out=$@ in=$<
-endif
 
-ifeq ($(sortOBJ),yes)
-$(objPath)/$(typeDir)/sort_%.o: $(srcPath)/main.c
-	@$(MAKE) directory path=$(dir $@)
-	@$(MAKE) compile OBJ='yes' CFlags="$(Flags)" out=$@ in=$<
-else
 $(objPath)/%.o: $(srcPath)/%.c
 	@$(MAKE) directory path=$(dir $@)
 	@$(MAKE) compile OBJ='yes' CFlags="$(Flags)" out=$@ in=$<
-endif
 
 directory:
 	@[ -d $(path) ] || $(MKDIR) $(path)

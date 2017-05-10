@@ -9,7 +9,7 @@ Fs  = 8000;
 Fp  = 2500; % freq parasite
 Rp  = 0.1;
 Rs  = 0.9;
-Bc  = 400;  %1/2 bande coupe
+Bc  = 400;  % 1/2 bande coupe
 dWs = 50;   % largeur de coupure
 
 Wp1 = (Fp-Bc-dWs)/(Fs/2);

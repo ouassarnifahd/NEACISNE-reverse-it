@@ -47,12 +47,12 @@ int main(int argc, char const *argv[]){
         MyElementMin=MyElementMax;
         MyElementMax=tmp;
     }
+    printf("SizeElem: %lu\n",sizeof(TElement));
     printf("Elements: Min=");
     TElement_Display(&MyElementMin);
     printf(" Max=");
     TElement_Display(&MyElementMax);
     printf("\n");
-    printf("sizeof(TElement)=%lu\n",sizeof(TElement));
     #if defined ELEM_SHORT || defined ELEM_LONG
     srand(time(NULL));
     #elif ELEM_REAL

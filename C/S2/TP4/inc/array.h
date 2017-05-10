@@ -9,11 +9,12 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
+#include <time.h>
 
 /** @def ARRAY_SIZE
 *   @brief Taille du tableau.
 */
-#define ARRAY_SIZE 10
+#define ARRAY_SIZE 20
 
 /** @fn displayTab
 *   @brief Fonction d'affichage d'un tableau générique.
