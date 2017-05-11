@@ -48,7 +48,7 @@ typedef long TElement;
 /** @typedef TElement
 *   @brief L'element.
 */
-typedef float TElement;
+typedef double TElement;
 
 /** @def FORMAT
 *   @brief Format de la structure de données.
@@ -56,7 +56,7 @@ typedef float TElement;
 #define FORMAT "%.2f"
 
 #ifdef DEBUG
-#define FORMATREAD "%f"
+#define FORMATREAD "%lf"
 #endif
 
 #else

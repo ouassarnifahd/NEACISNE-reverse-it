@@ -4,7 +4,11 @@
 
 int main(int argc, char const *argv[]){
     TElement ElementMin = MIN_RAND, ElementMax = MAX_RAND;
-    printf("Initialisation du tableau aléatoire:\n");
+    printf("Initialisation du tableau aléatoire entre ");
+    TElement_Display(&ElementMin);
+    printf(" et ");
+    TElement_Display(&ElementMax);
+    printf(":\n");
     #if defined ELEM_SHORT || defined ELEM_LONG
     srand(time(NULL));
     #elif ELEM_REAL
