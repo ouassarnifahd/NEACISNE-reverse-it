@@ -42,7 +42,6 @@ build: object
 		type=`echo "$${elem#ELEM_}" | tr /A-Z/ /a-z/`; \
 		staticObject="$(objPath)/$$type/element.o"; \
 		for sort in $(sorts); do \
-			[ -a $(binPath)/$$type/$${$(Project)}_$(Project).o ] || \
 			$(MAKE) $(binPath)/$$type/$${$(Project)}_$(Project) type=$$type staticOBJ="$$staticObject" && \
 			echo "$(GREEN)Successfuly compiled $(RED)$(Project)_$${sort}$(NOCOLOR)"; \
 		done; \
@@ -58,13 +57,11 @@ object: $(inc)
 				type=`echo "$${elem#ELEM_}" | tr /A-Z/ /a-z/`; \
 				elemFlag="-D $$elem"; \
 				if [ $$object == element.o ]; then \
-					[ -a $(objPath)/$$type/$$object ] || \
 					$(MAKE) $(objPath)/$$type/$$object type=$$type Flags="$(wFlag) $$elemFlag"; \
 				else \
 					for sort in $(sorts); do \
 						sortFlag="-D `echo "$$sort" | tr /a-z/ /A-Z/`"; \
 						if [ $$object == main.o ]; then \
-							[ -a $(objPath)/$$type/$${$(Project)}_$(Project).o ] || \
 							$(MAKE) $(objPath)/$$type/$${$(Project)}_$(Project).o type=$$type Flags="$(wFlag) $$elemFlag $$sortFlag"; \
 						fi; \
 					done; \
