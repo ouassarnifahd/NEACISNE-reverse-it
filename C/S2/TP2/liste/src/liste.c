@@ -24,7 +24,7 @@ PTList TList_New(int sizeofElem){
 }
 
 bool TList_IsEmpty(const PTList this){
-    return (this->NumElems)?0:1;
+    return (this->NumElems) ? 0 : 1;
 }
 
 int TList_Length(const PTList this){
@@ -67,7 +67,7 @@ PTNode TList_InsertFirst(const PTList this, void* pNewElt){
 
 bool TList_RemoveFirst(const PTList this){
     if(TList_IsEmpty(this)) return 0;
-    PTNode pNode = this->First;
+    PTNode pNode    = this->First;
     PTNode nextNode = pNode->Next;
     free(pNode->pElement);
     free(pNode);

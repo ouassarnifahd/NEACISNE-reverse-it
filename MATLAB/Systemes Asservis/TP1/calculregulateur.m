@@ -13,7 +13,7 @@ Aprime=conv(A,D);
 if(i==1) 
 Pc=conv(Pc1,Pc2);
 %resolution de l equation de Bezout
-[Rd,Rn]=bezou(A,B,Pc)
+[Rd,Rn]=bezou(A,B,Pc);
 reg=tf(Rn,Rd);
 end
 
@@ -24,7 +24,7 @@ Pc3=conv(Pc2,Pc2);                         %polynome des modes auxillaires
 Pc=conv(Pc1,Pc3);
 
 %Resolution de l equation de bezou
-[Rdprime,Rn]=bezou(Aprime,B,Pc)
+[Rdprime,Rn]=bezou(Aprime,B,Pc);
 
 %Calcul du polynome Rd
 Rd=conv(Rdprime,D);

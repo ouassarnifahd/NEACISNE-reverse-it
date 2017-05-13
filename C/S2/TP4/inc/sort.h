@@ -23,7 +23,7 @@
 /** @def MIN_SORT
 *   @brief Taille du tableau minimal a trier recursivement.
 */
-#define MIN_SORT 3
+#define MIN_SORT 2
 
 /** @fn selection_sort
 *   @brief Fonction de tri par selection.

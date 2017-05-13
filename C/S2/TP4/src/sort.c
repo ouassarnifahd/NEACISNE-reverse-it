@@ -3,6 +3,8 @@
 #ifdef DEBUG
 #include "../inc/array.h"
 #include "../inc/element.h"
+
+int swaps = 0;
 #endif
 
 void selection_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)(const void *, const void *)){
@@ -128,28 +130,24 @@ void quick_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)
         insertion_sort(tabElems, numElems, sizeElem, compare);
         return ;
     }
-    void *pivot = malloc(sizeElem);
-    memcpy(pivot, (char *)tabElems + (numElems - 1) * sizeElem, sizeElem);
+    //char *newTab = (char *)tabElems;
+    void *pivot = (char *)tabElems + (numElems - 1) * sizeElem;
     size_t leftIndex = 0, rightIndex = numElems - 2;
     #ifdef DEBUG
     printf("REC_BEGIN quick_sort: Size %zu Pivot ", numElems);
     TElement_Display(pivot);
     printf("\nIN  ");
-    displayTab((char *)tabElems, numElems, sizeElem, TElement_Display);
+    displayTab(tabElems, numElems, sizeElem, TElement_Display);
     #endif
     while (leftIndex <= rightIndex){
-        while (leftIndex <= rightIndex && compare((char *)tabElems + leftIndex * sizeElem, (char *)tabElems + (numElems-1) * sizeElem) < 0)
-            leftIndex++;
-        while (leftIndex <= rightIndex && compare((char *)tabElems + rightIndex * sizeElem, (char *)tabElems + (numElems-1) * sizeElem) >= 0)
-            rightIndex--;
+        while (leftIndex <= rightIndex && compare((char *)tabElems + leftIndex * sizeElem, pivot) < 0)   leftIndex++;
+        while (leftIndex <= rightIndex && compare((char *)tabElems + rightIndex * sizeElem, pivot) >= 0) rightIndex--;
         if (leftIndex < rightIndex)
             swap((char *)tabElems + (leftIndex++) * sizeElem, (char *)tabElems + (rightIndex--) * sizeElem, sizeElem);
     }
-    memcpy((char *)tabElems + (numElems - 1) * sizeElem, (char *)tabElems + leftIndex * sizeElem, sizeElem);
-    memcpy((char *)tabElems + leftIndex * sizeElem, pivot, sizeElem);
-    if (pivot) free(pivot);
+    swap((char *)tabElems + leftIndex * sizeElem, pivot, sizeElem);
     if (leftIndex > 1)
-        quick_sort((char *)tabElems, leftIndex, sizeElem, compare);
+        quick_sort(tabElems, leftIndex, sizeElem, compare);
     if (numElems > leftIndex + 2)
         quick_sort((char *)tabElems + (leftIndex + 1) * sizeElem, numElems - leftIndex - 1, sizeElem, compare);
 }
@@ -180,18 +178,21 @@ bool is_sorted(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)(
 }
 
 bool swap(void *pa, void *pb, size_t sizeElem){
-    void* tmp = malloc(sizeElem);
-    bool test1=0, test2=0, test3=0;
-    test1 = memcpy(tmp,pb,sizeElem);
-    test2 = memcpy(pb,pa,sizeElem);
-    test3 = memcpy(pa,tmp,sizeElem);
-    free(tmp);
     #ifdef DEBUGED
     printf("SWAP: ");
     TElement_Display(pa);
     printf(" <-> ");
     TElement_Display(pb);
     printf("\n");
+    #endif
+    void* tmp = malloc(sizeElem);
+    bool test1=0, test2=0, test3=0;
+    test1 = memcpy(tmp,pb,sizeElem);
+    test2 = memcpy(pb,pa,sizeElem);
+    test3 = memcpy(pa,tmp,sizeElem);
+    free(tmp);
+    #ifdef DEBUG
+    test1 & test2 & test3 && ++swaps;
     #endif
     return test1 & test2 & test3;
 }
@@ -227,14 +228,17 @@ int main(int argc, char const *argv[]){
     displayTab(tabElems, ARRAY_SIZE, sizeof(TElement), TElement_Display);
     #ifdef SELECTION
     selection_sort(tabElems,ARRAY_SIZE,sizeof(TElement),TElement_Compare);
+    printf("TOTAL SWAP: %d\n", swaps);
     #elif INSERTION
     insertion_sort(tabElems,ARRAY_SIZE,sizeof(TElement),TElement_Compare);
     #elif BUBBLE
     bubble_sort(tabElems,ARRAY_SIZE,sizeof(TElement),TElement_Compare);
+    printf("TOTAL SWAP: %d\n", swaps);
     #elif MERGE
     merge_sort(tabElems,ARRAY_SIZE,sizeof(TElement),TElement_Compare);
     #elif QUICK
     quick_sort(tabElems,ARRAY_SIZE,sizeof(TElement),TElement_Compare);
+    printf("TOTAL SWAP: %d\n", swaps);
     #endif
     printf("OUT ");
     displayTab(tabElems, ARRAY_SIZE, sizeof(TElement), TElement_Display);
