@@ -34,15 +34,17 @@ static bool TQueue_Enqueue(const PTQueue this, TElement pushElt){
     if(TQueue_IsEmpty(this)){
         this->Table[this->NumElems] = pushElt;
         this->BackIndex = (this->BackIndex + 1) % this->TabSize;
-    } else if(this->FrontIndex == ((this->BackIndex + 1) % this->TabSize)){
-        this->TabSize *= 2;
-        this->Table = realloc(this->Table,this->TabSize*sizeof(TElement));
-        for(this->FrontIndex < this->BackIndex)
-            this->Table[Index + this->TabSize/2] = this->Table[Index];
+    } else if(this->FrontIndex == ((this->BackIndex + 1) % this->TabSize)) {
+        this->Table = realloc(this->Table, 2 * this->TabSize * sizeof(TElement));
+        while(this->FrontIndex < this->BackIndex){
+            this->Table[Index + this->TabSize] = this->Table[Index];
+
+        }
         this->Table[this->BackIndex] = pushElt;
+        this->TabSize *= 2;
     } else {
         if(this->BackIndex == this->NumElems){
-
+            this->Table = realloc(this->Table, 2 * this->TabSize * sizeof(TElement));
         }
     }
     this->NumElems++;
