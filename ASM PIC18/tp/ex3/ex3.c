@@ -1,8 +1,8 @@
 /*********************************
  @file :  ex3.c
- @brief : programme de test pour dï¿½velopper la librairie LCDUser.c
- @author :
- last modification :
+ @brief : programme de test pour développer la librairie LCDUser.c
+ @author : 
+ last modification : 
 *********************************/
 
 /*** Configuration bits - Special Features ***/
@@ -13,9 +13,9 @@
 #include <LCD.h>
 #include "LCDUser.h"
 
-/*** chaï¿½nes de caractï¿½res pour le Debug ***/
-char testString1[] = "    ENSICAEN    ";
-char testString2[] = "Si vous ne preparez pas vos TP, vous aurez ...";
+/*** chaînes de caractères pour le Debug ***/
+char testString1[] = " C'est beau ca !";
+char testString2[] = "Coucou !";
 
 
 /**************************
@@ -23,27 +23,37 @@ char testString2[] = "Si vous ne preparez pas vos TP, vous aurez ...";
 ***************************/
 void main() {
 
-    /*** Configuration des broches RB0 ï¿½ RB5 en sorties ***/
+  /*** Configuration des broches RB0 à RB5 en sorties ***/
 
-        TRISB = 0xC0;
+    TRISB = 0xC0;
 
-    /*** nï¿½6 : Initialisation du LCD ***/
+  /*** n°6 : Initialisation du LCD ***/
 
-        LCD_Init_User();
+      LCD_Init();
 
+  /*** n°1 	 : Envoi d'un caractère au LCD ***/
+  /*** n°1'  : Ecriture fonction LCD_Write_Register_User(char DR_or_IR); ***/
+  /*** n°1'' : Ecriture fonction LCD_write_Data_User(char caracter); ***/
 
-        LCD_Char_User('d');
-        LCD_String_User(testString1);
-        LCD_Command_User(LCD_COMMAND_PANRIGHT);
+       //LCD_Char_User('d');
 
-  /*** nï¿½4  : Envoi d'un caractï¿½re au LCD + positionnement curseur ***/
-  /*** nï¿½4' : Ecriture fonction LCD_Cursor_XY_User(unsigned short row, unsigned short col); ***/
+  /*** n°2 : Envoi d'une chaîne de caractère au LCD ***/
 
-      LCD_Char_XY_User(2, 3, 'D');
+      //LCD_String_User(testString1);
 
-  /*** nï¿½5 : Envoi d'une chaï¿½ne de caractï¿½re au LCD + positionnement curseur ***/
+  /*** n°3 : Envoi d'une commande au LCD ***/
+
+     // LCD_Command(LCD_COMMAND_PANRIGHT);
+
+  /*** n°4  : Envoi d'un caractère au LCD + positionnement curseur ***/
+  /*** n°4' : Ecriture fonction LCD_Cursor_XY_User(unsigned short row, unsigned short col); ***/
+
+     //LCD_Char_XY_User(2, 3, 'D');
+
+  /*** n°5 : Envoi d'une chaîne de caractère au LCD + positionnement curseur ***/
 
       LCD_String_XY_User(2, 5,testString2);
 
   while (1);
 }
+

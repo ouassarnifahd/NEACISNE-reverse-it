@@ -2,7 +2,7 @@
 *   @brief Ficher source contenant les fonctions de manupilation des files.
 */
 
-#include"../inc/queue.h"
+#include "../inc/queue.h"
 
 PTQueue TQueue_New(int maxSize){
     PTQueue this = malloc(sizeof(TQueue));
@@ -23,7 +23,7 @@ PTQueue TQueue_New(int maxSize){
 }
 
 static bool TQueue_IsEmpty(const PTQueue this){
-    return !this->NumElems;
+    return (!this->NumElems || (this->BackIndex == this->FrontIndex));
 }
 
 static int TQueue_Length(const PTQueue this){
@@ -31,22 +31,19 @@ static int TQueue_Length(const PTQueue this){
 }
 
 static bool TQueue_Enqueue(const PTQueue this, TElement pushElt){
-    if(TQueue_IsEmpty(this)){
-        this->Table[this->NumElems] = pushElt;
-        this->BackIndex = (this->BackIndex + 1) % this->TabSize;
-    } else if(this->FrontIndex == ((this->BackIndex + 1) % this->TabSize)) {
+    if (this->FrontIndex == ((this->BackIndex + 1) % this->TabSize)) {
         this->Table = realloc(this->Table, 2 * this->TabSize * sizeof(TElement));
-        while(this->FrontIndex < this->BackIndex){
-            this->Table[Index + this->TabSize] = this->Table[Index];
-
+        if (this->BackIndex < this->FrontIndex) {
+            int MoveIndex = 0;
+            for (MoveIndex = 0; MoveIndex < this->BackIndex; MoveIndex++) {
+                this->Table[this->TabSize + MoveIndex] = this->Table[MoveIndex];
+            }
+            this->BackIndex += this->TabSize;
         }
-        this->Table[this->BackIndex] = pushElt;
         this->TabSize *= 2;
-    } else {
-        if(this->BackIndex == this->NumElems){
-            this->Table = realloc(this->Table, 2 * this->TabSize * sizeof(TElement));
-        }
     }
+    this->Table[this->BackIndex] = pushElt;
+    this->BackIndex = (this->BackIndex + 1) % this->TabSize;
     this->NumElems++;
     return 1;
 }
@@ -63,16 +60,12 @@ static bool TQueue_Dequeue(const PTQueue this, PTElement popElt){
 }
 
 static void TQueue_Clear(const PTQueue this){
-    this->FrontIndex = (this->BackIndex => this->FrontIndex) ? this->FrontIndex : this->BackIndex;
-    this->BackIndex = (this->BackIndex => this->FrontIndex) ? this->FrontIndex : this->BackIndex;
+    this->FrontIndex = (this->BackIndex >= this->FrontIndex) ? this->FrontIndex : this->BackIndex;
+    this->BackIndex = (this->BackIndex >= this->FrontIndex) ? this->FrontIndex : this->BackIndex;
+    this->NumElems = 0;
 }
 
 static void TQueue_Delete(const PTQueue this){
-    this->FrontIndex = 0;
-    this->BackIndex  = 0;
-    this->NumElems   = 0;
-    calloc(this->Table, this->TabSize * sizeof(TElement));
-    this->TabSize = 0;
     free(this->Table);
     free(this);
 }
@@ -81,13 +74,23 @@ static void TQueue_Display(const PTQueue this){
 	int Index = this->FrontIndex;
 	printf("Taille: %d\n", this->TabSize);
     printf("Nombre d'éléments : %d\n", this->NumElems);
-	printf("Contenu: out <- ");
+    #ifdef DEBUG
+    printf("FrontIndex: %d, BackIndex: %d\n", this->FrontIndex, this->BackIndex);
+    printf("Memoire:     [ ");
+    int i = 0;
+    for(i = 0; i < this->TabSize; i++) {
+        display_element(this->Table + i);
+        printf(" ");
+    }
+	printf("]\n");
+    #endif
+    printf("Contenu: out <- ");
     if (!this->IsEmpty(this)){
         do {
             display_element(this->Table + Index);
             printf(" <- ");
             Index = (Index + 1) % this->TabSize;
-        } while(Index != (this->BackIndex + 1) % this->TabSize);
+        } while((Index + 1) % this->TabSize != (this->BackIndex + 1) % this->TabSize);
     }
     printf("in\n");
 }

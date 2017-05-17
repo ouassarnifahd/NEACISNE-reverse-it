@@ -22,13 +22,13 @@
 							Delay10KTCYx(240);	\
 							Delay10KTCYx(240);	\
 							Delay10KTCYx(240)	
-#define		CODE_VALUE		1492
+#define		CODE_VALUE		2569
 #define		TMROHVALUE		/*** à compléter ! ***/
 #define		TMROLVALUE		/*** à compléter ! ***/
 
 /*** Déclaration des variables globales ***/
 char welcomeMess[] = "Saisir code :";
-char clearMess[] = "    ";
+char clearMess[] = "                ";
 char openMess[] = "Open";
  int CODE = CODE_VALUE;
 
@@ -40,21 +40,47 @@ char openMess[] = "Open";
 /**************************************************************/
 #pragma interruptlow low_isr
 void low_isr(void)
-{static unsigned char	Decode = 1;
+{
+    static unsigned char	Decode = 1;
 
     if(INTCONbits.TMR0IF)
     {
 		/*** Clear Timer0 overflow flag ***/
 
-    		/*** à compléter ! ***/  
+    		INTCONbits.TMR0IF = 0;
        
 		/*** pré-chargement de TMR0L + chargement automatique de TMR0H ***/
 
-    		/*** à compléter ! ***/  
+                TMR0H = 0xFF;
+    		TMR0L = 0x15;
     
 		/*** Signal de BALAYAGE : Mise à "1" de l'une des broches RD4-RD7 ***/
-
-    		/*** à compléter ! ***/  
+                if(Decode==1){
+                    LATDbits.LATD4 = 1;
+                    LATDbits.LATD5 = 0;
+                    LATDbits.LATD6 = 0;
+                    LATDbits.LATD7 = 0;
+                }
+                else if(Decode==2){
+                    LATDbits.LATD4 = 0;
+                    LATDbits.LATD5 = 1;
+                    LATDbits.LATD6 = 0;
+                    LATDbits.LATD7 = 0;
+                }
+                else if(Decode==3){
+                    LATDbits.LATD4 = 0;
+                    LATDbits.LATD5 = 0;
+                    LATDbits.LATD6 = 1;
+                    LATDbits.LATD7 = 0;
+                }
+                else if(Decode==4){
+                    Decode=0;
+                    LATDbits.LATD4 = 0;
+                    LATDbits.LATD5 = 0;
+                    LATDbits.LATD6 = 0;
+                    LATDbits.LATD7 = 1;
+                }
+                Decode++;
     }							
 }
 /*** Configuration du vecteur d'interruption de priorité basse ***/
@@ -74,19 +100,24 @@ void Timer_Config(void)
 {
 	/*** T0CON n°1 : Timer0=OFF, mode=16bits, synchro=Tcy, prescaler=ON, prescale value=1:256 ***/
 
-    T0CON = 0b00;
+    T0CON = 0x07;
 
 	/*** TMR0 n°2 : Initialisation des registres de pré-chargement ***/
-
-    		/*** à compléter ! ***/  
+    TMR0H = 0xFF;
+    TMR0L = 0x15;
 
 	/*** Gestion des IT : priority mode, vecteur d'IT de priorité basse, démasquage IT TMR0, TMR0IF=0 ***/
 
-    		/*** à compléter ! ***/  
+    RCONbits.IPEN = 1;
+    INTCON2bits.TMR0IP = 0;
+    INTCONbits.TMR0IE = 1;
+    INTCONbits.GIEH = 1;
+    INTCONbits.GIEL = 1;
+    INTCONbits.TMR0IF = 0;
 
 	/*** Démarrage du Timer0 n°3 ***/
 
-    		/*** à compléter ! ***/  
+    T0CONbits.TMR0ON = 1;
 
 }        
 
@@ -97,11 +128,11 @@ void Port_Config(void)
 {
 	/*** LCD config : Broches RB0 à RB5 en sortie ***/
 
-    		/*** à compléter ! ***/  
+            TRISB = 0xC0;
 
 	/*** KEYBOARD config : Broches RD4 à RD7 en sortie et RD0 à RD2 en entrée ***/
 
-    		/*** à compléter ! ***/  
+            TRISD = 0x07;
 
 }     
   
@@ -113,28 +144,36 @@ char shared;
 void main() {
 unsigned char	TouchNum , CodeCount = 0, latchPORTD;
 unsigned int 	CodeCompare = 0;
+char message[]="Saisir code :",message_Fail[]="GAME OVER";
+
+char etoile='*';
 
 	/*** Appel fonction de configuration des port B et D ***/
 
+            Port_Config();
 	
 	/*** Appel fonction de configuration du Timer0 et des IT ***/
 
-    		/*** à compléter ! ***/  
+            Timer_Config();
 
 	/*** Initialisation LCD et affichage message d'accueil ***/
 
-    		/*** à compléter ! ***/ 
+            LCD_Init_User();
+            LCD_String_User(message);
+            LCD_Cursor_XY_User(2,1);
 			
 	/*** Démasquage global des IT ***/
 
-    		/*** à compléter ! ***/  
+            INTCONbits.GIEH = 1;
+            INTCONbits.GIEL = 1;
 	
   while(1){
 		/*** Test si l'utilisateur a appuyé sur une touche ***/
-		if( ???? ){
+		if(PORTDbits.RD0 || PORTDbits.RD1 || PORTDbits.RD2){
 			/*** Masquage global des IT ***/
 			
-    			/*** à compléter ! ***/  
+                        INTCONbits.GIEH = 0;
+                        INTCONbits.GIEL = 0;
 
 			/*** Sauvegarde de la valeur sur le PORT D ***/
 			latchPORTD = PORTD;
@@ -142,42 +181,67 @@ unsigned int 	CodeCompare = 0;
 			/*** n°1 : Détection de la touche frappée ***/
 			switch(latchPORTD){
 					case 0x11	:	TouchNum = 0x1;	break;
-					case ????	:	TouchNum = 0x2;	break;	
-					case ????	:	TouchNum = 0x3;	break;
-					case ????	:	TouchNum = 0x4;	break;
-					case ????	:	TouchNum = 0x5;	break;	
-					case ????	:	TouchNum = 0x6;	break;
-					case ????	:	TouchNum = 0x7;	break;
-					case ????	:	TouchNum = 0x8;	break;
-					case ????	:	TouchNum = 0x9;	break;
-					case ????	:	TouchNum = 0xF;	break;
-					case ????	:	TouchNum = 0x0;	break;
-					case ????	:	TouchNum = 0xF;	break;
+					case 0x12	:	TouchNum = 0x2;	break;
+					case 0x14	:	TouchNum = 0x3;	break;
+					case 0x21	:	TouchNum = 0x4;	break;
+					case 0x22	:	TouchNum = 0x5;	break;
+					case 0x24   	:	TouchNum = 0x6;	break;
+					case 0x41	:	TouchNum = 0x7;	break;
+					case 0x42	:	TouchNum = 0x8;	break;
+					case 0x44	:	TouchNum = 0x9;	break;
+					case 0x81	:	TouchNum = 0xF;	break;
+					case 0x82	:	TouchNum = 0x0;	break;
+					case 0x84	:	TouchNum = 0xF;	break;
 					default		:	TouchNum = 0xF;	
 			}
 
 			/*** n°2 : Affichage des caractères "*" et gestion du compteur de touches frappées ***/
 			
-    			/*** à compléter ! ***/  
-			
+                        LCD_Char_User(etoile);
+            		CodeCount++;
 			/*** n°3 : Effacement des "***" si touche "#" ou touche "*" frappée ***/
 			
-    			/*** à compléter ! ***/  
+                        if(TouchNum==0xF){
+                            LCD_Cursor_XY_User(2,1);
+                            LCD_String_User(clearMess);
+                            LCD_Cursor_XY_User(2,1);
+                            CodeCompare=0;
+                            CodeCount=0;
+                        }
 
-			/*** n°4 : Calcul de la valeur à comparer au CODE ***/
-			
-    			/*** à compléter ! ***/  
+			/*** n°4 : Calcul de la valeur à comparer au CODE ***/ 
 
+                        if(TouchNum!=0xF){
+                            CodeCompare = TouchNum + CodeCompare * 10;
+                        }
 			/*** n°5 : Si code calculé = CODE et si on a appuyé sur 4 touches alors ... ***/
-			
-    			/*** à compléter ! ***/  
+                        if(CodeCount==4){
+                            if(CodeCompare==CODE_VALUE){
+                                LCD_Command_User(LCD_USER_COMMAND_CLEAR);
+                                LCD_String_User(openMess);
+                                Delay_1s();
+                                LCD_Command_User(LCD_USER_COMMAND_CLEAR);
+                                LCD_String_User(message);
+                                LCD_Cursor_XY_User(2,1);
+                            } else {
+                                LCD_Command_User(LCD_USER_COMMAND_CLEAR);
+                                LCD_String_User(message_Fail);
+                                Delay_1s();
+                                LCD_Command_User(LCD_USER_COMMAND_CLEAR);
+                                LCD_String_User(message);
+                                LCD_Cursor_XY_User(2,1);
+                            }
+                            CodeCompare=0;
+                            CodeCount=0;
+                        }
 
 			/*** tant que l'on reste appuyé sur la touche, on ne relance pas le balayage des lignes ***/
 			while(PORTD == latchPORTD);
 		
 			/*** Démasquage global des IT ***/
 			
-    			/*** à compléter ! ***/  
+    			INTCONbits.GIEH = 1;
+                        INTCONbits.GIEL = 1;
 				
 		}
 	}

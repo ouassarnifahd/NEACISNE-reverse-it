@@ -2,17 +2,17 @@
 *   @brief Ficher source de la fonction main.
 */
 
-#include"../inc/queue.h"
+#include "../inc/queue.h"
 
 int main(int argc, char const *argv[]){
-	int TailleFile,choix;
-	TElement newElt=0;
+	int TailleFile, choix;
+	TElement newElt = 0;
 	printf("Creation d'une file de %s: \n", (char*)TYPE);
 	printf("Entrer la taille pour commencer: ");
 	scanf("%d",&TailleFile);
-	PTQueue mainFILE=TQueue_New(TailleFile);
+	PTQueue mainFILE = TQueue_New(TailleFile);
 	printf("Faites votre choix:");
-	while(1){
+	while(1) {
 		printf("\n");
 		printf("\t1 : Ajouter un nouvel élément en queue de la file\n");
 		printf("\t2 : Retirer le premier élément de la file\n");
@@ -22,17 +22,17 @@ int main(int argc, char const *argv[]){
 		scanf("%d", &choix);
 		switch(choix){
 			case 1:
-				do{
+				do {
 					printf("\t  Entrer l'element: ");
-				}while(read_element(&newElt));
-				if(mainFILE->Enqueue(mainFILE,newElt)){
+				} while(read_element(&newElt));
+				if (mainFILE->Enqueue(mainFILE, newElt)) {
 					printf("\t  Success!\n");
 				} else {
 					printf("\t  Erreur!\n");
 				}
 				break;
 			case 2:
-				if(mainFILE->Dequeue(mainFILE,NULL)){
+				if (mainFILE->Dequeue(mainFILE, NULL)) {
 					printf("\t  Success!\n");
 				} else {
 					printf("\t  Erreur!\n");
