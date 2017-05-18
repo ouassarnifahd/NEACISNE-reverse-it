@@ -53,7 +53,7 @@ typedef double TElement;
 /** @def FORMAT
 *   @brief Format de la structure de données.
 */
-#define FORMAT "%.2lf"
+#define FORMAT "%.2f"
 
 #ifdef DEBUG
 #define FORMATREAD "%lf"
