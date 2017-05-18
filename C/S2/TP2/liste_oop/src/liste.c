@@ -126,9 +126,10 @@ static bool TList_RemoveLast(const PTList this){
 
 static PTNode TList_Insert(const PTList this, void* pNewElt){
     if(!this->Current) return NULL;
-    if(this->First==this->Current)
-        this->Current=TList_InsertFirst(this, pNewElt);
-    else{
+    if(this->First==this->Current){
+        this->First=TList_InsertFirst(this, pNewElt);
+        this->Current=this->First;
+    } else {
         PTNode newNode=(PTNode)malloc(sizeof(TNode));
         if(!newNode) return NULL;
         PTElement NewElt = new_element(TList_GetSizeofElem(this));

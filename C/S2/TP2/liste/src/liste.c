@@ -86,7 +86,6 @@ PTNode TList_Add(const PTList this, void* pNewElt){
     if(!AddNewElt)  return NULL;
     memcpy(AddNewElt,pNewElt,TList_GetSizeofElem(this));
     newNode->pElement = AddNewElt;
-    newNode->Next = NULL;
     if(TList_IsEmpty(this))
         this->First=newNode;
     else
@@ -123,17 +122,19 @@ bool TList_RemoveLast(const PTList this){
 
 PTNode TList_Insert(const PTList this, void* pNewElt){
     if(!this->Current) return NULL;
-    if(this->First==this->Current)
-        this->Current=TList_InsertFirst(this, pNewElt);
-    else{
-        PTNode newNode=(PTNode)malloc(sizeof(TNode));
+    if(this->First==this->Current){
+        this->First=TList_InsertFirst(this, pNewElt);
+        this->Current=this->First;
+    } else {
+        printf("Imhere\n");
+        PTNode newNode = (PTNode)malloc(sizeof(TNode));
         if(!newNode) return NULL;
         void* AddNewElt = malloc(TList_GetSizeofElem(this));
         if(!AddNewElt)  return NULL;
         memcpy(AddNewElt,pNewElt,TList_GetSizeofElem(this));
         newNode->pElement = AddNewElt;
         newNode->Next = this->Current;
-        TList_GoTo(this, this->Index-1);
+        this->Current = TList_GoTo(this, this->Index-1);
         this->Current->Next = newNode;
         this->Current = newNode;
         this->Index++;
