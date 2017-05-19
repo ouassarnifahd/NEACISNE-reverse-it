@@ -139,9 +139,11 @@ void quick_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)
     printf("\nIN  ");
     displayTab(tabElems, numElems, sizeElem, TElement_Display);
     #endif
-    while (leftIndex <= rightIndex){
-        while (leftIndex <= rightIndex && compare((char *)tabElems + leftIndex * sizeElem, pivot) < 0)   leftIndex++;
-        while (leftIndex <= rightIndex && compare((char *)tabElems + rightIndex * sizeElem, pivot) >= 0) rightIndex--;
+    while (leftIndex <= rightIndex) {
+        while (leftIndex <= rightIndex && compare((char *)tabElems + leftIndex * sizeElem, pivot) < 0)
+            leftIndex++;
+        while (leftIndex <= rightIndex && compare((char *)tabElems + rightIndex * sizeElem, pivot) >= 0)
+            rightIndex--;
         if (leftIndex < rightIndex)
             swap((char *)tabElems + (leftIndex++) * sizeElem, (char *)tabElems + (rightIndex--) * sizeElem, sizeElem);
     }

@@ -51,14 +51,14 @@ typedef TElement* PTElement;
 
 /** @fn display_element
 *   @brief Affiche l'element.
-*   @param L'element a afficher.
+*   @param pElement L'element a afficher.
 */
-void display_element(const void *pElement);
+void display_element(const void *pElement /**< L'element a afficher. */); /**< Affiche l'element.    */
 
 /** @fn read_element
 *   @brief Lecture de l'element.
-*   @param L'element a lire.
+*   @param pElement L'element a lire.
 */
-bool read_element(const void *pElement);
+bool read_element(const void *pElement    /**< L'element a lire.     */); /**< Lecture de l'element. */
 
 #endif /* end of include guard : _ELEMENT_ */

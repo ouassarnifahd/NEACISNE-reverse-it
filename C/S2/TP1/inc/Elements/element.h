@@ -17,7 +17,7 @@
 *   @param var Nom de la variable de type TElement.
 */
 
-#define SCAN(var) scanf("%", &var)
+#define SCAN(var /**< Nom de la variable de type TElement. */) scanf("%", &var)
 
 /** @typedef TElement
 *   @brief L'element de travail.
@@ -35,7 +35,7 @@ typedef TYPE TElement;
 *   @brief Macro pour scanner l'element à l'aide de son type.
 *   @param var Nom de la variable de type TElement.
 */
-#define SCAN(var) scanf("%f", &var)
+#define SCAN(var /**< Nom de la variable de type TElement. */) scanf("%f", &var)
 
 /** @typedef TElement
 *   @brief L'element de travail.
@@ -53,7 +53,7 @@ typedef float TElement;
 *   @brief Macro pour scanner l'element à l'aide de son type.
 *   @param var Nom de la variable de type TElement.
 */
-#define SCAN(var) scanf("%d", &var)
+#define SCAN(var  /**< Nom de la variable de type TElement. */) scanf("%d", &var)
 
 /** @typedef TElement
 *   @brief L'element de travail.
@@ -71,6 +71,6 @@ typedef TElement* PTElement;
 *   @brief Affiche l'element TElement.
 *   @param Un element de type TElement.
 */
-void TElement_Afficher(TElement data);
+void TElement_Afficher(TElement data /**< Un element de type TElement. */);
 
 #endif /* End of include Guard: _ELEMENT_ */

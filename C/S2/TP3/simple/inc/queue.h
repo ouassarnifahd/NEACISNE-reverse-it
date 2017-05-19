@@ -5,7 +5,7 @@
 *   @brief Header contenant la definition des fonctions de manupilation des files.
 */
 
-#include"./Elements/element.h"
+#include "./Elements/element.h"
 
 /** @struct Queue
 *   @brief Structure d'une file en programmation orientée objet.
@@ -39,21 +39,21 @@ typedef TQueue *PTQueue;
 *   @param TabSize Taille à allouer au tableau.
 *   @return Un pointeur vers le type file (PTQueue).
 */
-PTQueue TQueue_New(int TabSize);
+PTQueue TQueue_New(int TabSize                       /**< Taille à allouer au tableau.          */); /**< Création d'une nouvelle file vide.                        */
 
 /** @fn TQueue_IsEmpty
 *   @brief Retourne true si la file est vide.
 *   @param this Pointeur vers le type file (PTQueue).
 *   @return Un booleen.
 */
-static inline bool TQueue_IsEmpty(const PTQueue this);
+static inline bool TQueue_IsEmpty(const PTQueue this /**< Pointeur vers le type file (PTQueue). */); /**< Retourne true si la file est vide.                        */
 
 /** @fn TQueue_Length
 *   @brief Retourne la taille de la file.
 *   @param this Pointeur vers le type file (PTQueue).
 *   @return la taille de la file.
 */
-static inline int TQueue_Length(const PTQueue this);
+static inline int TQueue_Length(const PTQueue this   /**< Pointeur vers le type file (PTQueue). */); /**< Retourne la taille de la file.                            */
 
 /** @fn TQueue_Enqueue
 *   @brief Ajoute un nouvel élément en queue de la file.
@@ -61,7 +61,8 @@ static inline int TQueue_Length(const PTQueue this);
 *   @param pushElt L'élément à ajouter.
 *   @return Un booleen.
 */
-static inline bool TQueue_Enqueue(const PTQueue this, TElement pushElt);
+static inline bool TQueue_Enqueue(const PTQueue this /**< Pointeur vers le type file (PTQueue). */,
+                                  TElement pushElt   /**< L'élément à ajouter.                  */); /**< Ajoute un nouvel élément en queue de la file.             */
 
 /** @fn TQueue_Dequeue
 *   @brief Retire l'élément en début de file.
@@ -69,24 +70,25 @@ static inline bool TQueue_Enqueue(const PTQueue this, TElement pushElt);
 *   @param popElt Pointeur vers l'élément retiré.
 *   @return Un booleen.
 */
-static inline bool TQueue_Dequeue(const PTQueue this, PTElement popElt);
+static inline bool TQueue_Dequeue(const PTQueue this /**< Pointeur vers le type file (PTQueue). */,
+                                  PTElement popElt   /**< Pointeur vers l'élément retiré.       */); /**< Retire l'élément en début de file.                        */
 
 /** @fn TQueue_Clear
 *   @brief Vide la file.
 *   @param this Pointeur vers le type file (PTQueue).
 */
-static inline void TQueue_Clear(const PTQueue this);
+static inline void TQueue_Clear(const PTQueue this   /**< Pointeur vers le type file (PTQueue). */); /**< Vide la file.                                             */
 
 /** @fn TQueue_Display
 *   @brief Affiche tous les éléments de la file.
 *   @param this Pointeur vers le type file (PTQueue).
 */
-static inline void TQueue_Display(const PTQueue this);
+static inline void TQueue_Display(const PTQueue this /**< Pointeur vers le type file (PTQueue). */); /**< Affiche tous les éléments de la file.                     */
 
 /** @fn TQueue_Delete
 *   @brief Supprime la file en libérant les zones mémoires allouées.
 *   @param this Pointeur vers le type file (PTQueue).
 */
-static inline void TQueue_Delete(const PTQueue this);
+static inline void TQueue_Delete(const PTQueue this  /**< Pointeur vers le type file (PTQueue). */); /**< Supprime la file en libérant les zones mémoires allouées. */
 
 #endif /* end of include guard : _QUEUE_ */

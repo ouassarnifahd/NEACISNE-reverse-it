@@ -2,8 +2,6 @@
 *   @brief Ficher source contenant les fonctions de manupilation des listes.
 */
 
-//BUG TList_Insert : l'element insere n'est pas affiche
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>

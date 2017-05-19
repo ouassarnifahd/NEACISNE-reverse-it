@@ -3,9 +3,9 @@
 #---------------------------------------------------------------------------
 
 DOXYFILE_ENCODING      = UTF-8
-PROJECT_NAME           = "TP4 - sort"
+PROJECT_NAME           = "TP5 - time sort"
 PROJECT_NUMBER         = "1.0"
-PROJECT_BRIEF          = "Une implementation d'algorithmes de tri en C"
+PROJECT_BRIEF          = "Evaluation des algorithmes de tri en C"
 PROJECT_LOGO           =
 OUTPUT_DIRECTORY       = "doc"
 CREATE_SUBDIRS         = NO
@@ -401,4 +401,3 @@ DOT_TRANSPARENT        = NO
 DOT_MULTI_TARGETS      = NO
 GENERATE_LEGEND        = YES
 DOT_CLEANUP            = YES
-

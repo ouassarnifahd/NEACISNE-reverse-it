@@ -37,12 +37,12 @@ typedef TElement *PElement;
 *   @brief Affiche l'élément.
 *   @param pElement L'élément à afficher.
 */
-void display_element(const void *pElement);
+void display_element(const void *pElement /**< L'élément à afficher. */); /**< Affiche l'élément. */
 
 /** @fn read_element
 *   @brief Lecture de l'élément.
 *   @param pElement L'élément à lire.
 */
-bool read_element(const void *pElement);
+bool read_element(const void *pElement /**< L'élément à lire. */); /**< Lecture de l'élément. */
 
 #endif /* End of include Guard: _ELEMENT_ */
