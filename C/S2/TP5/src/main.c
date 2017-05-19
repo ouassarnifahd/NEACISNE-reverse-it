@@ -23,7 +23,7 @@ int main(int argc, char const *argv[]){
         double mergeTime = eval_sort(inTab, size, sizeof(TElement), TElement_Compare, merge_sort);
         double quickTime = 0;//eval_sort(inTab, size, sizeof(TElement), TElement_Compare, quick_sort);
         double qsortTime = eval_sort(inTab, size, sizeof(TElement), TElement_Compare, qsort);
-        printf(" %5zu  %2.6lf\t%2.6lf\t %2.6lf\t %2.6lf\t %2.6lf\t %2.6lf\n", size, selectionTime, insertionTime, bubbleTime, mergeTime, quickTime, qsortTime);
+        printf(" %5zu  %2.6lfs\t%2.6lfs\t %2.6lfs\t %2.6lfs\t %2.6lfs\t %2.6lfs\n", size, selectionTime, insertionTime, bubbleTime, mergeTime, quickTime, qsortTime);
         size *= 2;
     }
     free(inTab);
