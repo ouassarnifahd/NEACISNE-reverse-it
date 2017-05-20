@@ -3,17 +3,21 @@
 #include "../inc/sort.h"
 
 int main(int argc, char const *argv[]){
-    TElement ElementMin = MIN_RAND, ElementMax = MAX_RAND;
+    #ifdef ELEM_SHORT
+    TElement ElementMin = SHRT_MIN, ElementMax = SHRT_MAX;
+    srand(time(NULL));
+    #elif ELEM_LONG
+    TElement ElementMin = LONG_MIN, ElementMax = LONG_MAX;
+    srand(time(NULL));
+    #elif ELEM_REAL
+    TElement ElementMin = -DBL_MAX, ElementMax = DBL_MAX;
+    srand48(time(NULL));
+    #endif
     printf("Initialisation du tableau aléatoire entre ");
     TElement_Display(&ElementMin);
     printf(" et ");
     TElement_Display(&ElementMax);
     printf(":\n");
-    #if defined ELEM_SHORT || defined ELEM_LONG
-    srand(time(NULL));
-    #elif ELEM_REAL
-    srand48(time(NULL));
-    #endif
     PTElement tabElems = initRandomTab(ARRAY_SIZE, &ElementMin, &ElementMax, sizeof(TElement), TElement_Random);
     displayTab(tabElems,ARRAY_SIZE,sizeof(TElement),TElement_Display);
     if (is_sorted(tabElems,ARRAY_SIZE,sizeof(TElement),TElement_Compare)) {

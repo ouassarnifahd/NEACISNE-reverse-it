@@ -1,8 +1,8 @@
 /*********************************
  @file :  ex4.c
  @brief : gestion d'un clavier matriciel (DIGICODE)
- @author : 
- last modification : 
+ @author :
+ last modification :
 *********************************/
 
 /*** Configuration bits - Special Features ***/
@@ -10,10 +10,10 @@
 
 /*** Includes files ***/
 #include <p18f4550.h>
-#include <delays.h>	
+#include <delays.h>
 #include "LCDUser.h"
 
-/*** Définition des Macros ***/
+/*** Dï¿½finition des Macros ***/
 #define	Delay_200ms()		Delay10KTCYx(240)	/*** 240.10000.TCY 	~ 200ms ***/
 
 #define	Delay_1s()								\
@@ -21,12 +21,12 @@
 							Delay10KTCYx(240);	\
 							Delay10KTCYx(240);	\
 							Delay10KTCYx(240);	\
-							Delay10KTCYx(240)	
+							Delay10KTCYx(240)
 #define		CODE_VALUE		2569
-#define		TMROHVALUE		/*** à compléter ! ***/
-#define		TMROLVALUE		/*** à compléter ! ***/
+#define		TMROHVALUE		/*** ï¿½ complï¿½ter ! ***/
+#define		TMROLVALUE		/*** ï¿½ complï¿½ter ! ***/
 
-/*** Déclaration des variables globales ***/
+/*** Dï¿½claration des variables globales ***/
 char welcomeMess[] = "Saisir code :";
 char clearMess[] = "                ";
 char openMess[] = "Open";
@@ -36,7 +36,7 @@ char openMess[] = "Open";
 
 #pragma code
 /**************************************************************/
-/*** FONCTION : routine d'interruption de priorité basse	***/ 
+/*** FONCTION : routine d'interruption de prioritï¿½ basse	***/
 /**************************************************************/
 #pragma interruptlow low_isr
 void low_isr(void)
@@ -48,13 +48,13 @@ void low_isr(void)
 		/*** Clear Timer0 overflow flag ***/
 
     		INTCONbits.TMR0IF = 0;
-       
-		/*** pré-chargement de TMR0L + chargement automatique de TMR0H ***/
 
-                TMR0H = 0xFF;
+		/*** prï¿½-chargement de TMR0L + chargement automatique de TMR0H ***/
+
+            TMR0H = 0xFF;
     		TMR0L = 0x15;
-    
-		/*** Signal de BALAYAGE : Mise à "1" de l'une des broches RD4-RD7 ***/
+			
+		/*** Signal de BALAYAGE : Mise ï¿½ "1" de l'une des broches RD4-RD7 ***/
                 if(Decode==1){
                     LATDbits.LATD4 = 1;
                     LATDbits.LATD5 = 0;
@@ -81,9 +81,9 @@ void low_isr(void)
                     LATDbits.LATD7 = 1;
                 }
                 Decode++;
-    }							
+    }
 }
-/*** Configuration du vecteur d'interruption de priorité basse ***/
+/*** Configuration du vecteur d'interruption de prioritï¿½ basse ***/
 #pragma code low_vector = 0x18
 void interrupt_at_low_vector(void)
 {
@@ -92,21 +92,21 @@ void interrupt_at_low_vector(void)
 
 
 
-#pragma code 
+#pragma code
 /******************************************************************/
-/*** FONCTION : initialisation du timer0 et de l'IT associée	***/ 
+/*** FONCTION : initialisation du timer0 et de l'IT associï¿½e	***/
 /******************************************************************/
 void Timer_Config(void)
 {
-	/*** T0CON n°1 : Timer0=OFF, mode=16bits, synchro=Tcy, prescaler=ON, prescale value=1:256 ***/
+	/*** T0CON nï¿½1 : Timer0=OFF, mode=16bits, synchro=Tcy, prescaler=ON, prescale value=1:256 ***/
 
     T0CON = 0x07;
 
-	/*** TMR0 n°2 : Initialisation des registres de pré-chargement ***/
+	/*** TMR0 nï¿½2 : Initialisation des registres de prï¿½-chargement ***/
     TMR0H = 0xFF;
     TMR0L = 0x15;
 
-	/*** Gestion des IT : priority mode, vecteur d'IT de priorité basse, démasquage IT TMR0, TMR0IF=0 ***/
+	/*** Gestion des IT : priority mode, vecteur d'IT de prioritï¿½ basse, dï¿½masquage IT TMR0, TMR0IF=0 ***/
 
     RCONbits.IPEN = 1;
     INTCON2bits.TMR0IP = 0;
@@ -115,27 +115,27 @@ void Timer_Config(void)
     INTCONbits.GIEL = 1;
     INTCONbits.TMR0IF = 0;
 
-	/*** Démarrage du Timer0 n°3 ***/
+	/*** Dï¿½marrage du Timer0 nï¿½3 ***/
 
     T0CONbits.TMR0ON = 1;
 
-}        
+}
 
 /**************************************************/
-/*** FONCTION : initialisation des ports B et D	***/ 
+/*** FONCTION : initialisation des ports B et D	***/
 /**************************************************/
 void Port_Config(void)
 {
-	/*** LCD config : Broches RB0 à RB5 en sortie ***/
+	/*** LCD config : Broches RB0 ï¿½ RB5 en sortie ***/
 
             TRISB = 0xC0;
 
-	/*** KEYBOARD config : Broches RD4 à RD7 en sortie et RD0 à RD2 en entrée ***/
+	/*** KEYBOARD config : Broches RD4 ï¿½ RD7 en sortie et RD0 ï¿½ RD2 en entrï¿½e ***/
 
             TRISD = 0x07;
 
-}     
-  
+}
+
 char shared;
 
 /**************************
@@ -151,7 +151,7 @@ char etoile='*';
 	/*** Appel fonction de configuration des port B et D ***/
 
             Port_Config();
-	
+
 	/*** Appel fonction de configuration du Timer0 et des IT ***/
 
             Timer_Config();
@@ -161,24 +161,24 @@ char etoile='*';
             LCD_Init_User();
             LCD_String_User(message);
             LCD_Cursor_XY_User(2,1);
-			
-	/*** Démasquage global des IT ***/
+
+	/*** Dï¿½masquage global des IT ***/
 
             INTCONbits.GIEH = 1;
             INTCONbits.GIEL = 1;
-	
+
   while(1){
-		/*** Test si l'utilisateur a appuyé sur une touche ***/
+		/*** Test si l'utilisateur a appuyï¿½ sur une touche ***/
 		if(PORTDbits.RD0 || PORTDbits.RD1 || PORTDbits.RD2){
 			/*** Masquage global des IT ***/
-			
+
                         INTCONbits.GIEH = 0;
                         INTCONbits.GIEL = 0;
 
 			/*** Sauvegarde de la valeur sur le PORT D ***/
 			latchPORTD = PORTD;
-			 
-			/*** n°1 : Détection de la touche frappée ***/
+
+			/*** nï¿½1 : Dï¿½tection de la touche frappï¿½e ***/
 			switch(latchPORTD){
 					case 0x11	:	TouchNum = 0x1;	break;
 					case 0x12	:	TouchNum = 0x2;	break;
@@ -192,15 +192,15 @@ char etoile='*';
 					case 0x81	:	TouchNum = 0xF;	break;
 					case 0x82	:	TouchNum = 0x0;	break;
 					case 0x84	:	TouchNum = 0xF;	break;
-					default		:	TouchNum = 0xF;	
+					default		:	TouchNum = 0xF;
 			}
 
-			/*** n°2 : Affichage des caractères "*" et gestion du compteur de touches frappées ***/
-			
+			/*** nï¿½2 : Affichage des caractï¿½res "*" et gestion du compteur de touches frappï¿½es ***/
+
                         LCD_Char_User(etoile);
             		CodeCount++;
-			/*** n°3 : Effacement des "***" si touche "#" ou touche "*" frappée ***/
-			
+			/*** nï¿½3 : Effacement des "***" si touche "#" ou touche "*" frappï¿½e ***/
+
                         if(TouchNum==0xF){
                             LCD_Cursor_XY_User(2,1);
                             LCD_String_User(clearMess);
@@ -209,12 +209,12 @@ char etoile='*';
                             CodeCount=0;
                         }
 
-			/*** n°4 : Calcul de la valeur à comparer au CODE ***/ 
+			/*** nï¿½4 : Calcul de la valeur ï¿½ comparer au CODE ***/
 
                         if(TouchNum!=0xF){
                             CodeCompare = TouchNum + CodeCompare * 10;
                         }
-			/*** n°5 : Si code calculé = CODE et si on a appuyé sur 4 touches alors ... ***/
+			/*** nï¿½5 : Si code calculï¿½ = CODE et si on a appuyï¿½ sur 4 touches alors ... ***/
                         if(CodeCount==4){
                             if(CodeCompare==CODE_VALUE){
                                 LCD_Command_User(LCD_USER_COMMAND_CLEAR);
@@ -235,15 +235,14 @@ char etoile='*';
                             CodeCount=0;
                         }
 
-			/*** tant que l'on reste appuyé sur la touche, on ne relance pas le balayage des lignes ***/
+			/*** tant que l'on reste appuyï¿½ sur la touche, on ne relance pas le balayage des lignes ***/
 			while(PORTD == latchPORTD);
-		
-			/*** Démasquage global des IT ***/
-			
+
+			/*** Dï¿½masquage global des IT ***/
+
     			INTCONbits.GIEH = 1;
                         INTCONbits.GIEL = 1;
-				
+
 		}
 	}
 }
-

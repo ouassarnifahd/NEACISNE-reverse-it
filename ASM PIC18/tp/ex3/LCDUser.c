@@ -1,13 +1,13 @@
 /*********************************
  @file :  LCDUser.c
  @brief : Librairie pour piloter un afficheur LCD 2x16
- @author : 
- last modification : 
+ @author :
+ last modification :
 *********************************/
 #include "LCDUser.h"
 
 
-/*** Déclaration variables globales et fonctions (locales à LCDUser.c)***/
+/*** Dï¿½claration variables globales et fonctions (locales ï¿½ LCDUser.c)***/
 void LCD_Write_Register_User(char DR_or_IR);
 void LCD_Write_Data_User(char character);
 void LCD_Cursor_XY_User(unsigned char row, unsigned char col);
@@ -18,28 +18,28 @@ void LCD_Cursor_XY_User(unsigned char row, unsigned char col);
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 
 		/**********************************************************/
-		/*** FONCTION : Envoie d'une DATA 4bits au LCD			***/ 
-		/*** @param	character : donnée 8bits >> envoie des 4LSB	***/
+		/*** FONCTION : Envoie d'une DATA 4bits au LCD			***/
+		/*** @param	character : donnï¿½e 8bits >> envoie des 4LSB	***/
 		/**********************************************************/
 		void LCD_Write_Data_User(char character){
-		
+
 		    /*** envoie des 4bits LSB de character vers le LCD ***/
 		    /****************************************************/
-		    D4_PIN_LCD_USER = (0x01 & character);	//envoie du bit de poids faible de character à la broche n°4 du MCU 
+		    		D4_PIN_LCD_USER = (0x01 & character);	 //envoie du bit de poids faible de character ï¿½ la broche nï¿½4 du MCU
                     D5_PIN_LCD_USER = (0x02 & character)>>1;
                     D6_PIN_LCD_USER = (0x04 & character)>>2;
                     D7_PIN_LCD_USER = (0x08 & character)>>3;
-                    
+
 		}
 
 		/**************************************************/
-		/*** FONCTION : Envoie d'une COMMANDE au LCD		***/ 
+		/*** FONCTION : Envoie d'une COMMANDE au LCD		***/
 		/*** @param	DR_or_IR : registre de destination	***/
 		/**************************************************/
 		void LCD_Write_Register_User(char DR_or_IR){
-		
-		    /*** Sélection du registre à écrire : instruction ou data ***/
-		
+
+		    /*** Sï¿½lection du registre ï¿½ ï¿½crire : instruction ou data ***/
+
                     if (DR_or_IR==0)
                     {
                         RS_PIN_LCD_USER=0;
@@ -48,24 +48,24 @@ void LCD_Cursor_XY_User(unsigned char row, unsigned char col);
                     {
                         RS_PIN_LCD_USER=1;
                     }
-		
-		    /*** écriture dans le registre sélectionné ***/
-		
+
+		    /*** ï¿½criture dans le registre sï¿½lectionnï¿½ ***/
+
                     E_PIN_LCD_USER=1;
                     DelayUser_4us();
                     E_PIN_LCD_USER=0;
                     RS_PIN_LCD_USER=0;
-		    /*** delay de 2ms : spécifications électriques ***/
-			DelayUser_2ms();	    
+		    /*** delay de 2ms : spï¿½cifications ï¿½lectriques ***/
+			DelayUser_2ms();
 		}
 
 		/*******************************************************/
-		/*** FONCTION : Positionnement curseur				 ***/ 
-		/*** @param	row : n° de la ligne (position curseur)	 ***/
-		/*** @param	col : n° de la colonne (position curseur)***/
+		/*** FONCTION : Positionnement curseur				 ***/
+		/*** @param	row : nï¿½ de la ligne (position curseur)	 ***/
+		/*** @param	col : nï¿½ de la colonne (position curseur)***/
 		/*******************************************************/
 		void LCD_Cursor_XY_User(unsigned char row, unsigned char col){
-		
+
                     char i;
                     if(row==2){
 		    	LCD_Command_User(LCD_USER_COMMAND_SECONDROW);
@@ -83,36 +83,36 @@ void LCD_Cursor_XY_User(unsigned char row, unsigned char col);
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /*xxxxxxxxxxxx FONCTIONS PUBLIQUES xxxxxxxxxxx*/
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-		
+
 		/**********************************************/
-		/*** FONCTION : Envoie caractère au LCD		***/ 
-		/*** @param	character : caractère à envoyer	***/
+		/*** FONCTION : Envoie caractï¿½re au LCD		***/
+		/*** @param	character : caractï¿½re ï¿½ envoyer	***/
 		/**********************************************/
 		void LCD_Char_User(char character){
-		
+
 		char  characterL, characterH;
-		
-		    /*** Sauvegarde des 4bits LSB et 4 bits MSB du caractère ***/
-		
+
+		    /*** Sauvegarde des 4bits LSB et 4 bits MSB du caractï¿½re ***/
+
 		    	characterH = (0xF0 & character) >>4;
                         characterL = 0x0F & character;
-		
+
 		    /*** envoie des 4bits MSB du caractere sur le portB (RB4-RB7) ***/
 				LCD_Write_Data_User(characterH);
 				LCD_Write_Register_User(1);
-		
-		
+
+
 		    /*** envoie des 4bits LSB du caractere sur le portB (RB4-RB7) ***/
 				LCD_Write_Data_User(characterL);
 				LCD_Write_Register_User(1);
 		}
 
 		/******************************************************************/
-		/*** FONCTION : Envoie chaîne de caractères au LCD				***/ 
-		/*** @param	StringData : pointeur sur la chaîne de caractères	***/
+		/*** FONCTION : Envoie chaï¿½ne de caractï¿½res au LCD				***/
+		/*** @param	StringData : pointeur sur la chaï¿½ne de caractï¿½res	***/
 		/******************************************************************/
 		void LCD_String_User(char *StringData){
-		
+
                     char index=0;
                     while(StringData[index]!='\0'){
                         LCD_Char_User(StringData[index]);
@@ -121,79 +121,79 @@ void LCD_Cursor_XY_User(unsigned char row, unsigned char col);
 		}
 
 		/******************************************************/
-		/*** FONCTION : Envoie d'une commande au LCD			***/ 
-		/*** @param	commande : commande sur 8bits à envoyer	***/
+		/*** FONCTION : Envoie d'une commande au LCD			***/
+		/*** @param	commande : commande sur 8bits ï¿½ envoyer	***/
 		/******************************************************/
 		void LCD_Command_User(char commande){
 		char  commandeL, commandeH;
-		
+
 		    /*** Sauvegarde des 4bits LSB et 4 bits MSB de la commande***/
-		
+
 		    	commandeL = 0x0F & commande;
-                        commandeH = (0xF0 & commande)>>4;
-	
+                commandeH = (0xF0 & commande)>>4;
+
 		    /*** envoie des 4bits MSB de la commande sur le portB (RB4-RB7) ***/
 
-                        LCD_Write_Data_User(commandeH);
-			LCD_Write_Register_User(0);
-		
+                LCD_Write_Data_User(commandeH);
+				LCD_Write_Register_User(0);
+
 		    /*** envoie des 4bits LSB de la commande sur le portB (RB4-RB7) ***/
-		
+
 		    	LCD_Write_Data_User(commandeL);
-                        LCD_Write_Register_User(0);
-                        
+                LCD_Write_Register_User(0);
+
 		}
 
 		/******************************************************************/
-		/*** FONCTION : Envoie caractère au LCD + positionnement curseur	***/ 
-		/*** @param	row : n° de la ligne (position curseur)				***/
-		/*** @param	col : n° de la colonne (position curseur)			***/
-		/*** @param	character : donnée à envoyer						***/
+		/*** FONCTION : Envoie caractï¿½re au LCD + positionnement curseur	***/
+		/*** @param	row : nï¿½ de la ligne (position curseur)				***/
+		/*** @param	col : nï¿½ de la colonne (position curseur)			***/
+		/*** @param	character : donnï¿½e ï¿½ envoyer						***/
 		/******************************************************************/
 		void LCD_Char_XY_User(unsigned char row, unsigned char col, char character){
-		
+
 		    /*** Positionnement du curseur ***/
-		
+
 		    	LCD_Cursor_XY_User(row,col);
-		
-		    /*** envoie d'un caractère à la position courante du curseur ***/
-		
+
+		    /*** envoie d'un caractï¿½re ï¿½ la position courante du curseur ***/
+
 		    	LCD_Char_User(character);
-		
+
 		}
 
 		/******************************************************************************/
-		/*** FONCTION : Envoie chaîne de caractères au LCD + positionnement curseur	***/ 
-		/*** @param	row : n° de la ligne (position curseur)							***/
-		/*** @param	col : n° de la colonne (position curseur)						***/
-		/*** @param	StringData : pointeur sur la chaîne de caractères				***/
+		/*** FONCTION : Envoie chaï¿½ne de caractï¿½res au LCD + positionnement curseur	***/
+		/*** @param	row : nï¿½ de la ligne (position curseur)							***/
+		/*** @param	col : nï¿½ de la colonne (position curseur)						***/
+		/*** @param	StringData : pointeur sur la chaï¿½ne de caractï¿½res				***/
 		/******************************************************************************/
 		void LCD_String_XY_User(unsigned char row, unsigned char col, char *StringData){
-		
+
 
 		    /*** Positionnement du curseur ***/
-		
+
 		    	LCD_Cursor_XY_User(row,col);
-		
-		    /*** Envoie d'une chaîne de caractères à la position courante du curseur ***/
-		
+
+		    /*** Envoie d'une chaï¿½ne de caractï¿½res ï¿½ la position courante du curseur ***/
+
 		    	LCD_String_User(StringData);
-		
+
 		}
 
 		/***************************************/
-		/*** FONCTION : Initialisation LCD	 ***/ 
+		/*** FONCTION : Initialisation LCD	 ***/
 		/***************************************/
 		void LCD_Init_User(void){
 		#define	LCD_USER_COMMAND_FCTSET8	        0b0011			 // Function set  8bits (initialisation)
 		#define	LCD_USER_COMMAND_FCTSET4	        0b0010			 // Function set  8bits (initialisation)
-		
+
 		/*** PHASE D'INITIALISATION ***/
-		
-		    	/*** à compléter ! ***/
-		
+
+		    	/*** ï¿½ complï¿½ter ! ***/
+
 		/*** PHASE DE CONFIGURATION ***/
-		
-		    	/*** à compléter ! ***/
-		
+
+		    	/*** ï¿½ complï¿½ter ! ***/
+
 		}
