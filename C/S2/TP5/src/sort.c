@@ -1,8 +1,12 @@
-#include "../inc/sort.h"
+/** @file sort.c
+*   @brief Ficher source contenant les fonctions de tri pour des tableaux génériques.
+*/
+
+#include <sort.h>
 
 #ifdef DEBUG
-#include "../inc/array.h"
-#include "../inc/element.h"
+#include <array.h>
+#include <element.h>
 #endif
 
 void selection_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)(const void *, const void *)){

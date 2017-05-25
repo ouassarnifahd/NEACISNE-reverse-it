@@ -66,9 +66,9 @@ $(debugPath)/%.dbg: $(srcPath)/%.c $(inc)
 	@$(MAKE) directory path=$(dir $@)
 	@if [ '$(objects)' != '' ]; then \
 		$(MAKE) $(addprefix $(debugPath)/,$(objects)) Flags="$(Flags)"; \
-		$(CC) $(dbgFlags) $(Flags) -o $@ $(addprefix $(debugPath)/,$(objects)) $< 2> $(basename $@).err; \
+		$(MAKE) compile OBJ=no CFlags="$(dbgFlags) $(Flags)" out=$@ objects="$(addprefix $(debugPath)/,$(objects)) $<" 2> $(basename $@).err; \
 	else \
-		$(CC) $(dbgFlags) $(Flags) -o $@ $< 2> $(basename $@).err; \
+		$(MAKE) compile OBJ=yes CFlags="$(dbgFlags) $(Flags)" out=$@ in=$< 2> $(basename $@).err; \
 	fi;
 
 $(debugPath)/%.o: $(srcPath)/%.c
@@ -95,7 +95,7 @@ directory:
 	@[ -d $(path) ] || $(MKDIR) $(path)
 
 compile:
-	@if [ $(OBJ) == yes ]; then $(CC) $(CFlags) -c -o $(out) $(in); else $(CC) $(CFlags) -o $(out) $(objects); fi
+	@if [ $(OBJ) == yes ]; then $(CC) -I $(incPath) $(CFlags) -c -o $(out) $(in); else $(CC) -I $(incPath) $(CFlags) -o $(out) $(objects); fi
 
 makeDoc:
 	@echo "Run $(PURPLE)make doc$(NOCOLOR) to create $(BLUE)documentation$(NOCOLOR)."

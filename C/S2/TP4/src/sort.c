@@ -1,8 +1,12 @@
-#include "../inc/sort.h"
+/** @file sort.c
+*   @brief Ficher source contenant les fonctions de tri pour des tableaux génériques.
+*/
+
+#include <sort.h>
 
 #ifdef DEBUG
-#include "../inc/array.h"
-#include "../inc/element.h"
+#include <array.h>
+#include <element.h>
 
 int swaps = 0;
 #endif
@@ -125,7 +129,7 @@ void merge_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)
 }
 
 // BUG /!\ fonction instable.
-void quick_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)(const void *, const void *)){
+void quick_sort2(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)(const void *, const void *)){
     if (1 < numElems && numElems <= MIN_SORT){
         insertion_sort(tabElems, numElems, sizeElem, compare);
         return ;
@@ -134,7 +138,7 @@ void quick_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)
     void *pivot = (char *)tabElems + (numElems - 1) * sizeElem;
     size_t leftIndex = 0, rightIndex = numElems - 2;
     #ifdef DEBUG
-    printf("REC_BEGIN quick_sort: Size %zu Pivot ", numElems);
+    printf("REC quick_sort: Size %zu Pivot ", numElems);
     TElement_Display(pivot);
     printf("\nIN  ");
     displayTab(tabElems, numElems, sizeElem, TElement_Display);
@@ -153,6 +157,11 @@ void quick_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)
     if (numElems > leftIndex + 2)
         quick_sort((char *)tabElems + (leftIndex + 1) * sizeElem, numElems - leftIndex - 1, sizeElem, compare);
 }
+
+void quick_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)(const void *, const void *)){
+
+}
+
 
 bool is_sorted(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)(const void *, const void *)){
     bool sorted = 1;

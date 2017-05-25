@@ -1,6 +1,10 @@
-#include "../inc/element.h"
-#include "../inc/array.h"
-#include "../inc/sort.h"
+/** @file main.h
+*   @brief Ficher source de la fonction main.
+*/
+
+#include <element.h>
+#include <array.h>
+#include <sort.h>
 
 int main(int argc, char const *argv[]){
     #ifdef ELEM_SHORT

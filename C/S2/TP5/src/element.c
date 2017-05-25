@@ -1,4 +1,8 @@
-#include "../inc/element.h"
+/** @file element.c
+*   @brief Ficher source contenant les fonctions de l'elements.
+*/
+
+#include <element.h>
 
 void TElement_Display(const void *pElement){
     printf(FORMAT, *(PTElement)pElement);

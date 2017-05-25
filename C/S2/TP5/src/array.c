@@ -1,7 +1,11 @@
-#include "../inc/array.h"
+/** @file array.c
+*   @brief Ficher source contenant les fonctions de manupilation des tableaux génériques.
+*/
+
+#include <array.h>
 
 #ifdef DEBUG
-#include "../inc/element.h"
+#include <element.h>
 #endif
 
 void displayTab(void *tabElems, size_t numElems, size_t sizeElem, void (*display)(const void *)){
