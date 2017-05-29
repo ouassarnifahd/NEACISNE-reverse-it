@@ -1,7 +1,7 @@
 howto:
 	@echo "usage: make source_file_basename.bin"
 
-%.bin:%.c
+%:%.c
 	gcc -Wall -o $@ $<
 
 clean:
