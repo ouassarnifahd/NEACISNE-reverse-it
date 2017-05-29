@@ -107,7 +107,7 @@ int main(int argc, char const *argv[]) {
     packet.txTm_s = ntohl(packet.txTm_s);
     packet.txTm_f = ntohl(packet.txTm_f);
 
-    time_t txTm_s = (time_t)(packet.txTm_s - NTP_TIMESTAMP_DELTA - 3600*2);
+    time_t txTm_s = (time_t)(packet.txTm_s - NTP_TIMESTAMP_DELTA);
 
     //Printing time in format Day Month DD hh:mm:ss Year
     printf("Time: %s", ctime((const time_t*)&txTm_s));
