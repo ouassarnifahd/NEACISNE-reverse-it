@@ -1,3 +1,5 @@
+/* Adapted from https://github.com/lettier/ntpclient */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -6,14 +8,14 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
-#include <netdb.h>
+#include <arpa/inet.h>
 #include <unistd.h>
 
-#define NTP_TIMESTAMP_DELTA 2208988800ull
+#define NTP_TIMESTAMP_DELTA 2208988800ull // 70 years worth of seconds
 
-void error(char* msg){
-    perror(msg); // Print the error message to stderr.
-    exit(0); // Quit the process.
+void error(char* msg) {
+    perror(msg);
+    exit(0);
 }
 
 /* NTP packet
@@ -28,20 +30,21 @@ void error(char* msg){
 *   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 *   |                      Reference Identifier                     |
 *   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-*   |                                                               |
-*   |                    Reference Timestamp (64)                   |
+*   |                  Reference Timestamp seconds                  |
+*   |            Reference Timestamp fraction of a second           |
 *   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-*   |                                                               |
-*   |                    Originate Timestamp (64)                   |
+*   |                  Originate Timestamp seconds                  |
+*   |            Originate Timestamp fraction of a second           |
 *   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-*   |                                                               |
-*   |                     Receive Timestamp (64)                    |
+*   |                   Receive Timestamp seconds                   |
+*   |             Receive Timestamp fraction of a second            |
 *   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-*   |                                                               |
-*   |                     Transmit Timestamp (64)                   |
+*   |                   Transmit Timestamp seconds                  |
+*   |             Transmit Timestamp fraction of a second           |
 *   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 */
 typedef struct {
+
     unsigned li   : 2;       // 2 bits  - Leap indicator.
     unsigned vn   : 3;       // 3 bits  - Version number of the protocol.
     unsigned mode : 3;       // 3 bits  - Mode.
@@ -66,44 +69,37 @@ typedef struct {
     uint32_t txTm_s;         // 32 bits - Transmit time-stamp seconds.
     uint32_t txTm_f;         // 32 bits - Transmit time-stamp fraction of a second.
 
-} ntp_packet;                // Total: 384 bits ou 48 octets.
+} ntp_packet;                // Total: 384 bits or 48 bytes.
 
 int main(int argc, char const *argv[]) {
     ssize_t socket_fd, fd;
-    // char *host = "ntp.ecole.ensicaen.fr";
-    char *host = "pool.ntp.org";
 
     // Init paquet vide
-    ntp_packet packet = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    ntp_packet packet = {0};
 	memset(&packet, 0, sizeof(ntp_packet));
     // Mettre LI = 00, VN = 011 et MODE = 011
-    *((char *)&packet + 0) = 0x1b;
+    *((char *)&packet + 0) = 0x1b; // 0001_1011
 
     // UDP socket init
     socket_fd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
     if(socket_fd < 0)
         error("ERROR opening socket");
 
-    // Server data
-    struct hostent *server;
-    server = gethostbyname(host);
-    if(server == NULL)
-        error("ERROR, no such host");
-
-    // Server address data
     struct sockaddr_in serv_addr;
-    bzero((char*)&serv_addr, sizeof(serv_addr));
+    // bzero((char*)&serv_addr, sizeof(serv_addr));
+
+    serv_addr.sin_addr.s_addr = inet_addr("193.49.200.16");
     serv_addr.sin_family = AF_INET;
-    bcopy((char*)server->h_addr, (char*)&serv_addr.sin_addr.s_addr, server->h_length);
     serv_addr.sin_port = htons(123);
-    // Connecting...
+
+    // Connect
     if(connect(socket_fd, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0)
 		error("ERROR connecting");
-    // Writing...
+    // Writing (same as sendto)
     fd = write(socket_fd, (char*)&packet, sizeof(ntp_packet));
     if(fd < 0)
     	error( "ERROR writing to socket" );
-    // Reading...
+    // Reading (same as recvfrom)
     fd = read(socket_fd, (char*)&packet, sizeof(ntp_packet));
     if(fd < 0)
         error( "ERROR reading from socket" );
@@ -112,9 +108,10 @@ int main(int argc, char const *argv[]) {
     packet.txTm_s = ntohl(packet.txTm_s);
     packet.txTm_f = ntohl(packet.txTm_f);
 
-    time_t txTm = (time_t)(packet.txTm_s - NTP_TIMESTAMP_DELTA);
+    time_t txTm_s = (time_t)(packet.txTm_s - NTP_TIMESTAMP_DELTA - 3600*2);
 
-    printf("Time: %s", ctime((const time_t*)&txTm));
+    //Printing time in format Day Month DD hh:mm:ss Year
+    printf("Time: %s", ctime((const time_t*)&txTm_s));
 
     return 0;
 }
