@@ -1,7 +1,3 @@
-// @TITLE : Serveur d'echo sur le port pass� en argument
-// @BRIEF : R�p�te ce qu'il re�oit et l'affiche. La connexion s'arrete apres reception de bye.
-// @AUTHOR : Ph Lefebvre - ENSI de Caen
-
 #include <errno.h>                 // biblio des erreurs
 #include <sys/socket.h>            // biblio pour les socket
 #include <sys/types.h>
@@ -9,22 +5,26 @@
 #include <netinet/in.h>
 #include <stdio.h>                 // biblio pour les E/S.
 #include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+
+#define BUFFER 1024
 
 int main( int argc, char **argv) {
 	int er, lgr;                   // gestion des erreurs
 	int s;                         // socket d'ecoute du port
 	int sd;                        // socket de dialogue avec le client.
-	unsigned char paquet[64];             // paquet recu / envoye
+	unsigned char paquet[BUFFER];             // paquet recu / envoye
 
 	struct sockaddr_in adTo, adFrom;    // adresse au format internet
 
-	unsigned int ladd=sizeof (struct sockaddr_in);  // longueur de l'adresse de reception
+	unsigned int ladd = sizeof(struct sockaddr_in);  // longueur de l'adresse de reception
 	int port;						// port de connexion
 
 	if (argc !=2 ) {
 		printf ("Erreur argument 1 : %s no_port \n", argv[0]); exit (-1);
 	}
-	else  sscanf(argv[1], "%d", &port); 
+	else  sscanf(argv[1], "%d", &port);
 
 	/* On ouvre la socket  Internet en mode connecte. 6 est le num�ro de TCP , cf. le fichier /etc/protocols*/
 	if ((s = socket(AF_INET, SOCK_STREAM, 6)) < 0) {
@@ -36,7 +36,7 @@ int main( int argc, char **argv) {
 	adTo.sin_addr.s_addr = INADDR_ANY;   // accepte les connexions de n'importe quelle interface ethernet, wifi...
 
 	/* On attache la socket au port d'ecoute */
-	er = bind (s, (struct sockaddr *) &adTo, sizeof (struct sockaddr_in));
+	er = bind (s, (struct sockaddr *)&adTo, sizeof(struct sockaddr_in));
 	if (er < 0) {
 		perror ("bind : "); exit(-1);
 	}
@@ -50,14 +50,14 @@ int main( int argc, char **argv) {
     sd = accept( s, (struct sockaddr *) &adFrom, &ladd);             /* attente d'une connexion. La fonction accept est boquante et cree une socket de dialogue si un client se connecte.*/
     printf ("1 client !\n");
     do {
-		lgr = recv( sd, paquet, 64, 0 );     // on lit au maximum 64 octets venant du client.
+		lgr = recv(sd, paquet, BUFFER, 0 );     // on lit au maximum 64 octets venant du client.
 		if (lgr == 0 ) {printf("Deconnexion par le client !\n\n") ; exit(0) ;}
 		if (lgr < 0 ) {perror ("pb recv") ; exit(-1) ;}
 	  	paquet[lgr]= '\0';						// le paquet re�u n'est pas une chaine de caract�re => ajout de "\0" � la fin
 		printf ("paquet de longueur %d recu : %s\n",lgr,paquet);
-		send (sd, paquet, lgr, 0);          // reemission du paquet recu.
+		// send (sd, paquet, lgr, 0);          // reemission du paquet recu.
 	}
-	while ( (strncmp ((char *)paquet, "bye", 3)));      // on compare les 3 premiers octets recus a "bye"
+	while (strncmp((char *)paquet, "bye", 3));      // on compare les 3 premiers octets recus a "bye"
     printf (" Mon client s'est deconnecte.\n");
 	close (sd);                         // fermeture de la socket de dialogue
     close (s);							// fermeture de la socket d'�coute

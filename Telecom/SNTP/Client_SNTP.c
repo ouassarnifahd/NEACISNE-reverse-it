@@ -85,7 +85,6 @@ int main(int argc, char const *argv[]) {
         error("ERROR opening socket");
 
     struct sockaddr_in serv_addr;
-    // bzero((char*)&serv_addr, sizeof(serv_addr));
 
     serv_addr.sin_addr.s_addr = inet_addr("193.49.200.16"); // ntp.ensicaen.fr
     serv_addr.sin_family = AF_INET;

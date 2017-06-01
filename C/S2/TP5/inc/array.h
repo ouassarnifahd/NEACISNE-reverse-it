@@ -11,10 +11,15 @@
 #include <string.h>
 #include <time.h>
 
+/** @def NUM_EVAL
+*   @brief Nombre d'evalutions des fonctions de tri.
+*/
+#define NUM_EVAL 9
+
 /** @def ARRAY_SIZE
 *   @brief Taille du tableau.
 */
-#define ARRAY_SIZE 25600
+#define ARRAY_SIZE 100 * (1ull << (NUM_EVAL - 1))
 
 /** @fn displayTab
 *   @brief Fonction d'affichage d'un tableau générique.

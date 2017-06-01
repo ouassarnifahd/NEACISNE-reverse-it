@@ -129,7 +129,7 @@ void merge_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)
 }
 
 // BUG /!\ fonction instable.
-void quick_sort2(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)(const void *, const void *)){
+void quick_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)(const void *, const void *)){
     if (1 < numElems && numElems <= MIN_SORT){
         insertion_sort(tabElems, numElems, sizeElem, compare);
         return ;
@@ -157,11 +157,6 @@ void quick_sort2(void *tabElems, size_t numElems, size_t sizeElem, int (*compare
     if (numElems > leftIndex + 2)
         quick_sort((char *)tabElems + (leftIndex + 1) * sizeElem, numElems - leftIndex - 1, sizeElem, compare);
 }
-
-void quick_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)(const void *, const void *)){
-
-}
-
 
 bool is_sorted(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)(const void *, const void *)){
     bool sorted = 1;
@@ -210,13 +205,10 @@ bool swap(void *pa, void *pb, size_t sizeElem){
 
 #ifdef DEBUG
 int main(int argc, char const *argv[]){
-    TElement MyElementMin=0, MyElementMax=0;
+    TElement MyElementMin = 0, MyElementMax = 100;
     if (argc == 3) {
         sscanf(argv[1],FORMATREAD,&MyElementMin);
         sscanf(argv[2],FORMATREAD,&MyElementMax);
-    } else {
-        printf("Missing arguments!\n");
-        return 0;
     }
     if(TElement_Compare(&MyElementMin,&MyElementMax)>0){
         TElement tmp=MyElementMin;
