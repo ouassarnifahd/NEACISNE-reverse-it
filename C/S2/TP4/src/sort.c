@@ -130,13 +130,14 @@ void merge_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)
 
 // BUG /!\ fonction instable.
 void quick_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)(const void *, const void *)){
-    if (1 < numElems && numElems <= MIN_SORT){
-        insertion_sort(tabElems, numElems, sizeElem, compare);
+    if (numElems <= MIN_SORT){
+        if(numElems > 1) insertion_sort(tabElems, numElems, sizeElem, compare);
         return ;
     }
     //char *newTab = (char *)tabElems;
-    void *pivot = (char *)tabElems + (numElems - 1) * sizeElem;
     size_t leftIndex = 0, rightIndex = numElems - 2;
+    void *pivot = (char *)tabElems + (numElems - 1) * sizeElem;
+    // swap((char *)tabElems + ((numElems-1)/2) * sizeElem, pivot, sizeElem);
     #ifdef DEBUG
     printf("REC quick_sort: Size %zu Pivot ", numElems);
     TElement_Display(pivot);

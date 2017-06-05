@@ -86,13 +86,14 @@ void merge_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)
 
 // BUG /!\ fonction instable.
 void quick_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)(const void *, const void *)){
-    if (1 < numElems && numElems <= MIN_SORT){
-        insertion_sort(tabElems, numElems, sizeElem, compare);
+    if (numElems <= MIN_SORT){
+        if(numElems > 1) insertion_sort(tabElems, numElems, sizeElem, compare);
         return ;
     }
     //char *newTab = (char *)tabElems;
     void *pivot = (char *)tabElems + (numElems - 1) * sizeElem;
     size_t leftIndex = 0, rightIndex = numElems - 2;
+    // swap((char *)tabElems + ((numElems-1)/2) * sizeElem, pivot, sizeElem);
     #ifdef DEBUG
     printf("REC_BEGIN quick_sort: Size %zu Pivot ", numElems);
     TElement_Display(pivot);
@@ -105,7 +106,8 @@ void quick_sort(void *tabElems, size_t numElems, size_t sizeElem, int (*compare)
         if (leftIndex < rightIndex)
             swap((char *)tabElems + (leftIndex++) * sizeElem, (char *)tabElems + (rightIndex--) * sizeElem, sizeElem);
     }
-    swap((char *)tabElems + leftIndex * sizeElem, pivot, sizeElem);
+    memcpy((char *)tabElems + (numElems-1) * sizeElem, (char *)tabElems + leftIndex * sizeElem, sizeElem);
+    memcpy((char *)tabElems + leftIndex * sizeElem, pivot, sizeElem);
     if (leftIndex > 1)
         quick_sort(tabElems, leftIndex, sizeElem, compare);
     if (numElems > leftIndex + 2)

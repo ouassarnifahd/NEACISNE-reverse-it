@@ -14,7 +14,7 @@
 /** @def NUM_EVAL
 *   @brief Nombre d'evalutions des fonctions de tri.
 */
-#define NUM_EVAL 9
+#define NUM_EVAL 10
 
 /** @def ARRAY_SIZE
 *   @brief Taille du tableau.
