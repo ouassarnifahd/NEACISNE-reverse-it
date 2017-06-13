@@ -30,7 +30,6 @@ char* extractcontent_type(char *request){
 	char* Acceptline = strstr(req,"Accept");
 	strtok(Acceptline + 8,delim);
 	return strtok(Acceptline + 8,"\n");
-
 }
 
 int getSizeFile(FILE *fd){
@@ -104,6 +103,8 @@ int main (int argc, char **argv) {
 	/* On fixe le nombre maximum de clients simultanes en attente. Ici 1 seule*/
 	err = listen (sockfd, 1);
 	if (err < 0) { perror ("listen : "); exit(-1); }
+
+	printf("Starting localhost at %d\n", port);
 
 	while(1) {
 		sd = accept(sockfd, (struct sockaddr *)&adFrom, (unsigned int *)&ladd);    /* attente d'une connexion. La fonction accept est boquante et cree une socket de dialogue si un client se connecte.*/

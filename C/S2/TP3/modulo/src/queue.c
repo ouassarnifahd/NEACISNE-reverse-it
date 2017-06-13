@@ -4,6 +4,8 @@
 
 #include "../inc/queue.h"
 
+// #define DEBUG
+
 PTQueue TQueue_New(int maxSize){
     PTQueue this = malloc(sizeof(TQueue));
     if(!this) return NULL;
