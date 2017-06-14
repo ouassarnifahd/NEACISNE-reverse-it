@@ -86,9 +86,9 @@ static inline void TQueue_Clear(const PTQueue this   /**< Pointeur vers le type 
 static inline void TQueue_Display(const PTQueue this /**< Pointeur vers le type file (PTQueue). */); /**< Affiche tous les éléments de la file.                     */
 
 /** @fn TQueue_Delete
-*   @brief Supprime la file en libérant les zones mémoires allouées.
+*   @brief Supprime la file en libérant les zones mémoires allouées.
 *   @param this Pointeur vers le type file (PTQueue).
 */
-static inline void TQueue_Delete(const PTQueue this  /**< Pointeur vers le type file (PTQueue). */); /**< Supprime la file en libérant les zones mémoires allouées. */
+static inline void TQueue_Delete(const PTQueue this  /**< Pointeur vers le type file (PTQueue). */); /**< Supprime la file en libérant les zones mémoires allouées. */
 
 #endif /* end of include guard : _QUEUE_ */

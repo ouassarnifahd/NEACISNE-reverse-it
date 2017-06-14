@@ -7,14 +7,20 @@
 #include <sort.h>
 
 int main(int argc, char const *argv[]){
+    TElement ElementMin, ElementMax;
+    if (argc == 3) {
+        sscanf(argv[1],FORMATREAD,&ElementMin);
+        sscanf(argv[2],FORMATREAD,&ElementMax);
+    } else {
+        printf("usage: %s min max\n\n", argv[0]);
+        ElementMin = SHRT_MIN;
+        ElementMax = SHRT_MAX;
+    }
     #ifdef ELEM_SHORT
-    TElement ElementMin = SHRT_MIN, ElementMax = SHRT_MAX;
     srand(time(NULL));
     #elif ELEM_LONG
-    TElement ElementMin = LONG_MIN, ElementMax = LONG_MAX;
     srand(time(NULL));
     #elif ELEM_REAL
-    TElement ElementMin = -DBL_MAX, ElementMax = DBL_MAX;
     srand48(time(NULL));
     #endif
     printf("Initialisation du tableau aléatoire entre ");

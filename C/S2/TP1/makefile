@@ -50,12 +50,12 @@ build: cleanEasy int float makeDoc
 int: intObj
 	@[ -d ${intBinPath}   ] || mkdir -p ${intBinPath}
 	@${CC} ${wFlag} -o ${intBinPath}/${intBinary} ${intObjects}
-	@echo "${GREEN}Successfuly compiled ${RED}${intBinary} ${NOCOLOR}  : see $${PWD}/${intObjPath}/"
+	@echo "${GREEN}Successfuly compiled ${RED}${intBinary} ${NOCOLOR}  : see $${PWD}/${intBinPath}"
 
 float: floatObj
 	@[ -d ${floatBinPath} ] || mkdir -p ${floatBinPath}
 	@${CC} ${wFlag} -o ${floatBinPath}/${floatBinary} ${floatObjects}
-	@echo "${GREEN}Successfuly compiled ${RED}${floatBinary} ${NOCOLOR}: see $${PWD}/${floatBinPath}/"
+	@echo "${GREEN}Successfuly compiled ${RED}${floatBinary} ${NOCOLOR}: see $${PWD}/${floatBinPath}"
 
 intObj:
 	@[ -d ${intObjPath}   ] || mkdir -p ${intObjPath}

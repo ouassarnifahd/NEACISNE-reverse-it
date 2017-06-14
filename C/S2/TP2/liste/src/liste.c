@@ -22,7 +22,7 @@ PTList TList_New(int sizeofElem){
 }
 
 bool TList_IsEmpty(const PTList this){
-    return (this->NumElems) ? 0 : 1;
+    return !this->NumElems;
 }
 
 int TList_Length(const PTList this){

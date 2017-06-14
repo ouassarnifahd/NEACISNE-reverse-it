@@ -1,4 +1,4 @@
-/** @file main.h
+/** @file main.c
 *   @brief Ficher source de la fonction main.
 */
 
@@ -17,34 +17,35 @@ char* gplot(char* filename, double xvals[NUM_EVAL], double yvals[NUM_EVAL]){
     return filename;
 }
 
-void printnplot(const void *tabElems, char* tabtype){
-    printf("Pour des donnees %s\n", tabtype);
+// BUG /!\ Abort trap: 6 after ploting!
+void printnplot(const void *inTab, char* dataType){
+    printf("Pour des donnees %s\n", dataType);
     printf("Taille  Selection\tInsertion\tTri bulles\tTri fusion\tTri rapide\tqsort du C\n");
     size_t index = 0;
     double size[NUM_EVAL];
     size[0] = 100;
     double selectionTime[NUM_EVAL], insertionTime[NUM_EVAL], bubbleTime[NUM_EVAL], mergeTime[NUM_EVAL], quickTime[NUM_EVAL], qsortTime[NUM_EVAL];
     while(size[index] <= ARRAY_SIZE) {
-        selectionTime[index] = eval_sort(tabElems, size[index], sizeof(TElement), TElement_Compare, selection_sort);
-        insertionTime[index] = eval_sort(tabElems, size[index], sizeof(TElement), TElement_Compare, insertion_sort);
-        bubbleTime[index] = eval_sort(tabElems, size[index], sizeof(TElement), TElement_Compare, bubble_sort);
-        mergeTime[index] = eval_sort(tabElems, size[index], sizeof(TElement), TElement_Compare, merge_sort);
-        quickTime[index] = 0;//eval_sort(tabElems, size[index], sizeof(TElement), TElement_Compare, quick_sort);
-        qsortTime[index] = eval_sort(tabElems, size[index], sizeof(TElement), TElement_Compare, qsort);
+        selectionTime[index] = eval_sort(inTab, size[index], sizeof(TElement), TElement_Compare, selection_sort);
+        insertionTime[index] = eval_sort(inTab, size[index], sizeof(TElement), TElement_Compare, insertion_sort);
+        bubbleTime[index] = eval_sort(inTab, size[index], sizeof(TElement), TElement_Compare, bubble_sort);
+        mergeTime[index] = eval_sort(inTab, size[index], sizeof(TElement), TElement_Compare, merge_sort);
+        quickTime[index] = 0;//eval_sort(inTab, size[index], sizeof(TElement), TElement_Compare, quick_sort);
+        qsortTime[index] = eval_sort(inTab, size[index], sizeof(TElement), TElement_Compare, qsort);
         printf(" %5.0lf  %lfs\t%lfs\t%lfs\t%lfs\t%lfs\t%lfs\n", size[index], selectionTime[index], insertionTime[index], bubbleTime[index], mergeTime[index], quickTime[index], qsortTime[index]);
         size[index + 1] = size[index] * 2;
         index++;
     }
     char command[COMMAND_LEN];
-    int indexWrite = snprintf(command, COMMAND_LEN, "gnuplot -p -e \"set title 'Donees %s'; set grid; set xlabel 'Taille'; set ylabel 'Temps (s)'; set logscale xy;", tabtype);
-    indexWrite += snprintf(command + indexWrite, COMMAND_LEN - indexWrite," plot '%s' using 1:2 title 'Selection' with lines", gplot("selection.plt", size, selectionTime));
-    indexWrite += snprintf(command + indexWrite, COMMAND_LEN - indexWrite,", '%s' using 1:2 title 'Insertion' with lines", gplot("insertion.plt", size, insertionTime));
-    indexWrite += snprintf(command + indexWrite, COMMAND_LEN - indexWrite,", '%s' using 1:2 title 'Tri bulles' with lines", gplot("bubble.plt", size, bubbleTime));
-    indexWrite += snprintf(command + indexWrite, COMMAND_LEN - indexWrite,", '%s' using 1:2 title 'Tri fusion' with lines", gplot("merge.plt", size, mergeTime));
-    indexWrite += snprintf(command + indexWrite, COMMAND_LEN - indexWrite,", '%s' using 1:2 title 'Tri rapide' with lines", gplot("quick.plt", size, quickTime));
-    indexWrite += snprintf(command + indexWrite, COMMAND_LEN - indexWrite,", '%s' using 1:2 title 'qsort du C' with lines\" && rm *.plt", gplot("qsort.plt", size, qsortTime));
-    printf("Ploting this result with GNUPLOT.\n");
+    int indexWrite = snprintf(command, COMMAND_LEN, "gnuplot -p -e \"set title 'Donees %s'; set grid; set xlabel 'Taille'; set ylabel 'Temps (s)'; set logscale xy;", dataType);
+    indexWrite += snprintf(command + indexWrite, COMMAND_LEN - indexWrite," plot '%s' using 1:2 title 'Selection' with lines,", gplot("selection.plt", size, selectionTime));
+    indexWrite += snprintf(command + indexWrite, COMMAND_LEN - indexWrite," '%s' using 1:2 title 'Insertion' with lines,", gplot("insertion.plt", size, insertionTime));
+    indexWrite += snprintf(command + indexWrite, COMMAND_LEN - indexWrite," '%s' using 1:2 title 'Tri bulles' with lines,", gplot("bubble.plt", size, bubbleTime));
+    indexWrite += snprintf(command + indexWrite, COMMAND_LEN - indexWrite," '%s' using 1:2 title 'Tri fusion' with lines,", gplot("merge.plt", size, mergeTime));
+    indexWrite += snprintf(command + indexWrite, COMMAND_LEN - indexWrite," '%s' using 1:2 title 'Tri rapide' with lines,", gplot("quick.plt", size, quickTime));
+    indexWrite += snprintf(command + indexWrite, COMMAND_LEN - indexWrite," '%s' using 1:2 title 'qsort du C' with lines\" && rm *.plt", gplot("qsort.plt", size, qsortTime));
     system(command);
+    printf("Result ploted!\n");
 }
 
 int TElement_Compare2(const void *p1, const void *p2){
@@ -65,9 +66,9 @@ int main(int argc, char const *argv[]){
     #endif
     PTElement inTab = initRandomTab(ARRAY_SIZE, &ElementMin, &ElementMax, sizeof(TElement), TElement_Random);
     printnplot(inTab,"aleatoires");
-    qsort(inTab,ARRAY_SIZE,sizeElem,TElement_Compare);
+    qsort(inTab,ARRAY_SIZE,sizeof(TElement),TElement_Compare);
     printnplot(inTab,"triees");
-    qsort(inTab,ARRAY_SIZE,sizeElem,TElement_Compare2);
+    qsort(inTab,ARRAY_SIZE,sizeof(TElement),TElement_Compare2);
     printnplot(inTab,"inversees");
     free(inTab);
 }
