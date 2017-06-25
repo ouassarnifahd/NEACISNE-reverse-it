@@ -41,8 +41,8 @@ int main(int argc, char **argv) {
 			close (s);
 			return(-1);
 		}
-		printf("Sending \" %s \"...", paquet);
-		send (s, paquet, BUF_LEN, 0);          // reemission du paquet recu.
+		printf("Sending %s", paquet);
+		send (s, paquet, BUF_LEN, 0);          // emission du paquet recu.
 	} while(1);
     close (s);							// fermeture de la socket d'écoute
     return(0) ;

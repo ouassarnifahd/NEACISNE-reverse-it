@@ -46,7 +46,7 @@ INTERRUPTIONS: (USING GLOBAL VARIABLES) p32
             /* system - global interrupt enable */
                 INTCONbits.GIEH=1;
     2) Interruption Vectors: Memory-Addresses containing: goto ISR
-    3) Context "commuting": Save mainProgram->ISR-> Restore mainProgram
+    3) Context "commuting": Save mainProgram -> ISR -> Restore mainProgram
     4) ISR: Interrupt Service Routine (function|software)
         CODE:
             /* ISR - high level Interrupt Service Routine */
