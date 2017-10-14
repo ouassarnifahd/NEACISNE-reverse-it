@@ -1,5 +1,0 @@
-
-function [reg,Rn,Rd,Rp,Pc]= calculregulateur(B,A,w_reg,alpha)
-
-
-end
