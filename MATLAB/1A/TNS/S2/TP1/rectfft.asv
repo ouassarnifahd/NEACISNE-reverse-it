@@ -1,0 +1,15 @@
+%%%%%%%%%% FFT RECT %%%%%%%%%%%%
+% CLEAR
+clc
+clear
+close all
+% LOAD
+load sig1_rect.mat
+% CODE
+N=length(xk);
+Ta=N/Fs;
+Fa=1/Ta
+f=0:1/Ta:Fs-Fa
+% FIGURE
+stem(f,abs(fftshift(fft(xk))))
+

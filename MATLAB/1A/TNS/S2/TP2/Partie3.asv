@@ -1,0 +1,12 @@
+%%%%%%%%%%%% PARTIE III %%%%%%%%%%%%
+% CLEAR
+clc
+clear
+close all
+% CODE
+time=zeros(1,5);
+for coup=2:6
+    tic;
+    W(2^coup)
+    toc;
+    time(coup-1)=toc-tic;

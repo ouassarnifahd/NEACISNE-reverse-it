@@ -1,0 +1,10 @@
+%%%%%%%%%%%% PARTIE I %%%%%%%%%%%%
+% CLEAR
+clc
+clear
+close all
+% CODE 
+% cosX(64,3);
+f=500;
+theta=2*pi*f;
+N=8000;
