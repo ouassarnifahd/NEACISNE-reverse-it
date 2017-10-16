@@ -34,6 +34,7 @@ function [xmin, fmin, N] = stepperconj(fx, grad_fx, X0, Tol, dsearch, lsearch, p
     % xlabel('x1'),ylabel('x2'),title('Minimization de la fonction en banane');
     % [C,H] = contour(xx,yy,meshd,conts,'k:');
     % clabel(C);
+    % hold on
 
     xk = X0;
     dk = - grad_fx(xk, p);
@@ -42,11 +43,12 @@ function [xmin, fmin, N] = stepperconj(fx, grad_fx, X0, Tol, dsearch, lsearch, p
     % buf = [X0'];
     % text(X0(1), X0(2), 'Debut');
     while prec > Tol
-        if N < nmax
+        if N < nmax,
             alphak = lsearch(fx, grad_fx, xk, dk, p);
             xk1 = xk + alphak * dk;
             betak = dsearch(grad_fx, xk1, xk, p);
-            if mod(N, 2) == 0
+            % betak = (norm(grad_fx(xk1,p))^2)/norm(grad_fx(xk,p))^2;
+            if mod(N, 2) == 0,
                 dk = - grad_fx(xk, p) + betak * dk;
             else
                 dk = - grad_fx(xk, p);

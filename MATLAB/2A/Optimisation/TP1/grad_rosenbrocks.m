@@ -6,7 +6,8 @@
 % p : parametre (reel)
 
 function grad = grad_rosenbrocks(X, p)
-    gr1 = 2 * (X(1) - 1) + 4 * p * X(1) * (X(1) * X(1) - X(2));
-    gr2 = - 2 * p * (X(1) * X(1) - X(2));
+    x1 = X(1); x2 = X(2);
+    gr1 = 2 * (x1 - 1) + 4 * p * x1 * (x1 * x1 - x2);
+    gr2 = - 2 * p * (x1 * x1 - x2);
     grad = [gr1; gr2];
 end

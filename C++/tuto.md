@@ -2,7 +2,7 @@
 
 # Introduction
 
-## 1. Surcharge de fonction (≠ #arg & type_arg)
+## 1. Surcharge de fonction (≠ #arg & type_arg soit signatures ≠)
 ``` c++
 int add(int a, int b);
 float add(float a, float b);
@@ -212,9 +212,7 @@ public:
 };
 ```
 
-
-#### b. Hierarchy MULTIPLE
-
+#### c. Hierarchy MULTIPLE
 
 ``` c++
 class point2D {
@@ -243,4 +241,53 @@ public:
     pixel (arguments);
     virtual ~pixel ();
 };
+```
+
+#### d. Methode redefinition (same signature! but ≠ core)
+
+``` c++
+class point {
+private:
+    int x;
+
+public:
+    point (arguments);
+    virtual ~point (); // OK je vois!
+    virtual void print() const; // vurtual autorise la redefinition
+};
+
+class pixel : public point {
+private:
+    int color;
+
+public:
+    pixel (arguments);
+    virtual ~pixel ();
+    void print() const override; // Confirmation de la redefinition
+};
+```
+
+#### e. Methode abstraite (pas de corps)
+* redefinition obligée
+* class abstraite => utilisation pour de la derivation
+
+### 2. Interfaces (des classes abstraites pour du code generique)
+
+* type comportemental contrairement a une classe (type structural)
+
+``` c++
+class Operation {
+public:
+    virtual void initialisation(int& o) const;
+    virtual void combiner(int& acc, const int& elt) const;
+    ...
+};
+
+class Somme : public Operation {
+public:
+    void initialisation(int& o) const override;
+    void combiner(int& acc, const int& elt) const override;
+    ...
+};
+
 ```

@@ -6,5 +6,6 @@
 % p : parametre (reel)
 
 function fx = rosenbrocks(X, p)
-    fx = (X(1) - 1) * (X(1) - 1) + p * (X(1) * X(1) - X(2)) * (X(1) * X(1) - X(2));
+    x1 = X(1); x2 = X(2);
+    fx = (x1 - 1) * (x1 - 1) + p * (x1 * x1 - x2) * (x1 * x1 - x2);
 end

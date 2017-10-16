@@ -12,9 +12,12 @@
 
 function alpha = lsearch1(fx, grad_fx, xk, dk, p)
     alpha = 0.5; epsilon = 0.5;
-    val = fx(xk, p);
-    grad = grad_fx(xk, p);
-    while fx(xk + alpha * dk, p) > val + epsilon * alpha * grad' * dk
+    % val = fx(xk, p);
+    val = rosenbrocks(xk, p);
+    % grad = grad_fx(xk, p);
+    grad = grad_rosenbrocks(xk, p);
+    % while fx(xk + alpha * dk, p) > val + epsilon * alpha * grad' * dk
+    while (rosenbrocks(xk + alpha * dk, p) > val + epsilon * alpha * grad' * dk)
         alpha = alpha / 2;
     end
 end

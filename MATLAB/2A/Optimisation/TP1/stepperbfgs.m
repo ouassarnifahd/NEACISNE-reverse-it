@@ -36,23 +36,25 @@ function [xmin, fmin, N] = stepperbfgs(fx, grad_fx, X0, Tol, lsearch, p, nmax)
     dim = length(xk);
     Sk = eye(dim);
     dk = - grad_fx(xk, p); % eye(2) * vect = vect
+    % dk = - grad_rosenbrocks(xk, p);
     prec = 10 * Tol;
     N = 0;
     % buf = [X0'];
     % text(X0(1), X0(2), 'Debut');
     while prec > Tol
         if N < nmax
-            alphak = lsearch(fx, grad_fx, xk, dk, p);
-            xk1 = xk + alphak * dk;
+            xk1 = xk + lsearch(fx, grad_fx, xk, dk, p) * dk;
             if mod(N, 2) == 0
                 deltak = xk1 - xk;
                 gammak = grad_fx(xk1, p) - grad_fx(xk, p);
-                Sk = Sk + ((1 + (gammak' * Sk * gammak)/(deltak' * gammak)) / (deltak' * gammak)) * deltak * deltak' - (1 / (deltak' * gammak)) * (deltak * gammak' * Sk + Sk * gammak * deltak');
+                % gammak = grad_rosenbrocks(xk1, p) - grad_rosenbrocks(xk, p);
+                Sk = Sk + (1 + (gammak' * Sk * gammak)/(deltak' * gammak)) * deltak * deltak' / (deltak' * gammak)) - (deltak * gammak' * Sk + Sk * gammak * deltak') / (deltak' * gammak);
             else
                 Sk = eye(dim);
             end
             dk = - Sk * grad_fx(xk, p);
-            prec = norm(xk1 - xk);
+            % dk = - Sk * grad_rosenbrocks(xk, p);
+            prec = norm(xk1 - xk)/norm(xk);
             % fk = fx(xk, p)
             xk = xk1;
             N = N + 1;
