@@ -8,7 +8,7 @@
 * program entry point
 */
 int main(void){
-	char* pfoo = "foo";
+	char* pfoo = "foo"; // read only data
 	char bar[] = "bar";
 
 return 0;

@@ -1,0 +1,9 @@
+1.064e-3   --  1064 nm (infrared).
+2          --  TEM_20.
+1.0        --  w(0) in mm.
+0.0        --  Collimated.
+0.9        --  90% (soft clipping).
+0.02       --  1/f = 1/50mm.
+50.0       --  zm = f (far field).
+1024       --  Sampling point number.
+0.1        --  rmax at zm.

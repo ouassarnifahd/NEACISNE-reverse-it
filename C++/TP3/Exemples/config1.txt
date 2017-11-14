@@ -1,0 +1,9 @@
+850.0e-6   --  850 nm (infrared).
+0          --  Gaussian beam.
+0.0752     --  w(0) in mm.
+1.19760479 --  1/RC(0) = 1 / 0.835mm.
+0.1        --  10% (hard clipping).
+0.0        --  1/f = 0 (no lens).
+0.008      --  zm in the very near field.
+1024       --  Sampling point number.
+0.01       --  rmax at zm.
