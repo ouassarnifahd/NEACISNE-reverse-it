@@ -10,6 +10,7 @@ Fraction::Fraction(const long& num, const long& den): num_(num), den_(den) {
 void Fraction::reset(const long& num, const long& den) {
     this->num_ = num;
     this->den_ = den;
+    reduce();
 }
 
 void Fraction::reduce() {
@@ -44,12 +45,38 @@ const long& Fraction::getDen() const {
     return this->den_;
 }
 
-std::ostream Fraction::print() {
-    std::ostream toString(std::cout);
-    toString << getNum() << " / " << getDen();
-    return toString;
+Fraction Fraction::add(const Fraction& f) const {
+    long num = getNum() * f.getDen() + f.getNum() * getDen();
+    long den = getDen() * f.getDen();
+    Fraction add(num, den);
+    return add;
 }
 
-std::ostream Fraction::println() {
-    return getNum() << " / " << getDen() << std::endl;
+Fraction Fraction::sub(const Fraction& f) const {
+    long num = getNum() * f.getDen() - f.getNum() * getDen();
+    long den = getDen() * f.getDen();
+    Fraction sub(num, den);
+    return sub;
+}
+
+Fraction Fraction::mul(const Fraction& f) const {
+    long num = getNum() * f.getNum();
+    long den = getDen() * f.getDen();
+    Fraction mul(num, den);
+    return mul;
+}
+
+Fraction Fraction::div(const Fraction& f) const {
+    long num = getNum() * f.getDen();
+    long den = getDen() * f.getNum();
+    Fraction div(num, den);
+    return div;
+}
+
+void Fraction::print(std::ostream& os) {
+    os << getNum() << " / " << getDen();
+}
+
+void Fraction::println(std::ostream& os) {
+    os << getNum() << " / " << getDen() << std::endl;
 }
