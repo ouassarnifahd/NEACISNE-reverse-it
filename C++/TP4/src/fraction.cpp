@@ -45,38 +45,41 @@ const long& Fraction::getDen() const {
     return this->den_;
 }
 
-Fraction Fraction::add(const Fraction& f) const {
-    long num = getNum() * f.getDen() + f.getNum() * getDen();
-    long den = getDen() * f.getDen();
-    Fraction add(num, den);
+Fraction Fraction::operator+(const Fraction& f) const {
+    Fraction add(num_ * f.den_ + f.num_ * den_, den_ * f.den_);
     return add;
 }
 
-Fraction Fraction::sub(const Fraction& f) const {
-    long num = getNum() * f.getDen() - f.getNum() * getDen();
-    long den = getDen() * f.getDen();
-    Fraction sub(num, den);
+Fraction Fraction::operator-(const Fraction& f) const {
+    Fraction sub(num_ * f.den_ - f.num_ * den_, den_ * f.den_);
     return sub;
 }
 
-Fraction Fraction::mul(const Fraction& f) const {
-    long num = getNum() * f.getNum();
-    long den = getDen() * f.getDen();
-    Fraction mul(num, den);
+Fraction Fraction::operator*(const Fraction& f) const {
+    Fraction mul(num_ * f.num_, den_ * f.den_);
     return mul;
 }
 
-Fraction Fraction::div(const Fraction& f) const {
-    long num = getNum() * f.getDen();
-    long den = getDen() * f.getNum();
-    Fraction div(num, den);
+Fraction Fraction::operator/(const Fraction& f) const {
+    Fraction div(num_ * f.den_, den_ * f.num_);
     return div;
 }
 
-void Fraction::print(std::ostream& os) {
-    os << getNum() << " / " << getDen();
+std::istream& operator>>(std::istream& from, Fraction& to) {
+    long num = 0, den = 1; char slash;
+    from >> num >> slash >> den;
+    if (slash == '/') {
+        to = Fraction(num, den);
+    }
+    return from;
 }
 
-void Fraction::println(std::ostream& os) {
-    os << getNum() << " / " << getDen() << std::endl;
+std::ostream& operator<<(std::ostream& to, Fraction& from) {
+    if (from.getDen() == 1) {
+        return to << from.getNum();
+    } else if (from.getNum() == from.getDen()){
+        return to << 1;
+    } else {
+        return to << from.getNum() << " / " << from.getDen();
+    }
 }

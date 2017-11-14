@@ -1,12 +1,12 @@
 #include <iostream>
-#include "fraction.hpp"
+#include "libmaths.hpp"
 
 using namespace std;
 
 int main(int argc, char const *argv[]) {
-    Fraction f1(12,11);
-    Fraction f2(31,43);
-    Fraction f3 = f1.sub(f2);
-    f3.println(cout);
+    Fraction f1(1,1);
+    Fraction f3 = exp(f1);
+    cout << f3 << endl;
+    cout << f3.getNum()/(double)f3.getDen() << endl;
     return 0;
 }
