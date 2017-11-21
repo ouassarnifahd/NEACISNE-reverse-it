@@ -1,4 +1,4 @@
-% analyse vocale
+% Analyse vocale
 close all
 clear all
 
@@ -20,7 +20,8 @@ lenChunk = floor(Tchunk * Fs);
 Nchunks = floor((lenSound - lenChunk)/ lenScroled) + 1;
 
 % Saves et Synthese
-seuil = 0.58;
+seuil_peaks = 0.53;
+seuil_et = 0.001;
 save_et = zeros(1, Nchunks);
 ordreAR = 22;
 save_AR = zeros(Nchunks, ordreAR);
@@ -35,9 +36,16 @@ ordreFiltre = 10;
 % ANALYSE
 for k = 1 : Nchunks,
     Chunk = Sound(1 + (k - 1) * lenScroled: lenChunk + (k - 1) * lenScroled);
-    save_et(k) = std(Chunk); % Save ecart type
+    % stem(Chunk); pause 0.5;
+    et = std(Chunk);
+    if et > seuil_et,
+        save_et(k) = et;
+    else
+        save_et(k) = 0;
+    endif
+     % Save ecart type
     if max(save_et) == 0,
-        zeroAR = zeros(1, ordreAR); zeroAR(1) = 1;
+        zeroAR = [1 zeros(1, ordreAR - 1)];
         save_AR(k,:) = zeroAR;
         save_dec(k) = 0;
         save_To(k) = 0;
@@ -48,13 +56,15 @@ for k = 1 : Nchunks,
         Chunk = Chunk .* hamming(length(Chunk))'; % Fenetrage Hamming
         Num_AR = aryule(Chunk, 4); % Estimation Filtre AR ordre 4
         Chunk = filter(Num_AR, 1, Chunk); % Filtrage AR
+        stem(Chunk); pause 0.5;
         Chunk = Chunk .* hamming(length(Chunk))'; % Fenetrage Hamming
         [Chunkxx, ec] = xcorr(Chunk, 'biased'); % Autocorrelation
+        % plot(ec, Chunkxx); pause 0.5;
         Chunkxx = Chunkxx ./ max(Chunkxx); % Normalisation autocorrelation
-        [maxi, locs] = findpeaks(Chunkxx, "MinPeakHeight", seuil, "DoubleSided"); % Peaks!!
-        if maxi >= 1,
-            save_dec(k) = maxi;
-            save_To(k) = locs;
+        [maxi, locs] = findpeaks(Chunkxx, "MinPeakHeight", seuil_peaks, "DoubleSided"); % Peaks!!
+        if length(maxi) > 1,
+            save_dec(k) = 1;
+            save_To(k) = locs(3) - locs(2);
         else
             save_dec(k) = 0;
             save_To(k) = 0;

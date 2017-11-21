@@ -11,7 +11,13 @@ SET ( EXECUTABLE_OUTPUT_PATH bin/${CMAKE_BUILD_TYPE} )
 SET( CMAKE_CXX_FLAGS "-std=c++11")
 
 # Création des exécutables.
-ADD_EXECUTABLE( maths src/maths.cpp src/fraction.cpp src/libmaths.cpp)
+ADD_EXECUTABLE( automate src/automate.cpp )
+ADD_EXECUTABLE(
+  demo
+  src/Token.cpp
+  src/Lexer.cpp
+  src/demo.cpp
+)
 
 # Faire parler le make.
 set( CMAKE_VERBOSE_MAKEFILE off )

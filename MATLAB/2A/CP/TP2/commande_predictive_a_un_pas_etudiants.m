@@ -14,12 +14,10 @@ B = [0.276865 -0.103825];
 A = [1 -0.826959];
 
 %A completer
-d= 0;           %retard en plus du bloqueur
-
+d = floor(retard/Te); %retard en plus du bloqueur
 
 %Determination des parametres d un precdicteur a d+1 pas
 %prenant en compte les perturbations de type echelon
-
 
 
 
@@ -32,10 +30,7 @@ temps = 0 : Te : (n - 1) * Te;
 figure(1);
 
 
-
 %Synthese du filtre pour attenuer le bruit de capteur(ponderation frequentielle H/W')
-
-
 
 
 %Calcul du filtre complet H/W (W = W'D)

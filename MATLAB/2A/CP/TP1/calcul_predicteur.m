@@ -8,17 +8,18 @@ pkg load control % OCTAVE-ONLY
 
 %Modele du systeme (sans le bloqueur : le bloqueur est rejoute dans le fichier Simulink)
 %(A et B sont donc conformes aux notations du cours)
-choice = 0; % MODIFY-ME
+
+      choice = 0; % MODIFY-ME
 
 B = [0.0644];
 A = [1.0000 -0.9556];
-d = 0;        %retard en plus du bloqueur
+d = 0; %retard en plus du bloqueur
 ret = 1 + d;
 
 %periode d echantillonnage
-N = 300;
+Time = 10; % 10s
 Te = 0.1;
-Time = N * Te;
+N = Time / Te;
 t = 0 : Te : Time - Te;
 
 %Affichage de la config des poles du systeme
@@ -38,7 +39,7 @@ else
     C = 1;
 endif
 
-% precdicteur
+% predicteur
 [Ej, Fj] = bezou_z(conv(A, D), 1, ret, C);
 sys_predi_y = tf(Fj ,C, Te, 'Variable','z^-1');
 sys_predi_u = tf(conv(D, conv(B, Ej)), C, Te, 'Variable','z^-1');
@@ -56,7 +57,6 @@ y_retard = lsim(sys_retard, u, t);
 
 u_predicted = lsim(sys_predi_u, u_retard, t);
 y_predicted = lsim(sys_predi_y, y_retard, t);
-
 
 stem(t, y_retard);
 hold on

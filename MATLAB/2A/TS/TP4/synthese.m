@@ -1,4 +1,4 @@
-% analyse vocale
+% Synthese vocale
 close all
 clear all
 
