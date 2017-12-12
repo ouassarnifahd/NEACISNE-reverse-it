@@ -51,6 +51,13 @@ namespace intexpr {
       return kind_ == TokenKind::DivideKind;
     }
 
+    bool Token::isOperator() const {
+      return kind_ == TokenKind::PlusKind ||
+             kind_ == TokenKind::MinusKind || 
+             kind_ == TokenKind::MultiplyKind ||
+             kind_ == TokenKind::DivideKind;
+    }
+
     bool Token::isInteger() const {
       return kind_ == TokenKind::IntegerKind;
     }

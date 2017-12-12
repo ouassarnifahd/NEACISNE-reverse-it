@@ -47,6 +47,7 @@ namespace intexpr {
       bool isMinus() const;
       bool isMultiply() const;
       bool isDivide() const;
+      bool isOperator() const;
       bool isInteger() const;
       bool isUnknown() const;
       bool isEndOfExpression() const;

@@ -75,8 +75,8 @@ namespace intexpr {
           if (indexEnd != indexBegin) {
             return Token(TokenKind::IntegerKind, line_.substr(indexBegin, indexEnd));
           }
-          linePosition_ += line_.length() - 1;
-          return Token(TokenKind::UnknownKind, line_);
+          // linePosition_ += line_.length() - 1;
+          return Token(TokenKind::UnknownKind, line_.substr(indexBegin, 1));
       }
     }
 

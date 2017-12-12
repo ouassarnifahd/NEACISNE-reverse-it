@@ -142,7 +142,7 @@ int main(int argc, char const *argv[]) {
     ```
 
 # I. Object Oriented Aspect
-## 1. The 23 design parterns! (GoF = Gang of Four)
+## 1. The 23 design parterns! (GoF = Gang of Four) [More...](Object Oriented Aspect/gof.md)
 #### a. Modelisation with Unified Modeling Langage (UML)
   * Language visuel
   * Description d'API
