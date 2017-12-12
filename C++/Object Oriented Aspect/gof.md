@@ -8,51 +8,51 @@
 
   ![](gof/allgof.png)
 
-* #### Abstract Factory
+* #### [Abstract Factory](https://github.com/ouassarnifahd/NEACISNE-reverse-it/blob/master/C%2B%2B/Object%20Oriented%20Aspect/gof.md#2-abstract-factory-pattern)
   Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
-* #### Adapter
+* #### [Adapter](https://github.com/ouassarnifahd/NEACISNE-reverse-it/blob/master/C%2B%2B/Object%20Oriented%20Aspect/gof.md#1-adapter-or-wrapper-pattern-cast)
   Convert the interface of a class into another interface clients expect. Adapter lets classes work together that couldn't otherwise because of incompatible interfaces.
-* #### Bridge
+* #### [Bridge](https://github.com/ouassarnifahd/NEACISNE-reverse-it/blob/master/C%2B%2B/Object%20Oriented%20Aspect/gof.md#2-bridge-pattern)
   Decouple an abstraction from its implementation so that the two can vary independently.
-* #### Builder
+* #### [Builder](https://github.com/ouassarnifahd/NEACISNE-reverse-it/blob/master/C%2B%2B/Object%20Oriented%20Aspect/gof.md#3-builder-pattern)
   Separate the construction of a complex object from its representation so that the same construction process can create different representations.
-* #### Chain of Responsibility
+* #### [Chain of Responsibility](https://github.com/ouassarnifahd/NEACISNE-reverse-it/blob/master/C%2B%2B/Object%20Oriented%20Aspect/gof.md#1-chain-of-responsibility-pattern)
   Avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. Chain the receiving objects and pass the request along the chain until an object handles it.
-* #### Command
+* #### [Command](https://github.com/ouassarnifahd/NEACISNE-reverse-it/blob/master/C%2B%2B/Object%20Oriented%20Aspect/gof.md#2-command-pattern)
   Encapsulate a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.
-* #### Composite
+* #### [Composite](https://github.com/ouassarnifahd/NEACISNE-reverse-it/blob/master/C%2B%2B/Object%20Oriented%20Aspect/gof.md#3-composite-pattern)
   Compose objects into tree structures to represent part-whole hierarchies. Composite lets clients treat individual objects and compositions of objects uniformly.
-* #### Decorator
+* #### [Decorator](https://github.com/ouassarnifahd/NEACISNE-reverse-it/blob/master/C%2B%2B/Object%20Oriented%20Aspect/gof.md#4-decorator-pattern)
   Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.
-* #### Facade
+* #### [Facade](https://github.com/ouassarnifahd/NEACISNE-reverse-it/blob/master/C%2B%2B/Object%20Oriented%20Aspect/gof.md#5-facade-pattern)
   Provide a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use.
-* #### Factory Method
+* #### [Factory Method](https://github.com/ouassarnifahd/NEACISNE-reverse-it/blob/master/C%2B%2B/Object%20Oriented%20Aspect/gof.md#1-factory-pattern)
   Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation 19 to subclasses.
-* #### Flyweight
+* #### [Flyweight](https://github.com/ouassarnifahd/NEACISNE-reverse-it/blob/master/C%2B%2B/Object%20Oriented%20Aspect/gof.md#6-flyweight-pattern)
   Use sharing to support large numbers of fine-grained objects efficiently.
-* #### Interpreter
+* #### [Interpreter](https://github.com/ouassarnifahd/NEACISNE-reverse-it/blob/master/C%2B%2B/Object%20Oriented%20Aspect/gof.md#interpreter)
   Given a language, define a represention for its grammar along with an interpreter that uses the representation to interpret sentences in the language.
-* #### Iterator
+* #### [Iterator](https://github.com/ouassarnifahd/NEACISNE-reverse-it/blob/master/C%2B%2B/Object%20Oriented%20Aspect/gof.md#3-iterator-pattern)
   Provide a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
-* #### Mediator
+* #### [Mediator](https://github.com/ouassarnifahd/NEACISNE-reverse-it/blob/master/C%2B%2B/Object%20Oriented%20Aspect/gof.md#4-mediator-pattern)
   Define an object that encapsulates how a set of objects interact. Mediator promotes loose coupling by keeping objects from referring to each other explicitly, and it lets you vary their interaction independently.
-* #### Memento
+* #### [Memento](https://github.com/ouassarnifahd/NEACISNE-reverse-it/blob/master/C%2B%2B/Object%20Oriented%20Aspect/gof.md#5-memento-pattern)
   Without violating encapsulation, capture and externalize an object's internal state so that the object can be restored to this state later.
-* #### Observer
+* #### [Observer](https://github.com/ouassarnifahd/NEACISNE-reverse-it/blob/master/C%2B%2B/Object%20Oriented%20Aspect/gof.md#6-observer-pattern)
   Define a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
-* #### Prototype
+* #### [Prototype](https://github.com/ouassarnifahd/NEACISNE-reverse-it/blob/master/C%2B%2B/Object%20Oriented%20Aspect/gof.md#4-prototype-pattern)
   Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.
-* #### Proxy
+* #### [Proxy](https://github.com/ouassarnifahd/NEACISNE-reverse-it/blob/master/C%2B%2B/Object%20Oriented%20Aspect/gof.md#7-proxy-pattern)
   Provide a surrogate or placeholder for another object to control access to it.
-* #### Singleton
+* #### [Singleton](https://github.com/ouassarnifahd/NEACISNE-reverse-it/blob/master/C%2B%2B/Object%20Oriented%20Aspect/gof.md#5-singleton-pattern)
   Ensure a class only has one instance, and provide a global point of access to it.
-* #### State
+* #### [State](https://github.com/ouassarnifahd/NEACISNE-reverse-it/blob/master/C%2B%2B/Object%20Oriented%20Aspect/gof.md#7-state-pattern)
   Allow an object to alter its behavior when its internal state changes. The object will appear to change its class.
-* #### Strategy
+* #### [Strategy](https://github.com/ouassarnifahd/NEACISNE-reverse-it/blob/master/C%2B%2B/Object%20Oriented%20Aspect/gof.md#8-strategy-pattern)
   Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
-* #### Template Method
+* #### [Template Method](https://github.com/ouassarnifahd/NEACISNE-reverse-it/blob/master/C%2B%2B/Object%20Oriented%20Aspect/gof.md#template-method)
   Define the skeleton of an algorithm in an operation, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.
-* #### Visitor
+* #### [Visitor](https://github.com/ouassarnifahd/NEACISNE-reverse-it/blob/master/C%2B%2B/Object%20Oriented%20Aspect/gof.md#visitor)
   Represent an operation to be performed on the elements of an object structure. Visitor lets you define a new operation without changing the classes of the elements on which it operates.
 
 ## I. Creational Design Datterns
