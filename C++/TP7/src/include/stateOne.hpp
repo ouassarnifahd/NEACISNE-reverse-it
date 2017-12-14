@@ -10,14 +10,14 @@ namespace automata {
     StateOne(const StateOne& from) = delete;
 
   private:
-    static const StateOne singleton_;
+    static StateOne singleton_;
     StateOne() = default;
 
   public:
     static const StateOne& getSingleton();
     virtual bool isTerminalState () const override;
     virtual const State& nextState(const Event& evt) const override;
-    
+
   };
 
 } /* automata */

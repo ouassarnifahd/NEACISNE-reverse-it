@@ -2,7 +2,7 @@
 
 namespace automata {
 
-  const StateOne StateOne::singleton_;
+  StateOne StateOne::singleton_;
 
   const StateOne& StateOne::getSingleton() {
     return singleton_;
@@ -13,7 +13,7 @@ namespace automata {
   }
 
   const State& StateOne::nextState(const Event& evt) const {
-    return StateOne;
+    return getSingleton();
   }
 
 } /* automata */

@@ -1,8 +1,8 @@
 #include "stateZero.hpp"
 
 namespace automata {
-
-  const StateZero StateZero::singleton_;
+  // const!! clang do no want it!
+  StateZero StateZero::singleton_;
 
   const StateZero& StateZero::getSingleton() {
     return singleton_;

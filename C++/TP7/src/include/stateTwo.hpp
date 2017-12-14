@@ -10,7 +10,7 @@ namespace automata {
     StateTwo(const StateTwo& from) = delete;
 
   private:
-    static const StateTwo singleton_;
+    static StateTwo singleton_;
     StateTwo() = default;
 
   public:

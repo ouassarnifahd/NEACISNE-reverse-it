@@ -2,7 +2,7 @@
 
 namespace automata {
 
-  const StateTwo StateTwo::singleton_;
+  StateTwo StateTwo::singleton_;
 
   const StateTwo& StateTwo::getSingleton() {
     return singleton_;
