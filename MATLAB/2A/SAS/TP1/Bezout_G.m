@@ -1,13 +1,14 @@
-function [sbez,rbez]=bezout_G(abez,bbez,pbez)
+function [sbez,rbez]=Bezout_G(abez,bbez,pbez)
 
 %solution generale d'une equation de BEZOUT
 % = la division polynomiale
 % augmentation du degre de S
 % les retards sont integres dans B
 %
-% 	abez * sbez +bbez * rbez = pbez
+% 	abez * sbez + bbez * rbez = pbez
 %
 %function [sbez,rbez]=bezout_G(abez,bbez,pbez)
+
 na = size(abez, 2) - 1;
 nb = size(bbez, 2) - 1;
 np = size(pbez, 2) - 1;

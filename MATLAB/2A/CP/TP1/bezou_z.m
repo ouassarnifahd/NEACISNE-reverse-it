@@ -8,6 +8,7 @@ function [sbez,rbez]=bezou_z(abez,bbez,ret,pbez)
 %
 %function [sbez,rbez]=bezou_z(abez,bbez,ret,pbez)
 
+
 na = size(abez, 2) - 1;
 nb = size(bbez, 2) - 1;
 nadd = na + nb + ret - size(pbez, 2);

@@ -77,6 +77,6 @@ Pc = conv(Pc_aux, Pc_d);
 % Bezou Pc = (A*D) * S + B * Rn;
 [S, Rn] = Bezout_G(conv(A, D), B);
 
-Rd =
+Rd = conv(S, D);
 
 % LSIM
