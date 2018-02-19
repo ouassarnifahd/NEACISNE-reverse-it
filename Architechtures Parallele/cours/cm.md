@@ -1,4 +1,4 @@
-# Architechtures Parallele
+# Architectures Paralleles
 
 ## Biblio
 * [High Performance Platforms](http://slideplayer.com/slide/4945068/)
