@@ -53,7 +53,7 @@ hold on;
 plot(real(MSG_RX));
 
 % 5. DIAGRAMME DE L'OEIL
-eyediagram(MSG_RX, 2);
+% eyediagram(MSG_RX, 2);
 
 % 6. CONSTELLATION
 scatterplot(MSG_RX);
@@ -62,10 +62,10 @@ scatterplot(MSG_RX);
 MSG_RX_DQUAM = qamdemod(MSG_RX, M);
 
 % 8. SOUS ECHANTILLONNAGE
-MSG_RX_DQUAM_DS = downsample(MSG_RX_DQUAM, 3)
+MSG_RX_DQUAM_DS = downsample(MSG_RX_DQUAM, 3);
 
 % 9. COMPARINGING MSG (source) and MSG_RX_DQUAM_DS (RX filtered)
-BER = biterr()
-SER = symerr()
+% BER = biterr();
+% SER = symerr()
 
 % 10. ...

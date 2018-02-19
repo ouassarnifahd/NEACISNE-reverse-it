@@ -4,8 +4,8 @@
 * @li 		XC32 C toolchain(tested with xc32 1.21)
 * @li 		MPLABX IDE(tested with mplabx 1.85)
 * @li       FreeRTOS vs 7.5.2 (2013-08)
-* @author   
-* @date     
+* @author   OUASSARNI - JAN
+* @date     29 Jan 2018
 */
 
 /* CONFIGURATION BITS ***************/
@@ -23,22 +23,22 @@
 */
 int main(void){
     // cache cpu configuration
-    // ...
+    SYSTEMConfig(SYS_FREQ, SYS_CFG_WAIT_STATES | SYS_CFG_PCACHE);
 
     // uart module configuration
-    // ...
+    uartConfig();
 
     // interruption configuration
-    // ...
+    interruptConfig();
 
     // kernel configuration
-    // ...
+    kernelConfig();
 
     // welcome message
-    // ...
+    uartPutS("\r\nCooperative:");
 
     // start kernel scheduling
-    // ...
+    vTaskStartScheduler();
 
     // it's a trap
     while(1);

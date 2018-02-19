@@ -3,6 +3,7 @@
 ## Biblio
 * Element of reusable object oriented software — 1995
 * GoF Design Patterns - with examples using Java and UML2 — 2008
+* *[More reading: Software Design Patterns](https://en.wikipedia.org/wiki/Software_design_pattern)*
 
 ## All design patterns
 
