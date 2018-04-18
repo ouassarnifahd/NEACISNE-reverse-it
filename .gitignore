@@ -3,6 +3,7 @@
 .ftpconfig
 .ftpignore
 whatsthis.sh
+macinfo.txt
 generate_project.sh
 zipall.sh
 *.pdf
@@ -21,3 +22,8 @@ Makefile
 bin
 pjct
 /Real-Time Systems/Projects/cooperative/nbproject/private/
+/Real-Time Systems/Projects/temperature/build/default/
+/Real-Time Systems/Projects/temperature/dist/default/
+/Real-Time Systems/Projects/preemptive/build/default/
+/Real-Time Systems/Projects/preemptive/dist/default/
+/Real-Time Systems/Projects/projet/dist/default/

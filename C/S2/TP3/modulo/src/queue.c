@@ -36,8 +36,7 @@ static bool TQueue_Enqueue(const PTQueue this, TElement pushElt){
     if (this->FrontIndex == ((this->BackIndex + 1) % this->TabSize)) {
         this->Table = realloc(this->Table, 2 * this->TabSize * sizeof(TElement));
         if (this->BackIndex < this->FrontIndex) {
-            int MoveIndex = 0;
-            for (MoveIndex = 0; MoveIndex < this->BackIndex; MoveIndex++) {
+            for (int MoveIndex = 0; MoveIndex < this->BackIndex; MoveIndex++) {
                 this->Table[this->TabSize + MoveIndex] = this->Table[MoveIndex];
             }
             this->BackIndex += this->TabSize;

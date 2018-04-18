@@ -1,0 +1,104 @@
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{geometry}
+\usepackage{appendix}
+\usepackage{array}
+\usepackage{verbatim}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage[table]{xcolor}
+\usepackage[explicit]{titlesec}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{geometry}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage[sfdefault]{ClearSans}
+\usepackage{caption}
+\usepackage{ifthen}
+\usepackage{tocloft}
+\usepackage{appendix}
+\usepackage{calc}
+\definecolor{ensigray}{RGB}{123,148,158}
+\definecolor{ensiblue}{RGB}{88,141,200}
+\definecolor{ensidarkgray}{RGB}{68,84,106}
+\geometry{hmargin=2.5cm,vmargin=3.5cm}
+
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{4}
+\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}.}
+\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.}
+
+% \titleformat
+% {\chapter}[display]{\normalfont\sffamily\Huge}{}{0em}{#1}
+% [\color{ensigray}\vspace{-0.75em}\rule{\textwidth}{1pt}]
+
+\titleformat
+{\section}[display]{\normalfont\sffamily\Large\color{ensigray}}{}{0em}{\thesection~#1}[]
+\titleformat
+{name=\section,numberless}[display]{\normalfont\sffamily\Large\color{ensigray}}{}{0em}{#1}[]
+\titleformat
+{\subsection}[block]{\normalfont\sffamily\large\color{ensigray}}{}{0em}{\thesubsection~#1}[]
+\titleformat
+{name=\subsection,numberless}[block]{\normalfont\sffamily\large\color{ensigray}}{}{0em}{#1}[]
+\titleformat
+{name=\subsubsection}[block]{\normalfont\sffamily\normalsize\color{ensigray}}{}{0em}{\thesubsubsection~#1}[]
+\titleformat
+{name=\paragraph}[block]{\normalfont\sffamily\normalsize\color{ensigray}}{}{0em}{~#1}[]
+
+\captionsetup{labelsep=period,labelfont={color=ensidarkgray,it,small},textfont={color=ensidarkgray,it,small}}
+
+\pagestyle{fancy}
+\fancypagestyle{plain}{%
+\fancyhead{} % clear all header fields
+\fancyfoot{} % clear all footer fields
+\fancyfoot[RO]{%
+  \begin{picture}(0,0)
+    \color{ensigray}
+    \linethickness{2.25pt}
+    \put(0,14){\line(1,0){500}}
+  \end{picture}%
+\@title\hspace{12pt}/{\color{ensigray}\thepage}}
+\fancyfoot[LE]{\hspace{0.25cm}ENSICAEN /{\color{ensigray}\thepage}%
+\begin{picture}(0,0)
+    \color{ensigray}
+    \linethickness{2.25pt}
+    \put(0,14){\line(-1,0){200}}
+\end{picture}}
+}
+
+\pagestyle{plain}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\fancyhfoffset[L]{\oddsidemargin + 1.5cm}
+\fancyhfoffset[R]{\evensidemargin + 1.5cm}
+
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\baselinestretch}{1.5}
+
+%
+% Aspect des titres des "Table des matières/figures/tableaux"  
+%
+\renewcommand{\cftaftertoctitle}{\par\color{ensigray}\vspace{-6pt}\rule{\textwidth}{2pt}\vspace{-1cm}}
+\renewcommand{\cfttoctitlefont}{\Huge}
+\renewcommand{\cftafterloftitle}{\par\color{ensigray}\vspace{-6pt}\rule{\textwidth}{2pt}\vspace{-1.5cm}}
+\renewcommand{\cftloftitlefont}{\Huge}
+\renewcommand{\cftafterlottitle}{\par\color{ensigray}\vspace{-6pt}\rule{\textwidth}{2pt}\vspace{-1.5cm}}
+\renewcommand{\cftlottitlefont}{\Huge}
+\setlength\cftbeforetoctitleskip{0cm}
+\setlength\cftbeforeloftitleskip{1cm}
+\setlength\cftbeforelottitleskip{1cm}
+
+\newcommand{\MakeSureLastPageIsEven}{
+\clearpage%
+\ifthenelse{\isodd{\value{page}}}%
+        {\thispagestyle{empty}~\newpage}%
+        {}%
+}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "reportV0.2"
+%%% End: 
