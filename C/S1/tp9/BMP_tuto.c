@@ -1,25 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef struct sColor {
+    unsigned char r,g,b;
+} Color;
+
 typedef struct sImage{
     int largeur;
     int hauteur;
-    int ***data;
+    Color *pixels;
 }Image;
 
 Image newImage(int l, int h){
     Image new;
     int i, j, k;
-    new.data=(int***)malloc(sizeof(int**)*h);
-    for(i=0; i<h; i++){
-        new.data[i]=(int**)malloc(sizeof(int*)*l);
-        for(j=0; j<l; j++){
-            new.data[i][j]=(int*)malloc(sizeof(int)*3);
-            for(k=0; k<3; k++){
-                new.data[i][j][k]=0;
-            }
-        }
-    }
+    new.pixels=malloc(sizeof(Color)*h*l);
     new.largeur=l;
     new.hauteur=h;
     return new;

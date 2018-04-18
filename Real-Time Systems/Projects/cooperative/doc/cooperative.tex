@@ -1,0 +1,198 @@
+\documentclass[a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+\input{dep/charte_ensicaen.tex}
+\input{dep/dirview.tex}
+
+\begin{document}
+
+\title{FreeRTOS - Mode cooperatif}
+\author{OUASSARNI Fahd}
+% \maketitle
+
+% couverture
+\makeatletter
+\newgeometry{top=1.8cm,bottom=2cm,height=25.9cm,width=19cm,left=1cm}
+\begin{titlepage}
+    \begin{center}
+        \huge\color{ensigray}École Publique d'Ingénieurs en 3 ans
+    \end{center}
+    \vspace{1.2in}
+    \begin{center}
+        \LARGE Travaux Pratiques
+    \end{center}
+    \vspace{0.5cm}
+    \begin{minipage}{1\linewidth}
+        \centering
+        {\Huge  \MakeUppercase{\@title}}
+    \end{minipage}
+    \vspace{1.2in}
+    \begin{center}\large
+        le 20 février 2018,
+
+        version 1.1
+    \end{center}
+    \vspace{2em}
+
+    \noindent\begin{minipage}[t]{0.47\linewidth}
+      \begin{flushright}
+        \large
+        Fahd OUASSARNI\\
+        {\color{ensiblue}ouassarni@ecole.ensicaen.fr}
+      \end{flushright}
+    \end{minipage}\hfill\vrule\hfill
+    \begin{minipage}[t]{0.47\linewidth}
+      \large
+      Tuteur~: Hugo DESCOUBES\\
+      {\color{ensiblue}email@ensicaen.fr}
+    \end{minipage}
+    \vfill
+
+    % logo
+    \begin{center}
+        \begin{minipage}[c]{0.33\linewidth}
+          \center\includegraphics[width=0.8\linewidth]{dep/LogoEnsicaen2017_crop.png}\\[1em]
+          {\color{ensigray}\huge www.ensicaen.fr}
+        \end{minipage}
+    \end{center}
+\end{titlepage}
+\restoregeometry
+
+\newgeometry{top=3.4cm,bottom=3.4cm,left=2.5cm,width=16cm}
+\setlength{\footskip}{2cm}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\cftdot}{}
+\newpage
+
+% \titleformat
+% {\chapter}[display]{\normalfont\sffamily\Huge}{}{0em}{#1}
+% [\color{ensigray}\vspace{-0.75em}\rule{\textwidth}{2pt}]
+
+\tableofcontents
+% \listoffigures       % Ligne à supprimer en l'absence de figures
+% \listoftables        % Ligne à supprimer en l'absence de tableaux
+% \endgroup
+
+\makeatletter
+\def\@makeschapterhead#1{%
+  {\parindent \z@ \raggedright
+    \interlinepenalty\@M
+    \normalfont\sffamily\Huge \MakeUppercase{#1}\par\vskip-14pt\nobreak
+    \color{ensigray}\vspace{-0.75em}\rule{\textwidth}{2.25pt}
+    \vskip 16\p@
+  }}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter*{Travail préparatoire}
+\addcontentsline{toc}{chapter}{Travail préparatoire}
+
+% \begin{center}
+%   \begin{minipage}{0.7\linewidth}
+%     \color{ensigray}\center
+%     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+%     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+%     nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+%   \end{minipage}
+% \end{center}
+
+\section{Quels états peu prendre une tâche sous FreeRTOS ?}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+\section{Ces états sont-ils les mêmes quelque soit l'OS ou le RTOS utilisé ?}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+\section{Que se passe-t-il sous FreeRTOS lorsqu'aucune tâche, précédemment créée via xTaskCreate(), ne s'exécute (état running) ?}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+\section{Qu'est-ce qu'un TCB ?}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+\section{Que trouve-t-on en général dans un TCB (prendre l'exemple de FreeRTOS) ?}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{TP: Mode cooperatif}
+\addcontentsline{toc}{chapter}{TP: Mode cooperatif}
+
+% \section{Repertoire du TP}
+
+\begin{forest}
+  pic dir tree,
+  pic root,
+  for tree={% folder icons by default; override using file for file icons
+    directory,
+  },
+  [cooperative
+    [doc
+      [cooperative.pdf, file
+      ]
+    ]
+    [inc
+      [utask.h, file
+      ]
+      [FreeRTOSConfig.h, file
+      ]
+    ]
+    [lib
+      [FreeRTOS
+      ]
+      [peripherals
+        [uart
+        ]
+      ]
+    ]
+    [src
+      [utask.c, file
+      ]
+      [ktrap.c, file
+      ]
+      [main.c, file
+      ]
+    ]
+    [readme.txt, file
+    ]
+  ]
+\end{forest}
+
+\end{document}
