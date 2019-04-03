@@ -9,11 +9,29 @@
 #define __HEADER_CONSOLE_TASK__
 
 #include <kuart.h>
+<<<<<<< HEAD
 #include "temperature.h"
 
 // Uart history.
 // this is a beta feature. Put the following line in kuart.h to use it.
 // #define configUSE_UART_HISTORY 1
+=======
+#include <stdio.h>
+#include "temperature.h"
+
+char uartPrintfBuffer[UART_MAX_STR_SIZE]; // Max uart time transfert for 9600 Bps ~ 64 ms
+char uartScanfBuffer[UART_MAX_STR_SIZE];
+
+#define uartprintf(MSG, ...) { \
+    sprintf(uartPrintfBuffer, MSG, ##__VA_ARGS__); \
+    uartPutS(uartPrintfBuffer); \
+}
+
+#define uartscanf(MSG, ...) { \
+    uartGetS(uartScanfBuffer); \
+    sscanf(uartScanfBuffer, MSG, ##__VA_ARGS__); \
+}
+>>>>>>> 161295374c548df9d50fa617d9516e2319393135
 
 #define BUILTIN_COMMANDS_NUMBER 6
 
