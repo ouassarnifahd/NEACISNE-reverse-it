@@ -9,9 +9,12 @@
 
 /* INCLUDES DEPENDENCIES ***************/
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include <stdio.h>
 =======
 >>>>>>> 161295374c548df9d50fa617d9516e2319393135
+=======
+>>>>>>> origin/master
 #include <string.h>
 #include <p32xxxx.h>
 #include <plib.h>
@@ -28,11 +31,14 @@
 #define UART_MAX_STR_SIZE   64
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // beta feature with some nasty bugs!!
 #define configUSE_UART_HISTORY 0
 
 =======
 >>>>>>> 161295374c548df9d50fa617d9516e2319393135
+=======
+>>>>>>> origin/master
 /* SPECIAL KEYS ***************/
 // http://www.theasciicode.com.ar/extended-ascii-code/non-breaking-space-no-break-space-ascii-code-255.html
 // Null character
@@ -103,10 +109,13 @@
 #define KEY_DEL             127
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define UTF_8_LIMIT         0xFF
 
 =======
 >>>>>>> 161295374c548df9d50fa617d9516e2319393135
+=======
+>>>>>>> origin/master
 /**
  * @fn void uartConfig(void)
  * @brief uart module configuration
@@ -162,6 +171,7 @@ char uartGetC(void) ;
 void uartGetS(char* stringToSave);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // very useful macros
 #define uartprintf(MSG, ...) { \
     char uartPrintfBuffer[UART_MAX_STR_SIZE]; \
@@ -177,4 +187,6 @@ void uartGetS(char* stringToSave);
 
 =======
 >>>>>>> 161295374c548df9d50fa617d9516e2319393135
+=======
+>>>>>>> origin/master
 #endif

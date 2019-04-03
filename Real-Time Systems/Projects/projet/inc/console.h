@@ -10,12 +10,15 @@
 
 #include <kuart.h>
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include "temperature.h"
 
 // Uart history.
 // this is a beta feature. Put the following line in kuart.h to use it.
 // #define configUSE_UART_HISTORY 1
 =======
+=======
+>>>>>>> origin/master
 #include <stdio.h>
 #include "temperature.h"
 
@@ -31,7 +34,10 @@ char uartScanfBuffer[UART_MAX_STR_SIZE];
     uartGetS(uartScanfBuffer); \
     sscanf(uartScanfBuffer, MSG, ##__VA_ARGS__); \
 }
+<<<<<<< HEAD
 >>>>>>> 161295374c548df9d50fa617d9516e2319393135
+=======
+>>>>>>> origin/master
 
 #define BUILTIN_COMMANDS_NUMBER 6
 

@@ -20,11 +20,14 @@ void vApplicationStackOverflowHook( xTaskHandle xTask, signed char *pcTaskName )
    uartPutS("    \r\n");
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    // vTaskEndScheduler();
    SoftReset();
    // S#!t, it's a trap!
    while(1);
 =======
+=======
+>>>>>>> origin/master
    vTaskEndScheduler();
    SoftReset();
    // S#!t, it's a trap!
@@ -33,7 +36,10 @@ void vApplicationStackOverflowHook( xTaskHandle xTask, signed char *pcTaskName )
    portNOP();
    portNOP();
    main();
+<<<<<<< HEAD
 >>>>>>> 161295374c548df9d50fa617d9516e2319393135
+=======
+>>>>>>> origin/master
 }
 
 /**
@@ -43,12 +49,15 @@ void vApplicationStackOverflowHook( xTaskHandle xTask, signed char *pcTaskName )
 void vApplicationMallocFailedHook( void ){
    uartPutS("error malloc failed    \r\n");
 <<<<<<< HEAD
+<<<<<<< HEAD
 
    // vTaskEndScheduler();
    SoftReset();
    // S#!t, it was a trap!
    while(1);
 =======
+=======
+>>>>>>> origin/master
    
    vTaskEndScheduler();
    SoftReset();
@@ -58,7 +67,10 @@ void vApplicationMallocFailedHook( void ){
    portNOP();
    portNOP();
    main();
+<<<<<<< HEAD
 >>>>>>> 161295374c548df9d50fa617d9516e2319393135
+=======
+>>>>>>> origin/master
 }
 
 /**
@@ -70,6 +82,7 @@ void vAssertCalled( const char *pcFileName, unsigned long ulLine ){
     uartprintf("file: %s", pcFileName);
     uartprintf("  line: %u\r\n", ulLine)
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
     // vTaskEndScheduler();
@@ -77,6 +90,8 @@ void vAssertCalled( const char *pcFileName, unsigned long ulLine ){
     // S#!t, it's a trap!
     while(1);
 =======
+=======
+>>>>>>> origin/master
     
     
     vTaskEndScheduler();
@@ -87,5 +102,8 @@ void vAssertCalled( const char *pcFileName, unsigned long ulLine ){
     portNOP();
     portNOP();
     main();
+<<<<<<< HEAD
 >>>>>>> 161295374c548df9d50fa617d9516e2319393135
+=======
+>>>>>>> origin/master
 }
