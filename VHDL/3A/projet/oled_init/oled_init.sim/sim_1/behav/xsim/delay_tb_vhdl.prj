@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../oled_init.srcs/sources_1/new/delay.vhd" \
+"../../../../oled_init.srcs/sim_1/new/delay_tb.vhd" \
+
+# Do not sort compile order
+nosort

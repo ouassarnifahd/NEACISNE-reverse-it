@@ -8,7 +8,6 @@
 #ifndef __HEADER_LED_TASK__
 #define __HEADER_LED_TASK__
 
-// #include <.h> // led handling dependencies
 #include "temperature.h"
 
 #define LED_BLINK_PERIOD 500

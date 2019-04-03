@@ -1,0 +1,21 @@
+build/default/production/src/tsk_console.o:  \
+src/tsk_console.c  \
+ inc/tsk_console.h  \
+lib/FreeRTOS/Source/include/FreeRTOS.h  \
+ lib/FreeRTOS/Source/include/projdefs.h  \
+inc/FreeRTOSConfig.h  \
+ lib/FreeRTOS/Source/include/portable.h  \
+ lib/FreeRTOS/Source/portable/MPLAB/PIC32MX/portmacro.h  \
+ lib/FreeRTOS/Source/include/mpu_wrappers.h  \
+ lib/FreeRTOS/Source/include/task.h  \
+lib/FreeRTOS/Source/include/list.h  \
+ inc/tsk_io.h  \
+lib/peripherals/kuart/pic32maxiweb/h/kuart.h  \
+ lib/FreeRTOS/Source/include/semphr.h  \
+lib/FreeRTOS/Source/include/queue.h  \
+ lib/FreeRTOS/Source/include/queue.h  \
+inc/tempServerConfig.h  \
+inc/tsk_io.h  \
+ inc/tsk_sensor.h  \
+lib/peripherals/adc/pic32maxiweb/h/adc.h  \
+ inc/while_preprocessor.h 

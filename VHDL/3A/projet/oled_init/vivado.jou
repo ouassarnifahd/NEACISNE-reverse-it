@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Thu Nov 29 12:08:32 2018
+# Process ID: 5748
+# Current directory: C:/Users/soc2/Desktop/Marius/projet/oled_init
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8984 C:\Users\soc2\Desktop\Marius\projet\oled_init\oled_init.xpr
+# Log file: C:/Users/soc2/Desktop/Marius/projet/oled_init/vivado.log
+# Journal file: C:/Users/soc2/Desktop/Marius/projet/oled_init\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/soc2/Desktop/Marius/projet/oled_init/oled_init.xpr
+update_compile_order -fileset sources_1
+close [ open C:/Users/soc2/Desktop/Marius/projet/oled_init/oled_init.srcs/sources_1/new/SpiCtrl.vhd w ]
+add_files C:/Users/soc2/Desktop/Marius/projet/oled_init/oled_init.srcs/sources_1/new/SpiCtrl.vhd
+update_compile_order -fileset sources_1

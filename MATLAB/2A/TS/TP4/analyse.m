@@ -61,7 +61,7 @@ for k = 1 : Nchunks,
         [Chunkxx, ec] = xcorr(Chunk, 'biased'); % Autocorrelation
         % plot(ec, Chunkxx); pause 0.5;
         Chunkxx = Chunkxx ./ max(Chunkxx); % Normalisation autocorrelation
-        [maxi, locs] = findpeaks(Chunkxx, "MinPeakHeight", seuil_peaks, "DoubleSided"); % Peaks!!
+        [maxi, locs] = findpeaks(Chunkxx, 'MinPeakHeight', seuil_peaks, 'DoubleSided'); % Peaks!!
         if length(maxi) > 1,
             save_dec(k) = 1;
             save_To(k) = locs(3) - locs(2);

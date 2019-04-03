@@ -8,7 +8,6 @@
 #include "console.h"
 #include <FreeRTOS.h>
 #include <task.h>
-#include <string.h>
 
 // TODO time + sync with sntp
 
@@ -104,9 +103,10 @@ static void serverDump(void) {
 static void serverStream(void) {
     float tempValue;
     uartprintf("freertos:~# ");
+    // Cursor save
+    uartSendEscCommand("[s");
     while (uartGetC() != KEY_CR) {
-        // xQueueReceive(xQueueTempStream, &tempValue, CONSOLE_TIMEOUT);
-        tempValue = tempBuffer[bufferIterator];
+        xQueueReceive(xQueueTempStream, &tempValue, 0);
         // Cursor restore
         uartSendEscCommand("[u");
         // Erasing to the end of line

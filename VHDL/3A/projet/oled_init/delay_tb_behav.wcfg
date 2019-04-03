@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="delay_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="delay_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="10001000000001fs"></ZoomEndTime>
+      <Cursor1Time time="10001000000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="146"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="8" />
+   <wvobject fp_name="/delay_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/delay_tb/RST" type="logic">
+      <obj_property name="ElementShortName">RST</obj_property>
+      <obj_property name="ObjectShortName">RST</obj_property>
+   </wvobject>
+   <wvobject fp_name="/delay_tb/DELAY_EN" type="logic">
+      <obj_property name="ElementShortName">DELAY_EN</obj_property>
+      <obj_property name="ObjectShortName">DELAY_EN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/delay_tb/DELAY_FIN" type="logic">
+      <obj_property name="ElementShortName">DELAY_FIN</obj_property>
+      <obj_property name="ObjectShortName">DELAY_FIN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/delay_tb/DELAY_MS" type="array">
+      <obj_property name="ElementShortName">DELAY_MS[11:0]</obj_property>
+      <obj_property name="ObjectShortName">DELAY_MS[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/delay_tb/DUT/etat" type="other">
+      <obj_property name="ElementShortName">etat</obj_property>
+      <obj_property name="ObjectShortName">etat</obj_property>
+   </wvobject>
+   <wvobject fp_name="/delay_tb/DUT/count" type="array">
+      <obj_property name="ElementShortName">count[16:0]</obj_property>
+      <obj_property name="ObjectShortName">count[16:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/delay_tb/DUT/count_ms" type="array">
+      <obj_property name="ElementShortName">count_ms[11:0]</obj_property>
+      <obj_property name="ObjectShortName">count_ms[11:0]</obj_property>
+   </wvobject>
+</wave_config>

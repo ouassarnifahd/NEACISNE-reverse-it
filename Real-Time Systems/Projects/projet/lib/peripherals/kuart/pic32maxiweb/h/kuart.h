@@ -8,6 +8,7 @@
 #define   __HEADER_UART__
 
 /* INCLUDES DEPENDENCIES ***************/
+#include <stdio.h>
 #include <string.h>
 #include <p32xxxx.h>
 #include <plib.h>
@@ -22,6 +23,9 @@
 #define UART_BUFFER_SIZE    200         // circular buffer size in byte
 #define UART_HISTORY_DEPTH  10
 #define UART_MAX_STR_SIZE   64
+
+// beta feature with some nasty bugs!!
+#define configUSE_UART_HISTORY 0
 
 /* SPECIAL KEYS ***************/
 // http://www.theasciicode.com.ar/extended-ascii-code/non-breaking-space-no-break-space-ascii-code-255.html
@@ -92,6 +96,8 @@
 // Delete
 #define KEY_DEL             127
 
+#define UTF_8_LIMIT         0xFF
+
 /**
  * @fn void uartConfig(void)
  * @brief uart module configuration
@@ -145,5 +151,18 @@ char uartGetC(void) ;
  * @param pointer on local mcu string to save received string
  */
 void uartGetS(char* stringToSave);
+
+// very useful macros
+#define uartprintf(MSG, ...) { \
+    char uartPrintfBuffer[UART_MAX_STR_SIZE]; \
+    sprintf(uartPrintfBuffer, MSG, ##__VA_ARGS__); \
+    uartPutS(uartPrintfBuffer); \
+}
+
+#define uartscanf(MSG, ...) { \
+    char uartScanfBuffer[UART_MAX_STR_SIZE]; \
+    uartGetS(uartScanfBuffer); \
+    sscanf(uartScanfBuffer, MSG, ##__VA_ARGS__); \
+}
 
 #endif

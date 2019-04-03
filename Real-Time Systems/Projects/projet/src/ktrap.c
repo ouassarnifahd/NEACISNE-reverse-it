@@ -19,14 +19,10 @@ void vApplicationStackOverflowHook( xTaskHandle xTask, signed char *pcTaskName )
    uartPutS(pcTaskName);
    uartPutS("    \r\n");
 
-   vTaskEndScheduler();
+   // vTaskEndScheduler();
    SoftReset();
    // S#!t, it's a trap!
-   portNOP();
-   portNOP();
-   portNOP();
-   portNOP();
-   main();
+   while(1);
 }
 
 /**
@@ -35,15 +31,11 @@ void vApplicationStackOverflowHook( xTaskHandle xTask, signed char *pcTaskName )
 */
 void vApplicationMallocFailedHook( void ){
    uartPutS("error malloc failed    \r\n");
-   
-   vTaskEndScheduler();
+
+   // vTaskEndScheduler();
    SoftReset();
    // S#!t, it was a trap!
-   portNOP();
-   portNOP();
-   portNOP();
-   portNOP();
-   main();
+   while(1);
 }
 
 /**
@@ -54,14 +46,10 @@ void vAssertCalled( const char *pcFileName, unsigned long ulLine ){
     uartPutS("error application or kernel assertion\r\n");
     uartprintf("file: %s", pcFileName);
     uartprintf("  line: %u\r\n", ulLine)
-    
-    
-    vTaskEndScheduler();
+
+
+    // vTaskEndScheduler();
     SoftReset();
     // S#!t, it's a trap!
-    portNOP();
-    portNOP();
-    portNOP();
-    portNOP();
-    main();
+    while(1);
 }
