@@ -10,7 +10,7 @@
 /* include all headers dependencies into utask.h file */
 
 // SIM_TIME
-#define SLOW_TIME 1
+#define SLOW_TIME 1000
 
 
 xQueueHandle xQueue;
