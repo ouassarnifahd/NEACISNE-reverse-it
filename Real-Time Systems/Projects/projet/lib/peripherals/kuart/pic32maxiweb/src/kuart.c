@@ -22,35 +22,18 @@ enum {
     ARROW_UP,
     ARROW_DOWN,
     ARROW_RIGHT,
-<<<<<<< HEAD
-<<<<<<< HEAD
     ARROW_LEFT,
     ARROW_NULL
 } key_Event = ARROW_NULL;
 
 #if configUSE_UART_HISTORY == 1
-=======
-    ARROW_LEFT
-} key_Event;
 
->>>>>>> 161295374c548df9d50fa617d9516e2319393135
-=======
-    ARROW_LEFT
-} key_Event;
-
->>>>>>> origin/master
 // command history
 int history_current = 0;
 int history_oldest  = 0;
 int history_cursor  = 0;
 char history_uartRx[UART_HISTORY_DEPTH][UART_MAX_STR_SIZE];
-<<<<<<< HEAD
-<<<<<<< HEAD
 #endif
-=======
->>>>>>> 161295374c548df9d50fa617d9516e2319393135
-=======
->>>>>>> origin/master
 
 /**
 * void __ISR(_UART_1_VECTOR, IPL2SOFT) IntUart1Handler(void)
@@ -175,14 +158,9 @@ void uartPutS(char* stringToSend) {
 /**
  * char uartGetC(void)
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
- #include "console.h"
->>>>>>> 161295374c548df9d50fa617d9516e2319393135
-=======
- #include "console.h"
->>>>>>> origin/master
+
+#include "console.h"
+
 char uartGetC(void) {
     char tmp = KEY_NULL;
 
@@ -193,20 +171,11 @@ char uartGetC(void) {
     const portTickType uartGetC_timeout = 20;
     xQueueReceive(xQueueUartBuffer, &tmp,  uartGetC_timeout);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> origin/master
     // debug
     // if (tmp) {
     //     uartprintf("\r\nchar debug: '%c' == 0x%x\r\n", tmp, (unsigned int)tmp);
     // }
 
-<<<<<<< HEAD
->>>>>>> 161295374c548df9d50fa617d9516e2319393135
-=======
->>>>>>> origin/master
     // character echo with connected device
     switch (tmp) {
         case KEY_NULL:
@@ -244,22 +213,13 @@ char uartGetC(void) {
         case KEY_CR:
         case KEY_ETX:
             // New Line
-<<<<<<< HEAD
-<<<<<<< HEAD
             cursor_char = 0;
             written_char = 0;
-=======
-=======
->>>>>>> origin/master
             written_char = 0;
             // history bug fix
             if (key_Event == ARROW_UP || key_Event == ARROW_DOWN) {
                 tmp = KEY_NULL;
             }
-<<<<<<< HEAD
->>>>>>> 161295374c548df9d50fa617d9516e2319393135
-=======
->>>>>>> origin/master
             break;
         case KEY_DEL:
             // KEY_BACKSPACE | KEY_DEL
@@ -296,13 +256,7 @@ char uartGetC(void) {
         case 'A':
             if (key_Event_Flag == 2) {
                 // UP_ARROW
-<<<<<<< HEAD
-<<<<<<< HEAD
                 #if configUSE_UART_HISTORY == 1
-=======
->>>>>>> 161295374c548df9d50fa617d9516e2319393135
-=======
->>>>>>> origin/master
                 if (history_oldest != history_cursor) {
                     // look for last command
                     history_cursor = (history_cursor - 1) % UART_HISTORY_DEPTH;
@@ -314,8 +268,6 @@ char uartGetC(void) {
                     uartSendEscCommand("[s");
                     // put history ...
                     uartPutS(history_uartRx[history_cursor]);
-<<<<<<< HEAD
-<<<<<<< HEAD
                     // resolve written caracters
                     for (written_char = 0;
                          history_uartRx[history_cursor][written_char] != KEY_NULL;
@@ -325,12 +277,6 @@ char uartGetC(void) {
                 } else
                 #endif
                 {
-=======
-                } else {
->>>>>>> 161295374c548df9d50fa617d9516e2319393135
-=======
-                } else {
->>>>>>> origin/master
                     // this is fun!
                     uartPutC(KEY_BEL);
                 }
@@ -343,13 +289,7 @@ char uartGetC(void) {
         case 'B':
             if (key_Event_Flag == 2) {
                 // DOWN_ARROW
-<<<<<<< HEAD
-<<<<<<< HEAD
                 #if configUSE_UART_HISTORY == 1
-=======
->>>>>>> 161295374c548df9d50fa617d9516e2319393135
-=======
->>>>>>> origin/master
                 if (history_current != history_cursor) {
                     // look for last command
                     history_cursor = (history_cursor + 1) % UART_HISTORY_DEPTH;
@@ -361,8 +301,6 @@ char uartGetC(void) {
                     uartSendEscCommand("[s");
                     // put history ...
                     uartPutS(history_uartRx[history_cursor]);
-<<<<<<< HEAD
-<<<<<<< HEAD
                     // resolve written caracters
                     for (written_char = 0;
                          history_uartRx[history_cursor][written_char] != KEY_NULL;
@@ -371,12 +309,6 @@ char uartGetC(void) {
                 } else
                 #endif
                 {
-=======
-                } else {
->>>>>>> 161295374c548df9d50fa617d9516e2319393135
-=======
-                } else {
->>>>>>> origin/master
                     // this is fun!
                     uartPutC(KEY_BEL);
                 }
@@ -419,8 +351,6 @@ char uartGetC(void) {
                 break;
             }
         default:
-<<<<<<< HEAD
-<<<<<<< HEAD
             // reset flags
             key_Event_Flag = 0;
             key_Event = ARROW_NULL;
@@ -432,17 +362,10 @@ char uartGetC(void) {
             } else {
                 tmp = KEY_NULL;
             }
-=======
-=======
->>>>>>> origin/master
             key_Event_Flag = 0;
             written_char++;
             uartPutC( tmp );
 
-<<<<<<< HEAD
->>>>>>> 161295374c548df9d50fa617d9516e2319393135
-=======
->>>>>>> origin/master
     }
 
     return tmp;
@@ -457,8 +380,6 @@ void uartGetS(char* rxString) {
 
     // wait for data receiving and check for ENTER key ascii code
     for (tmp = KEY_NULL; tmp != KEY_CR; tmp = uartGetC()) {
-<<<<<<< HEAD
-<<<<<<< HEAD
         // ctrl + c event!
         if (tmp == KEY_ETX) {
             i = 0;
@@ -493,9 +414,6 @@ void uartGetS(char* rxString) {
                 if (tmp <= UTF_8_LIMIT)
                     rxString[i++] = tmp;
 
-=======
-=======
->>>>>>> origin/master
         // if (tmp == KEY_NULL && key_Event == ARROW_RIGHT) {
         //     i = (i != UART_MAX_STR_SIZE) ? i + 1 : i;
         // } else if (tmp == KEY_NULL && key_Event == ARROW_LEFT) {
@@ -510,18 +428,12 @@ void uartGetS(char* rxString) {
             rxString[i++] = tmp;
             // rxString[i] = KEY_NULL;
             // uartprintf("\r\nstr debug: %s, last index %d\r\n", rxString, i - 1);
-<<<<<<< HEAD
->>>>>>> 161295374c548df9d50fa617d9516e2319393135
-=======
->>>>>>> origin/master
         }
     }
 
     // replace ENTER key ascii code
     rxString[i] = KEY_NULL;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     #if configUSE_UART_HISTORY == 1
     // history updated with text received
     if (i != 0 && rxString[0] != KEY_CR) {
@@ -538,9 +450,6 @@ void uartGetS(char* rxString) {
     history_cursor = history_current;
     #endif
 
-=======
-=======
->>>>>>> origin/master
     // history updated with text received
     if (rxString[0] != KEY_NULL) {
         // if (history_current != history_cursor) {
@@ -560,9 +469,5 @@ void uartGetS(char* rxString) {
     }
 
     // uartprintf("\r\nstr debug: %s \r\n", rxString);
-<<<<<<< HEAD
->>>>>>> 161295374c548df9d50fa617d9516e2319393135
-=======
->>>>>>> origin/master
     uartPutS("\r\n");
 }
