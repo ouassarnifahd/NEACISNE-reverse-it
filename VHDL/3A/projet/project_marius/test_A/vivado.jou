@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Wed Jan 16 17:00:46 2019
+# Process ID: 1184
+# Current directory: C:/Users/soc2/Desktop/Projet_Marius_Ouassarni
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4016 C:\Users\soc2\Desktop\Projet_Marius_Ouassarni\test_A.xpr
+# Log file: C:/Users/soc2/Desktop/Projet_Marius_Ouassarni/vivado.log
+# Journal file: C:/Users/soc2/Desktop/Projet_Marius_Ouassarni\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/soc2/Desktop/Projet_Marius_Ouassarni/test_A.xpr
+update_compile_order -fileset sources_1
+launch_sdk -workspace C:/Users/soc2/Desktop/Projet_Marius_Ouassarni/test_A.sdk -hwspec C:/Users/soc2/Desktop/Projet_Marius_Ouassarni/test_A.sdk/design_1_wrapper.hdf

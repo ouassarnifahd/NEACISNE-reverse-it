@@ -1,0 +1,26 @@
+17:07:19 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20004	   1148	  22824	  43976	   abc8	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+
+17:07:20 Build Finished (took 996ms)
+

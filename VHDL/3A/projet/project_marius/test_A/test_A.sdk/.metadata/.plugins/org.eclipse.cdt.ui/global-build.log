@@ -1,0 +1,2257 @@
+16:05:07 **** Build of project oled_lib_bsp ****
+make -k all 
+"Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_5/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/oled_ip2019_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/oled_ip2019_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scugic_v3_8/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v3_8/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/standalone_v6_5/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v6_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ttcps_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_2/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling coresightps_dcc"
+arm-none-eabi-ar: creating ../../../lib/libxil.a
+"Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_5/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling cpu_cortexa9"
+"Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling ddrps"
+"Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling devcfg"
+"Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling dmaps"
+"Running Make libs in ps7_cortexa9_0/libsrc/emacps_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling emacps"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling gpiops"
+"Running Make libs in ps7_cortexa9_0/libsrc/oled_ip2019_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/oled_ip2019_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling oled_ip2019..."
+oled_ip2019_selftest.c: In function 'OLED_IP2019_Reg_SelfTest':
+oled_ip2019_selftest.c:52:60: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( OLED_IP2019_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                            ^~
+oled_ip2019_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling qspips"
+"Running Make libs in ps7_cortexa9_0/libsrc/scugic_v3_8/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v3_8/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling scugic"
+"Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling scutimer"
+"Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling scuwdt"
+"Running Make libs in ps7_cortexa9_0/libsrc/sdps_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling sdps"
+"Running Make libs in ps7_cortexa9_0/libsrc/standalone_v6_5/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v6_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling standalone"
+"Running Make libs in ps7_cortexa9_0/libsrc/ttcps_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling ttcps"
+"Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling uartps"
+"Running Make libs in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling usbps"
+"Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_2/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling xadcps"
+'Finished building libraries'
+16:05:38 **** Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+../../oled_lib_bsp/ps7_cortexa9_0/lib\libxil.a(xil-crt0.o): In function `_start':
+xil-crt0.S:(.text+0x68): undefined reference to `main'
+collect2.exe: error: ld returned 1 exit status
+make: *** [oled_lib.elf] Erreur 1
+16:05:45 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:20:19: error: 'XPAR_OLED_IP_0_S00_AXI_BASEADDR' undeclared (first use in this function)
+ #define OLED_BASE XPAR_OLED_IP_0_S00_AXI_BASEADDR
+                   ^
+../src/main.c:26:12: note: in expansion of macro 'OLED_BASE'
+  Xil_Out32(OLED_BASE,0x44434241);
+            ^~~~~~~~~
+../src/main.c:20:19: note: each undeclared identifier is reported only once for each function it appears in
+ #define OLED_BASE XPAR_OLED_IP_0_S00_AXI_BASEADDR
+                   ^
+../src/main.c:26:12: note: in expansion of macro 'OLED_BASE'
+  Xil_Out32(OLED_BASE,0x44434241);
+            ^~~~~~~~~
+make: *** [src/main.o] Erreur 1
+16:07:03 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19512	   1148	  22568	  43228	   a8dc	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:07:50 **** Incremental Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+16:08:37 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:61:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq [64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+../../oled_lib_bsp/ps7_cortexa9_0/lib\libxil.a(xil-crt0.o): In function `_start':
+xil-crt0.S:(.text+0x68): undefined reference to `main'
+collect2.exe: error: ld returned 1 exit status
+make: *** [oled_lib.elf] Erreur 1
+16:10:09 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:68:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq [64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19512	   1148	  22824	  43484	   a9dc	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:13:19 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:68:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq [64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19224	   1148	  22824	  43196	   a8bc	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:13:40 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:68:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq [64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19224	   1148	  22824	  43196	   a8bc	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:13:45 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:68:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19224	   1148	  22824	  43196	   a8bc	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:14:09 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19224	   1148	  22824	  43196	   a8bc	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:14:15 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:16:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19224	   1148	  22824	  43196	   a8bc	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:14:32 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'print_char':
+../src/main.c:36:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/main.c:16:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19272	   1148	  22824	  43244	   a8ec	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:18:19 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'print_char':
+../src/main.c:35:11: error: expected expression before ',' token
+  Xil_Out8(, (u8)character);
+           ^
+../src/main.c:36:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/main.c:16:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+make: *** [src/main.o] Erreur 1
+16:18:49 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'print_char':
+../src/main.c:35:13: error: expected expression before ';' token
+  u8* addr = ;
+             ^
+../src/main.c:36:11: error: expected expression before ',' token
+  Xil_Out8(, (u8)character);
+           ^
+../src/main.c:35:6: warning: unused variable 'addr' [-Wunused-variable]
+  u8* addr = ;
+      ^~~~
+../src/main.c:37:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/main.c:16:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+make: *** [src/main.o] Erreur 1
+16:20:13 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'print_char':
+../src/main.c:36:11: error: expected expression before ',' token
+  Xil_Out8(, (u8)character);
+           ^
+../src/main.c:35:6: warning: unused variable 'addr' [-Wunused-variable]
+  u8* addr = (u8*)OLED_BASE + page * position;
+      ^~~~
+../src/main.c:37:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/main.c:16:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+make: *** [src/main.o] Erreur 1
+16:20:21 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'print_char':
+../src/main.c:36:11: warning: passing argument 1 of 'Xil_Out8' makes integer from pointer without a cast [-Wint-conversion]
+  Xil_Out8(addr, (u8)character);
+           ^~~~
+In file included from ../src/main.c:9:0:
+../../oled_lib_bsp/ps7_cortexa9_0/include/xil_io.h:186:20: note: expected 'UINTPTR {aka unsigned int}' but argument is of type 'u8 * {aka unsigned char *}'
+ static INLINE void Xil_Out8(UINTPTR Addr, u8 Value)
+                    ^~~~~~~~
+../src/main.c:37:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/main.c:16:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19372	   1148	  22824	  43344	   a950	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:21:08 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'print_char':
+../src/main.c:35:18: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+  UINTPTR* addr = (u8*)OLED_BASE + page * position;
+                  ^
+../src/main.c:36:11: warning: passing argument 1 of 'Xil_Out8' makes integer from pointer without a cast [-Wint-conversion]
+  Xil_Out8(addr, (u8)character);
+           ^~~~
+In file included from ../src/main.c:9:0:
+../../oled_lib_bsp/ps7_cortexa9_0/include/xil_io.h:186:20: note: expected 'UINTPTR {aka unsigned int}' but argument is of type 'UINTPTR * {aka unsigned int *}'
+ static INLINE void Xil_Out8(UINTPTR Addr, u8 Value)
+                    ^~~~~~~~
+../src/main.c:37:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/main.c:16:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19372	   1148	  22824	  43344	   a950	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:21:16 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../src/main.c:8:0:
+../src/main.c: In function 'print_char':
+../../oled_lib_bsp/ps7_cortexa9_0/include/xparameters.h:236:45: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+ #define XPAR_OLED_IP2019_0_S00_AXI_BASEADDR 0x43C00000
+                                             ^
+../src/main.c:14:19: note: in expansion of macro 'XPAR_OLED_IP2019_0_S00_AXI_BASEADDR'
+ #define OLED_BASE XPAR_OLED_IP2019_0_S00_AXI_BASEADDR
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/main.c:35:18: note: in expansion of macro 'OLED_BASE'
+  UINTPTR* addr = OLED_BASE + page * position;
+                  ^~~~~~~~~
+../src/main.c:36:11: warning: passing argument 1 of 'Xil_Out8' makes integer from pointer without a cast [-Wint-conversion]
+  Xil_Out8(addr, (u8)character);
+           ^~~~
+In file included from ../src/main.c:9:0:
+../../oled_lib_bsp/ps7_cortexa9_0/include/xil_io.h:186:20: note: expected 'UINTPTR {aka unsigned int}' but argument is of type 'UINTPTR * {aka unsigned int *}'
+ static INLINE void Xil_Out8(UINTPTR Addr, u8 Value)
+                    ^~~~~~~~
+../src/main.c:37:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/main.c:16:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19372	   1148	  22824	  43344	   a950	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:21:22 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'print_char':
+../src/main.c:37:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/main.c:16:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19368	   1148	  22824	  43340	   a94c	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:22:44 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'print_char':
+../src/main.c:37:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/main.c:16:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19372	   1148	  22824	  43344	   a950	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:25:29 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'print_char':
+../src/main.c:35:6: error: expected expression before ')' token
+  if () {
+      ^
+At top level:
+../src/main.c:16:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+make: *** [src/main.o] Erreur 1
+16:25:34 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'print_char':
+../src/main.c:35:6: error: expected expression before ')' token
+  if () {
+      ^
+At top level:
+../src/main.c:16:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+make: *** [src/main.o] Erreur 1
+16:26:03 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:16:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19404	   1148	  22824	  43376	   a970	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:26:35 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19404	   1148	  22824	  43376	   a970	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:26:42 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19408	   1148	  22824	  43380	   a974	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:27:33 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19424	   1148	  22824	  43396	   a984	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:27:46 **** Incremental Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+16:28:34 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'print_message':
+../src/main.c:60:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+At top level:
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19464	   1148	  22824	  43436	   a9ac	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:28:49 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'print_message':
+../src/main.c:59:18: error: 'position' undeclared (first use in this function)
+  if (page > 3 || position > 15) {
+                  ^~~~~~~~
+../src/main.c:59:18: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:63:33: error: 'character' undeclared (first use in this function)
+  Xil_Out8(OLED_BASE + addr, (u8)character);
+                                 ^~~~~~~~~
+At top level:
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+make: *** [src/main.o] Erreur 1
+16:28:56 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'print_message':
+../src/main.c:59:18: error: 'position' undeclared (first use in this function)
+  if (page > 3 || position > 15) {
+                  ^~~~~~~~
+../src/main.c:59:18: note: each undeclared identifier is reported only once for each function it appears in
+At top level:
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+make: *** [src/main.o] Erreur 1
+16:29:02 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19484	   1148	  22824	  43456	   a9c0	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:29:24 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19776	   1148	  22824	  43748	   aae4	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:29:48 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'print_message':
+../src/main.c:63:7: error: expected expression before ')' token
+  for () {
+       ^
+../src/main.c:63:7: error: expected expression before ')' token
+../src/main.c:62:6: warning: unused variable 'i' [-Wunused-variable]
+  int i = 0;
+      ^
+At top level:
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+make: *** [src/main.o] Erreur 1
+16:30:15 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'print_message':
+../src/main.c:60:19: error: expected expression before '>' token
+  if (page > 3 ||  > 16) {
+                   ^
+../src/main.c:64:18: error: expected expression before ')' token
+  for (i = 0; i < ) {
+                  ^
+../src/main.c:59:6: warning: unused variable 'len' [-Wunused-variable]
+  int len = strlen(start);
+      ^~~
+At top level:
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+make: *** [src/main.o] Erreur 1
+16:30:20 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'print_message':
+../src/main.c:64:18: error: expected expression before ')' token
+  for (i = 0; i < ) {
+                  ^
+At top level:
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+make: *** [src/main.o] Erreur 1
+16:30:26 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19776	   1148	  22824	  43748	   aae4	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:30:51 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19840	   1148	  22824	  43812	   ab24	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:32:13 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:106:2: error: too few arguments to function 'print_message'
+  print_message()
+  ^~~~~~~~~~~~~
+../src/main.c:58:5: note: declared here
+ int print_message(char *start , unsigned int page) {
+     ^~~~~~~~~~~~~
+../src/main.c:108:2: error: expected ';' before 'int'
+  int i=0;
+  ^~~
+../src/main.c:109:7: error: 'i' undeclared (first use in this function)
+  for (i=0;i<=DELAY ;i++)
+       ^
+../src/main.c:109:7: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:105:7: warning: unused variable 'msg' [-Wunused-variable]
+  char msg[] = "Hello FPGA!";
+       ^~~
+At top level:
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+make: *** [src/main.o] Erreur 1
+16:32:24 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19852	   1148	  22824	  43824	   ab30	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:32:46 **** Incremental Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+16:33:07 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19916	   1148	  22824	  43888	   ab70	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:35:41 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'clear':
+../src/main.c:82:7: error: expected expression before ')' token
+  for ()
+       ^
+../src/main.c:82:7: error: expected expression before ')' token
+../src/main.c:83:2: error: too few arguments to function 'Xil_Out64'
+  Xil_Out64()
+  ^~~~~~~~~
+In file included from ../src/main.c:9:0:
+../../oled_lib_bsp/ps7_cortexa9_0/include/xil_io.h:245:20: note: declared here
+ static INLINE void Xil_Out64(UINTPTR Addr, u64 Value)
+                    ^~~~~~~~~
+../src/main.c:84:1: error: expected ';' before '}' token
+ }
+ ^
+../src/main.c:81:6: warning: unused variable 'i' [-Wunused-variable]
+  int i;
+      ^
+At top level:
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+make: *** [src/main.o] Erreur 1
+16:35:53 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'clear':
+../src/main.c:82:18: error: 'len' undeclared (first use in this function)
+  for (i = 0; i < len; i++) {
+                  ^~~
+../src/main.c:82:18: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:83:14: error: 'start' undeclared (first use in this function)
+   print_char(start[i], page, i);
+              ^~~~~
+../src/main.c:83:24: error: 'page' undeclared (first use in this function)
+   print_char(start[i], page, i);
+                        ^~~~
+../src/main.c:85:2: error: too few arguments to function 'Xil_Out64'
+  Xil_Out64()
+  ^~~~~~~~~
+In file included from ../src/main.c:9:0:
+../../oled_lib_bsp/ps7_cortexa9_0/include/xil_io.h:245:20: note: declared here
+ static INLINE void Xil_Out64(UINTPTR Addr, u64 Value)
+                    ^~~~~~~~~
+../src/main.c:86:1: error: expected ';' before '}' token
+ }
+ ^
+At top level:
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+make: *** [src/main.o] Erreur 1
+16:35:59 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'clear':
+../src/main.c:82:18: error: 'len' undeclared (first use in this function)
+  for (i = 0; i < len; i++) {
+                  ^~~
+../src/main.c:82:18: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:83:3: error: too few arguments to function 'Xil_Out64'
+   Xil_Out64()
+   ^~~~~~~~~
+In file included from ../src/main.c:9:0:
+../../oled_lib_bsp/ps7_cortexa9_0/include/xil_io.h:245:20: note: declared here
+ static INLINE void Xil_Out64(UINTPTR Addr, u64 Value)
+                    ^~~~~~~~~
+../src/main.c:84:2: error: expected ';' before '}' token
+  }
+  ^
+At top level:
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+make: *** [src/main.o] Erreur 1
+16:36:02 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'clear':
+../src/main.c:82:18: error: 'len' undeclared (first use in this function)
+  for (i = 0; i < len; i++) {
+                  ^~~
+../src/main.c:82:18: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:83:3: error: too few arguments to function 'Xil_Out64'
+   Xil_Out64();
+   ^~~~~~~~~
+In file included from ../src/main.c:9:0:
+../../oled_lib_bsp/ps7_cortexa9_0/include/xil_io.h:245:20: note: declared here
+ static INLINE void Xil_Out64(UINTPTR Addr, u64 Value)
+                    ^~~~~~~~~
+At top level:
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+make: *** [src/main.o] Erreur 1
+16:36:11 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'clear':
+../src/main.c:82:18: error: 'len' undeclared (first use in this function)
+  for (i = 0; i < len; i++) {
+                  ^~~
+../src/main.c:82:18: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:83:14: error: expected expression before ',' token
+   Xil_Out64( ,(u64)0);
+              ^
+At top level:
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+make: *** [src/main.o] Erreur 1
+16:36:24 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'clear':
+../src/main.c:82:18: error: 'len' undeclared (first use in this function)
+  for (i = 0; i < len; i++) {
+                  ^~~
+../src/main.c:82:18: note: each undeclared identifier is reported only once for each function it appears in
+At top level:
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+make: *** [src/main.o] Erreur 1
+16:36:27 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'clear':
+../src/main.c:82:18: error: 'len' undeclared (first use in this function)
+  for (i = 0; i < len; i++) {
+                  ^~~
+../src/main.c:82:18: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:83:25: error: expected expression before ',' token
+   Xil_Out64(OLED_BASE + ,(u64)0);
+                         ^
+At top level:
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+make: *** [src/main.o] Erreur 1
+16:36:38 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'clear':
+../src/main.c:83:25: error: expected expression before ',' token
+   Xil_Out64(OLED_BASE + ,(u64)0);
+                         ^
+At top level:
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+make: *** [src/main.o] Erreur 1
+16:36:46 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20044	   1148	  22824	  44016	   abf0	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:36:51 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20044	   1148	  22824	  44016	   abf0	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:37:03 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20044	   1148	  22824	  44016	   abf0	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:37:22 **** Incremental Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+16:38:00 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20044	   1148	  22824	  44016	   abf0	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:38:06 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20044	   1148	  22824	  44016	   abf0	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:38:14 **** Incremental Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+16:39:02 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20044	   1148	  22824	  44016	   abf0	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:39:54 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20044	   1148	  22824	  44016	   abf0	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:40:10 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20044	   1148	  22824	  44016	   abf0	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:40:15 **** Incremental Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+16:40:48 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20044	   1148	  22824	  44016	   abf0	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:41:15 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'clear':
+../src/main.c:82:2: error: expected ',' or ';' before 'int'
+  int i;
+  ^~~
+../src/main.c:83:7: error: 'i' undeclared (first use in this function)
+  for (i = 0; i < 3; i++) {
+       ^
+../src/main.c:83:7: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:81:7: warning: unused variable 'space' [-Wunused-variable]
+  char space[] = "                 "
+       ^~~~~
+At top level:
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+make: *** [src/main.o] Erreur 1
+16:41:18 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'clear':
+../src/main.c:81:7: warning: unused variable 'space' [-Wunused-variable]
+  char space[] = "                 ";
+       ^~~~~
+At top level:
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20064	   1148	  22824	  44036	   ac04	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:41:31 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'clear':
+../src/main.c:84:3: error: too few arguments to function 'print_message'
+   print_message()
+   ^~~~~~~~~~~~~
+../src/main.c:58:5: note: declared here
+ int print_message(char *start , unsigned int page) {
+     ^~~~~~~~~~~~~
+../src/main.c:86:2: error: expected ';' before '}' token
+  }
+  ^
+../src/main.c:81:7: warning: unused variable 'space' [-Wunused-variable]
+  char space[] = "                 ";
+       ^~~~~
+At top level:
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+make: *** [src/main.o] Erreur 1
+16:41:45 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20000	   1148	  22824	  43972	   abc4	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:41:51 **** Incremental Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+16:42:18 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20000	   1148	  22824	  43972	   abc4	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:42:31 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20000	   1148	  22824	  43972	   abc4	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:42:37 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20004	   1148	  22824	  43976	   abc8	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:42:51 **** Incremental Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+16:43:40 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20004	   1148	  22824	  43976	   abc8	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:43:43 **** Incremental Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+16:44:07 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20004	   1148	  22824	  43976	   abc8	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:44:13 **** Incremental Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+16:45:36 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19992	   1148	  22824	  43964	   abbc	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:45:39 **** Incremental Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+16:46:14 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19992	   1148	  22824	  43964	   abbc	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:46:38 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20004	   1148	  22824	  43976	   abc8	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:46:52 **** Incremental Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+16:47:44 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20004	   1148	  22824	  43976	   abc8	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:47:58 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20004	   1148	  22824	  43976	   abc8	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:48:01 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20004	   1148	  22824	  43976	   abc8	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:48:03 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20004	   1148	  22824	  43976	   abc8	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:48:12 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20004	   1148	  22824	  43976	   abc8	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:48:17 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20004	   1148	  22824	  43976	   abc8	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:48:28 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20004	   1148	  22824	  43976	   abc8	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:49:32 **** Incremental Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+16:49:48 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20004	   1148	  22824	  43976	   abc8	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:50:00 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20004	   1148	  22824	  43976	   abc8	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+16:50:21 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20004	   1148	  22824	  43976	   abc8	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+17:03:31 **** Incremental Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+17:03:44 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20004	   1148	  22824	  43976	   abc8	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+17:03:48 **** Incremental Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+17:04:08 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20004	   1148	  22824	  43976	   abc8	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+17:04:11 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20004	   1148	  22824	  43976	   abc8	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+17:04:15 **** Incremental Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+17:04:29 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20004	   1148	  22824	  43976	   abc8	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+17:05:04 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20068	   1148	  22824	  44040	   ac08	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+17:05:11 **** Incremental Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+17:05:29 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20068	   1148	  22824	  44040	   ac08	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+17:05:34 **** Incremental Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+17:06:22 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20068	   1148	  22824	  44040	   ac08	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+17:06:37 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20004	   1148	  22824	  43976	   abc8	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+17:06:57 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:111:7: warning: unused variable 'msg' [-Wunused-variable]
+  char msg[] = "   Love FPGA!";
+       ^~~
+At top level:
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20004	   1148	  22824	  43976	   abc8	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+17:07:01 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20004	   1148	  22824	  43976	   abc8	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '
+17:07:05 **** Incremental Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Rien à faire pour « main-build ».
+17:07:19 **** Auto Build of configuration Debug for project oled_lib ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../oled_lib_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:17:12: warning: 'int_seq' defined but not used [-Wunused-variable]
+ static int int_seq[64];
+            ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building target: oled_lib.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../oled_lib_bsp/ps7_cortexa9_0/lib -o "oled_lib.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: oled_lib.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size oled_lib.elf  |tee "oled_lib.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  20004	   1148	  22824	  43976	   abc8	oled_lib.elf
+'Finished building: oled_lib.elf.size'
+' '

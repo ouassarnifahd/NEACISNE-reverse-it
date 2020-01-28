@@ -1,0 +1,52 @@
+/*
+ * main.c
+ *
+ *  Created on: 9 déc. 2018
+ *
+ */
+
+/*
+ * essai.c
+ *
+ *  Created on: 28 févr. 2018
+ *      Author: AA
+ */
+#include "xparameters.h"
+#include "xil_io.h"
+#include <string.h>
+#define DELAY 10000
+
+/* 	Base memory address of OLED_IP */
+#define OLED_BASE XPAR_OLED_IP_0_S00_AXI_BASEADDR
+
+int main(void)
+{
+	int i=0;
+
+	Xil_Out32(OLED_BASE,0x44434241);
+	Xil_Out32(OLED_BASE+4,0x48474645);
+	Xil_Out32(OLED_BASE+8,0x4C4B4A49);
+	Xil_Out32(OLED_BASE+12,0x504F4E4D);
+
+	Xil_Out32(OLED_BASE+16,0x34333231);
+	Xil_Out32(OLED_BASE+20,0x38373635);
+	Xil_Out32(OLED_BASE+24,0x00003039);
+	Xil_Out32(OLED_BASE+28,0x00000000);
+
+	Xil_Out32(OLED_BASE+32,0x00000000);
+	Xil_Out32(OLED_BASE+36,0x49534E45);
+	Xil_Out32(OLED_BASE+40,0x4E454143);
+	Xil_Out32(OLED_BASE+44,0x00000000);
+
+	Xil_Out32(OLED_BASE+48,0x00000000);
+	Xil_Out32(OLED_BASE+52,0x00000000);
+	Xil_Out32(OLED_BASE+56,0x00000000);
+	Xil_Out32(OLED_BASE+60,0x00000000);
+
+	for (i=0;i<=DELAY ;i++)
+		Xil_Out32(OLED_BASE+(64), 1);
+	for (i=0;i<=DELAY ;i++)
+		Xil_Out32(OLED_BASE+(64), 0);
+	return 1;
+}
+

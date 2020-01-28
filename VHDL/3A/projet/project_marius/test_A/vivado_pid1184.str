@@ -1,0 +1,103 @@
+/*
+
+Xilinx Vivado v2017.4 (64-bit) [Major: 2017, Minor: 4]
+SW Build: 2086221 on Fri Dec 15 20:55:39 MST 2017
+IP Build: 2085800 on Fri Dec 15 22:25:07 MST 2017
+
+Process ID: 1184
+License: Customer
+
+Current time: 	Wed Jan 16 17:01:01 CET 2019
+Time zone: 	Central European Time (Europe/Paris)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1280x1024
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 104 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2017.4/tps/win64/jre
+JVM executable location: 	C:/Xilinx/Vivado/2017.4/tps/win64/jre/bin/java.exe
+
+User name: 	soc2
+User home directory: C:/Users/soc2
+User working directory: C:/Users/soc2/Desktop/Projet_Marius_Ouassarni
+User country: 	FR
+User language: 	fr
+User locale: 	fr_FR
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2017.4
+RDI_DATADIR: C:/Xilinx/Vivado/2017.4/data
+RDI_BINDIR: C:/Xilinx/Vivado/2017.4/bin
+
+Vivado preferences file location: C:/Users/soc2/AppData/Roaming/Xilinx/Vivado/2017.4/vivado.xml
+Vivado preferences directory: C:/Users/soc2/AppData/Roaming/Xilinx/Vivado/2017.4/
+Vivado layouts directory: C:/Users/soc2/AppData/Roaming/Xilinx/Vivado/2017.4/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2017.4/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/soc2/Desktop/Projet_Marius_Ouassarni/vivado.log
+Vivado journal file location: 	C:/Users/soc2/Desktop/Projet_Marius_Ouassarni/vivado.jou
+Engine tmp dir: 	C:/Users/soc2/Desktop/Projet_Marius_Ouassarni/.Xil/Vivado-1184-A103PC1
+
+GUI allocated memory:	181 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 523 MB
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 48 MB (+47645kb) [00:00:08]
+// [Engine Memory]: 462 MB (+332921kb) [00:00:08]
+// bs (cj):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\soc2\Desktop\Projet_Marius_Ouassarni\test_A.xpr. Version: Vivado v2017.4 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/Users/soc2/Desktop/Projet_Marius_Ouassarni/test_A.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 67 MB (+17098kb) [00:00:13]
+// [Engine Memory]: 594 MB (+113965kb) [00:00:13]
+// [GUI Memory]: 71 MB (+1241kb) [00:00:16]
+// [GUI Memory]: 77 MB (+2272kb) [00:00:17]
+// Tcl Message: open_project C:/Users/soc2/Desktop/Projet_Marius_Ouassarni/test_A.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/Users/soc2/Desktop/Marius/projet/oled_ip/test_A' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [filemgmt 56-1] IP Repository Path: Directory not found as 'C:/Users/soc2/oled_ip_2019/ip_repo/oled_ip2019_1.0'; using path 'C:/Users/soc2/Desktop/Marius/projet/oled_ip_2019/ip_repo/oled_ip2019_1.0' instead. INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/soc2/Desktop/Marius/projet/oled_ip_2019/ip_repo/oled_ip2019_1.0'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.4/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 629 MB. GUI used memory: 45 MB. Current time: 1/16/19 5:01:08 PM CET
+// Project name: test_A; location: C:/Users/soc2/Desktop/Projet_Marius_Ouassarni; part: xc7z020clg484-1
+// [Engine Memory]: 642 MB (+19547kb) [00:00:17]
+// Tcl Message: open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 807.480 ; gain = 130.805 
+dismissDialog("Open Project"); // bs (cj)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // U (q, cj)
+// Tcl Message: update_compile_order -fileset sources_1 
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // Z (cj)
+selectMenuItem(PAResourceCommand.PACommandNames_LAUNCH_HARDWARE, "Launch SDK"); // ac (cj)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // U (q, cj)
+// Run Command: PAResourceCommand.PACommandNames_LAUNCH_HARDWARE
+// aa (cj): Launch SDK: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aa)
+dismissDialog("Launch SDK"); // aa (cj)
+// Tcl Message: launch_sdk -workspace C:/Users/soc2/Desktop/Projet_Marius_Ouassarni/test_A.sdk -hwspec C:/Users/soc2/Desktop/Projet_Marius_Ouassarni/test_A.sdk/design_1_wrapper.hdf 
+// Tcl Message: INFO: [Vivado 12-393] Launching SDK... INFO: [Vivado 12-417] Running xsdk -workspace C:/Users/soc2/Desktop/Projet_Marius_Ouassarni/test_A.sdk -hwspec C:/Users/soc2/Desktop/Projet_Marius_Ouassarni/test_A.sdk/design_1_wrapper.hdf INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages. 
+// Elapsed time: 83 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // U (q, cj)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, "Open Recent Project"); // Z (cj)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_IP_LOCATION, "Open Recent IP Location"); // Z (cj)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, "Open Recent File"); // Z (cj)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // U (q, cj)
+// [GUI Memory]: 82 MB (+1704kb) [00:04:20]
