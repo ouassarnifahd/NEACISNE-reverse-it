@@ -1,0 +1,6 @@
+[submodule "thermos"]
+	path = thermos
+	url = https://github.com/ouassarnifahd/thermos
+[submodule "Real-Time Systems/Projects/thermos"]
+	path = Real-Time Systems/Projects/thermos
+	url = https://github.com/ouassarnifahd/thermos
